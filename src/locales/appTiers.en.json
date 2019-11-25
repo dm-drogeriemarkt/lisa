@@ -1,0 +1,6 @@
+{
+  "app_tiers": {
+    "label": "*App Tier* - An application tier specifies the application staging environment.",
+    "name": "*name* - description"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "form_settings": {
+    "max_host_count_value": 10,
+    "host_creation_duration": 10000,
+    "min_cpu_value": 1,
+    "max_cpu_value": 8,
+    "step_cpu": 1,
+    "mark_step_cpu": 2,
+    "min_memory_value": 4,
+    "max_memory_value": 64,
+    "step_memory": 4,
+    "mark_step_memory": 16,
+    "min_size_value": 50,
+    "max_size_value": 900,
+    "step_size": 50,
+    "mark_step_size": 300,
+    "default_values": {
+      "cpu": 2,
+      "memory": 8,
+      "size": 200,
+      "operatingsystem_id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE=",
+      "location_code": "LAN",
+      "compute_resource_id": "MDE6Q29tcHV0ZVJlc291cmNlLTI=",
+      "puppet_master_id": "MDE6U21hcnRQcm94eS0x",
+      "datastore_type_id": "Mirror",
+      "app_tier_name": "development",
+      "puppet_env": "MDE6RW52aXJvbm1lbnQtMQ==",
+      "puppetclass_ids": ["MDE6UHVwcGV0Y2xhc3MtMQ=="]
+    },
+    "preset_resources": [
+      {
+        "cpu": 2,
+        "memory": 8,
+        "size": 200,
+        "operatingsystem_id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE="
+      }
+    ]
+  },
+  "default_configs": {
+    "build": true,
+    "enabled": true,
+    "managed": true,
+    "organization_id": "MDE6T3JnYW5pemF0aW9uLTE=",
+    "architecture_id": "MDE6QXJjaGl0ZWN0dXJlLTE=",
+    "compute_attributes": {
+      "start": true,
+      "memory_hot_add_enabled": true,
+      "cpu_hot_add_enabled": false,
+      "corespersocket": true
+    },
+    "interfaces_attributes": [
+      {
+        "computeAttributes": {
+          "type": "VirtualVmxnet3"
+        }
+      }
+    ]
+  },
+  "locations": [
+    {
+      "id": "MDE6TG9jYXRpb24tNA==",
+      "name": "LAN",
+      "code": "LAN",
+      "location": "LAN",
+      "country": "de",
+      "domain_name": "example.com",
+      "label": {
+        "location": "Karlsruhe",
+        "explanation": "Datacenter 1 (LAN)",
+        "reduced_performance": false
+      },
+      "relations": {
+        "cluster": "CLUSTER",
+        "compute_resource_id": "MDE6Q29tcHV0ZVJlc291cmNlLTI=",
+        "puppet_ca_proxy_id": "MDE6U21hcnRQcm94eS0x",
+        "media": [
+          {
+            "id": "MDE6TWVkaXVtLTEw",
+            "operatingsystem_id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE="
+          }
+        ]
+      },
+      "compute_attributes": {
+        "path_prefix": "/Datencenter/Location1/vm/Linux/"
+      },
+      "datastore_types": [
+        {
+          "id": "Mirror",
+          "name": "Mirror",
+          "template": "#DC#-LAN"
+        }
+      ]
+    }
+  ],
+  "operatingsystems": [
+    {
+     "id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE=",
+     "name": "RedHat 7.6",
+     "relations": {
+        "guest_operatingsystem_id": "rhel7_64Guest",
+        "ptable_id": "MDE6UHRhYmxlLTEwNw=="
+      }
+    }
+  ],
+  "app_tiers": [
+    {
+      "name": "development",
+      "relations": {
+        "locations": [
+          {
+            "code": "LAN",
+            "resource_pool": "default"
+          }
+        ]
+      }
+    }
+  ],
+  "fact_names": {
+    "cpu": "processors::count",
+    "memory": "memorysize_mb",
+    "disk": "blockdevice_sda_size"
+  }
+}

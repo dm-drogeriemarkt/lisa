@@ -1,0 +1,32 @@
+p.help-block.explanation {
+  min-height: 60px;
+}
+
+input.Select-control {
+  padding-right: 35px;
+}
+
+input.Select-control + span.pficon,
+input.Select-control + span + span.pficon {
+  position: absolute;
+  top: 8px;
+  font-size: 18px;
+  right: 32px;
+}
+
+
+input.Select-control:valid + span.pficon.pficon-ok {
+  display: block;
+}
+
+input.Select-control:valid + span + span.pficon.pficon-error-circle-o {
+  display: none;
+}
+
+input.Select-control:invalid + span + span.pficon.pficon-error-circle-o {
+  display: block
+}
+
+input.Select-control:invalid + span.pficon.pficon-ok {
+  display: none;
+}

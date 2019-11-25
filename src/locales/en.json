@@ -1,0 +1,137 @@
+{
+  "navigation": {
+    "dashboard": "< Dashboard"
+  },
+  "login": {
+    "header": "Login to Your Account",
+    "login": "Login",
+    "logout": "Logout",
+    "password": "Password",
+    "username": "Username",
+    "username_and_password_required": "Username and password are required",
+    "username_or_password_incorrect": "Incorrect username or password"
+  },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "error": "Sorry but something went wrong. Try again later!",
+    "no_hosts_info": "You have not created any hosts yet.",
+    "no_hosts_claim": "Don't worry, you can create new hosts easily and efficiently now.",
+    "no_hosts_search_info": "Search returned no results",
+    "toolbar": {
+      "create_hosts": "Create Hosts",
+      "filter_placeholder": "Search by name"
+    },
+    "hosts_list": {
+      "foreman_link": "Show in Foreman"
+    }
+  },
+  "hardware": {
+    "cpu_plural": "CPUs",
+    "cpu_singular": "CPU",
+    "disk": "HD",
+    "memory": "RAM"
+  },
+  "hosts_form": {
+    "app_tier_name": "App Tier",
+    "cpu": "CPU",
+    "cpus": "CPUs",
+    "create_hosts_button": "Create Hosts!",
+    "create_hosts_button_info": "Please fill in missing information",
+    "create_hosts_header": "Create Hosts",
+    "created_hosts": "Created Hosts:",
+    "datastore_type": "Datastore type",
+    "disk": "disk",
+    "error_code": "Error code:",
+    "errors": {
+      "host_params": {
+        "default": "Sorry, you can't create a host with these parameters",
+        "compute_resource_not_found": "Compute resource not found",
+        "network_not_found": "VLAN-{subnet_vlanid} could not be found on the compute resource"
+      }
+    },
+    "host": "Host",
+    "host_count": "Host Count",
+    "hosts_creation": {
+      "header": "Hosts Creation",
+      "description": "Add project details, tell us how many hosts you want to create, and give your hosts names that will help you to identify them.",
+      "project_details": {
+        "header": "Provide project details",
+        "explanation": "Project and Host Role can include only letters (a-z) and numbers (0-9). Host Count influences number of input fields for host names.",
+        "project": "Project",
+        "role": "Host Role in the Project",
+        "placeholders": {
+          "project": "Project",
+          "role": "Host Role"
+        }
+      },
+      "hosts_names": {
+        "header": "Choose host names",
+        "host_names": "Host Names",
+        "explanation": "The name should match the following pattern *project-role-id* and can include only letters (a-z) and numbers (0-9).",
+        "host": "Host",
+        "name": "Name"
+      }
+    },
+    "location": {
+      "default": {
+        "content": "By default your host will be created in Karlsruhe, Germany (Datacenters 1 or 2).",
+        "header": "Server location",
+        "link": "Pick a different server location >"
+      },
+      "custom": {
+        "header": "Pick Server Location",
+        "warning": "Any VM hosted by {location} runs slower than the ones hosted by other datacenters. Please make sure, if this location is the right choice for you."
+      }
+    },
+    "memory": "Memory",
+    "operatingsystem_id": "Operating System",
+    "owner_id": "Owner",
+    "placeholders": {
+      "app_tier_name": "Select App Tier",
+      "datastore_type": "Select Datastore type",
+      "loading": "Loading data from server",
+      "location": "Select Location",
+      "operatingsystem_id": "Select Operating System",
+      "owner_id": "Select Owner",
+      "puppetclass_ids": "Select Puppet Classes",
+      "puppet_env_id": "Select Puppet ENV",
+      "puppet_master_id": "Select Puppet Master",
+      "subnet_id": "Select Subnet",
+      "subnet_id_disabled": "Select App Tier at first"
+    },
+    "puppetclass_ids": "Puppet Classes",
+    "puppet_config": {
+      "header": "Puppet Configuration",
+      "default": {
+        "content": "The servers will be configured with basic operating system settings. If you want to use custom puppet code to set up your server, use the link bellow.",
+        "header": "Automated server configuration",
+        "link": "Puppet configuration >"
+      },
+      "custom": {
+        "header": "Pick Server Location"
+      }
+    },
+    "puppet_env_id": "Puppet Environment",
+    "puppet_master_id": "Puppet Master",
+    "ram": "RAM",
+    "resources": {
+      "header": "Basic Resources Configuration",
+      "description": "You can pick from available presets for basic configuration. Switch to the manual tab if you would like a fine tuned setup."
+    },
+    "server_config": {
+      "header": "Server Configuration"
+    },
+    "size": "Disk Size",
+    "subnet_id": "Subnet"
+  },
+  "host_details": {
+    "overview": {
+      "card_label": "Overview",
+      "header": "Host State",
+      "ip": "IPv4 address",
+      "ip6": "IPv6 address",
+      "operatingsystem": "OS",
+      "not_assigned": "not assigned"
+    }
+  }
+}

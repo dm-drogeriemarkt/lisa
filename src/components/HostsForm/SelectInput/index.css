@@ -1,0 +1,21 @@
+.Select > .Select-control {
+  z-index: 1;
+}
+
+.Select .Select-input {
+  padding: 0;
+}
+
+div.Select--multi div.Select-input {
+  margin-left: 5px;
+}
+
+.Select + input.hidden-input {
+  position: absolute;
+  opacity: 0;
+  display: block;
+  border: 0;
+  padding: 0;
+  margin: -20px 0 0 30px;
+  z-index: -1
+}

@@ -1,0 +1,602 @@
+{
+  "$id": "https://github.com/dm-drogeriemarkt-de/lisa/blob/master/src/settings/schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "form_settings",
+    "default_configs",
+    "locations",
+    "operatingsystems",
+    "app_tiers"
+  ],
+  "properties": {
+    "form_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_values"
+      ],
+      "properties": {
+        "max_host_count_value": {
+          "type": "number",
+          "default": 10
+        },
+        "host_creation_duration": {
+          "type": "number",
+          "default": 10000
+        },
+        "min_cpu_value": {
+          "type": "number",
+          "description": "The minimum number of CPUs that can be assigned to the host",
+          "default": 1
+        },
+        "max_cpu_value": {
+          "type": "number",
+          "description": "The maximum number of CPUs that can be assigned to the host",
+          "default": 8
+        },
+        "step_cpu": {
+          "type": "number",
+          "description": "The step of the CPUs number on the form",
+          "default": 1
+        },
+        "mark_step_cpu": {
+          "type": "number",
+          "description": "The step that the CPUs label should appear on the form",
+          "default": 1
+        },
+        "min_memory_value": {
+          "type": "number",
+          "description": "The minimum memory that can be assigned to the host",
+          "default": 4
+        },
+        "max_memory_value": {
+          "type": "number",
+          "description": "The maximum memory that can be assigned to the host",
+          "default": 64
+        },
+        "step_memory": {
+          "type": "number",
+          "description": "The step of the memory size on the form",
+          "default": 4
+        },
+        "mark_step_memory": {
+          "type": "number",
+          "description": "The step that the memory size label should appear on the form",
+          "default": 16
+        },
+        "min_size_value": {
+          "type": "number",
+          "description": "The minimum disk size that can be assigned to the host",
+          "default": 50
+        },
+        "max_size_value": {
+          "type": "number",
+          "description": "The maximum disk size that can be assigned to the host",
+          "default": 900
+        },
+        "step_size": {
+          "type": "number",
+          "description": "The step of the disk size on the form",
+          "default": 50
+        },
+        "mark_step_size": {
+          "type": "number",
+          "description": "The step that the disk size label should appear on the form",
+          "default": 300
+        },
+        "preset_resources": {
+          "type": "array",
+          "description": "A set of attributes that can be assigned to a host with one click on a form element",
+          "uniqueItems": true,
+          "default": [],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "cpu",
+              "memory",
+              "size",
+              "operatingsystem_id"
+            ],
+            "properties": {
+              "cpu": {
+                "type": "number",
+                "description": "Number of CPUs"
+              },
+              "memory": {
+                "type": "number",
+                "description": "Memory size"
+              },
+              "size": {
+                "type": "number",
+                "description": "Disk size"
+              },
+              "operatingsystem_id": {
+                "type": "string",
+                "description": "A reference to the [operating system](#operatingsystems)"
+              }
+            }
+          }
+        },
+        "default_values": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "puppet_env",
+            "puppetclass_ids"
+          ],
+          "properties": {
+            "cpu": {
+              "type": "number",
+              "description": "Number of CPUs",
+              "default": 1
+            },
+            "memory": {
+              "type": "number",
+              "description": "Memory size",
+              "default": 4
+            },
+            "size": {
+              "type": "number",
+              "description": "Disk size",
+              "default": 50
+            },
+            "operatingsystem_id": {
+              "type": "string",
+              "description": "A reference to the [operating system](#operatingsystems)",
+              "default": "Id of the first operatingsystem from operatingsystems"
+            },
+            "location_code": {
+              "type": "string",
+              "description": "A reference to the [location](#locations-1)",
+              "default": "Code of the first location from locations"
+            },
+            "compute_resource_id": {
+              "type": "string",
+              "description": "A reference to the [compute resource](#compute_resource_id-1)",
+              "default": "It will be taken from the attributes of the default location"
+            },
+            "puppet_master_id": {
+              "type": "string",
+              "description": "A reference to the [puppet master](#puppet_ca_proxy_id)",
+              "default": "It will be taken from the attributes of the default location"
+            },
+            "datastore_type_id": {
+              "type": "string",
+              "description": "A reference to the [datastore type](#datastore_types)",
+              "default": "It will be taken from the attributes of the default location"
+            },
+            "puppet_env": {
+              "type": "string",
+              "description": "Environment global id from Foreman",
+              "examples": [
+                "MDE6RW52aXJvbm1lbnQtMQ=="
+              ]
+            },
+            "puppetclass_ids": {
+              "type": "array",
+              "description": "Puppetclass global ids from Foreman",
+              "uniqueItems": true,
+              "minimum": 1,
+              "items": {
+                "type": "string"
+              },
+              "examples": [
+                "MDE6UHVwcGV0Y2xhc3MtMQ=="
+              ]
+            },
+            "app_tier_name": {
+              "type": "string",
+              "description": "App tier name",
+              "default": "Name of the first app tier from app tiers"
+            }
+          }
+        }
+      }
+    },
+    "default_configs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "organization_id",
+        "architecture_id",
+        "interfaces_attributes"
+      ],
+      "properties": {
+        "build": {
+          "type": "boolean",
+          "default": false
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "managed": {
+          "type": "boolean",
+          "default": false
+        },
+        "organization_id": {
+          "type": "string",
+          "description": "Organization global id from Foreman",
+          "examples": [
+            "MDE6T3JnYW5pemF0aW9uLTE="
+          ]
+        },
+        "architecture_id": {
+          "type": "string",
+          "description": "Architecture global id from Foreman",
+          "examples": [
+            "MDE6QXJjaGl0ZWN0dXJlLTE="
+          ]
+        },
+        "compute_attributes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "start": {
+              "type": "boolean",
+              "default": false
+            },
+            "memory_hot_add_enabled": {
+              "type": "boolean",
+              "default": false
+            },
+            "cpu_hot_add_enabled": {
+              "type": "boolean",
+              "default": false
+            },
+            "corespersocket": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        },
+        "interfaces_attributes": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "computeAttributes"
+            ],
+            "properties": {
+              "computeAttributes": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "type"
+                ],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "examples": [
+                      "VirtualVmxnet1"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "code",
+          "location",
+          "country",
+          "domain_name",
+          "label",
+          "relations",
+          "datastore_types",
+          "compute_attributes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Location global id from Foreman"
+          },
+          "code": {
+            "type": "string",
+            "description": "A unique code that is used to identify the location"
+          },
+          "name": {
+            "type": "string",
+            "description": "Location name"
+          },
+          "location": {
+            "type": "string",
+            "description": "This value will be used in the search query to filter subnets"
+          },
+          "country": {
+            "type": "string",
+            "description": "Country code",
+            "examples": [
+              "pl",
+              "de"
+            ]
+          },
+          "domain_name": {
+            "type": "string",
+            "description": "Domain name",
+            "examples": [
+              "example.com"
+            ]
+          },
+          "label": {
+            "type": "object",
+            "description": "These values will be visible on the host creation form",
+            "additionalProperties": false,
+            "required": [
+              "location"
+            ],
+            "properties": {
+              "location": {
+                "type": "string"
+              },
+              "explanation": {
+                "type": "string"
+              },
+              "reduced_performance": {
+                "type": "boolean"
+              }
+            }
+          },
+          "compute_attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path_prefix"
+            ],
+            "properties": {
+              "path_prefix": {
+                "type": "string",
+                "description": "A owner name will be added at the end of this value",
+                "examples": [
+                  "/Datencenter/Location/vm/Linux/"
+                ]
+              }
+            }
+          },
+          "datastore_types": {
+            "type": "array",
+            "uniqueItems": true,
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "name",
+                "template"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "examples": [
+                    "Mirror"
+                  ]
+                },
+                "name": {
+                  "type": "string",
+                  "examples": [
+                    "Mirror"
+                  ]
+                },
+                "template": {
+                  "type": "string",
+                  "description": "`#DC` will be replaced with datastore datacenter number (1 or 2) and will be send in the request as `storage_pod` attribute",
+                  "examples": [
+                    "PL-#DC#-LAN"
+                  ]
+                }
+              }
+            }
+          },
+          "relations": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "cluster",
+              "compute_resource_id",
+              "puppet_ca_proxy_id",
+              "media"
+            ],
+            "properties": {
+              "cluster": {
+                "type": "string",
+                "description": "Cluster name",
+                "examples": [
+                  "CLUSTER"
+                ]
+              },
+              "compute_resource_id": {
+                "type": "string",
+                "description": "ComputeResource global id from Foreman",
+                "examples": [
+                  "MDE6Q29tcHV0ZVJlc291cmNlLTI="
+                ]
+              },
+              "puppet_ca_proxy_id": {
+                "type": "string",
+                "description": "SmartProxy global id from Foreman",
+                "examples": [
+                  "MDE6Q29tcHV0ZVJlc291cmNlLTI="
+                ]
+              },
+              "media": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "operatingsystem_id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Medium global id from Foreman",
+                      "examples": [
+                        "MDE6TWVkaXVtLTEw"
+                      ]
+                    },
+                    "operatingsystem_id": {
+                      "type": "string",
+                      "description": "A reference to the [operating system](#operatingsystems)"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "operatingsystems": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "relations"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Operatingsystem global id from Foreman",
+            "examples": [
+              "MDE6T3BlcmF0aW5nc3lzdGVtLTE="
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Operating system name",
+            "examples": [
+              "RedHat 7.6"
+            ]
+          },
+          "relations": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "guest_operatingsystem_id",
+              "ptable_id"
+            ],
+            "properties": {
+              "guest_operatingsystem_id": {
+                "type": "string",
+                "examples": [
+                  "rhel7_64Guest"
+                ]
+              },
+              "ptable_id": {
+                "type": "string",
+                "description": "Ptable global id from Foreman",
+                "examples": [
+                  "MDE6UHRhYmxlLTEwNw=="
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "app_tiers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "relations"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "App tier name",
+            "examples": [
+              "development"
+            ]
+          },
+          "relations": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "locations"
+            ],
+            "properties": {
+              "locations": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "code",
+                    "resource_pool"
+                  ],
+                  "properties": {
+                    "code": {
+                      "type": "string",
+                      "description": "A reference to the [location](#locations-1)",
+                      "examples": [
+                        "LAN"
+                      ]
+                    },
+                    "resource_pool": {
+                      "type": "string",
+                      "examples": [
+                        "default",
+                        "prod"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "fact_names": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cpu": {
+          "type": "string",
+          "default": "processors::count"
+        },
+        "memory": {
+          "type": "string",
+          "default": "memorysize_mb"
+        },
+        "disk": {
+          "type": "string",
+          "default": "blockdevice_sda_size"
+        }
+      }
+    }
+  }
+}

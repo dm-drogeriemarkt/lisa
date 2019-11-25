@@ -1,0 +1,53 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+#hosts-list-toolbar {
+  .toolbar-pf {
+    span.pficon.pficon-search {
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      font-size: 20px;
+      color: #bbb;
+    }
+
+    span.fa.sort-direction {
+      border: 1px solid #bbb;
+      border-radius: 1px;
+      padding: 5px;
+      font-size: 28px;
+
+      &:hover {
+        border-color: #7dc3e8;
+      }
+    }
+
+    input.search {
+      padding-left: 35px;
+    }
+
+    .form-group {
+      button.btn-link {
+        padding: 0;
+  
+        &:hover,
+        &:focus,
+        &:active {
+          color: black;
+          outline: none;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      [class*='col-'] {
+        padding: 0;
+      }
+
+      span.pficon.pficon-search {
+        left: 10px;
+      }
+    }
+  }
+}

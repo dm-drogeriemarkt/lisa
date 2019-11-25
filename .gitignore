@@ -1,0 +1,15 @@
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+yarn-error.log
+npm-debug.log*
+
+/node_modules
+/coverage
+/build
+
+/src/settings/development.json
+/src/settings/production.json

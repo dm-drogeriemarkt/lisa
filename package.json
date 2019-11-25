@@ -1,0 +1,63 @@
+{
+  "name": "lisa",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-boost": "^0.1.16",
+    "apollo-cache-inmemory": "^1.3.5",
+    "apollo-link-batch-http": "^1.2.3",
+    "bootstrap": "^4.1.3",
+    "bytes": "^3.0.0",
+    "classnames": "^2.2.6",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "hoek": "^4.2.1",
+    "i18n-react": "^0.6.4",
+    "lodash": "^4.17.13",
+    "lodash-humps": "^3.1.5",
+    "node-sass": "^4.11.0",
+    "patternfly-react": "^1.19.1",
+    "rc-pagination": "^1.17.3",
+    "rc-slider": "^8.6.3",
+    "react": "^16.5.2",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.5.2",
+    "react-flag-icon-css": "^1.0.24",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.1",
+    "react-select": "^1.3.0",
+    "url-parse": "^1.4.3"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src/ PORT=3001 react-scripts start ",
+    "build": "NODE_PATH=src/ react-scripts build",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "test:debug": "echo 'Open Chrome at chrome://inspect to start debugging' && NODE_PATH=src/ react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "eject": "react-scripts eject",
+    "upload": "s3-deploy './build/**' --cwd './build/' --region eu-central-1 --bucket ${WEBBUCKET} --deleteRemoved --private --signatureVersion v4",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
+    "docs": "npx jsonschema2md -x - -d src/settings/schema.json -o docs/settings/"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run docs && git add docs/settings/schema.md"
+    }
+  },
+  "devDependencies": {
+    "@adobe/jsonschema2md": "^3.3.1",
+    "ajv-cli": "^3.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "husky": "^3.0.9",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.1",
+    "s3-deploy": "^0.10.0",
+    "waait": "^1.0.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

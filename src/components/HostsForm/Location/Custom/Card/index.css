@@ -1,0 +1,10 @@
+div.card-pf.location > div.card-pf-body > p.location {
+  color: black;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 0;
+}
+
+div.active-icon-wrapper > div.col-xs-6 {
+  padding: 0;
+}

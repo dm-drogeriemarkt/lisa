@@ -1,0 +1,27 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import './src/scss/mixins';
+
+div.list-group-item#dashboard-host-list {
+  .list-view-pf-description,
+  .list-view-pf-additional-info-item {
+    @include ellipsis;
+  }
+
+  [class*='col-'] {
+    padding: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+     .list-view-pf-description {
+      flex-basis: 35%;
+      width: 35%;
+    }
+
+    .list-view-pf-additional-info {
+      flex-basis: 65%;
+      width: 65%;
+    }
+  }
+}

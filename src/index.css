@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Montserrat-SemiBold;
+  src: url(./assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+div.card-pf {
+  -webkit-box-shadow: 0 1px 1px 1px rgba(3, 3, 3, 0.175);
+  box-shadow: 0 1px 1px 1px rgba(3, 3, 3, 0.175);
+}
+
+div.card-pf.clickable {
+  cursor: pointer;
+  padding: 5px;
+}
+
+div.card-pf.clickable:hover {
+  -webkit-box-shadow: 0 1px 1px 1px rgba(3, 3, 3, 0.375);
+  box-shadow: 0 1px 1px 1px rgba(3, 3, 3, 0.375);
+}
+
+div.card-pf.clickable > h2.card-pf-title {
+  margin: 0;
+}
+
+div.card-pf.clickable > div.active-icon-wrapper {
+  height: 25px;
+}
+
+div.card-pf.clickable > div.active-icon-wrapper > .pficon,
+div.card-pf.clickable > div.active-icon-wrapper > div > .pficon {
+  font-size: 20px;
+}
+
+.font-weight-bold {
+  font-weight: 600;
+}
+
+input.form-control {
+  height: 40px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+input.form-control:active,
+input.form-control:focus,
+input.form-control:hover {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+button.btn {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 0;
+  background-image: none;
+  padding: 10px 20px;
+}
+
+button.btn:hover,
+button.btn:active,
+button.btn:focus {
+  outline: none;
+  border: none;
+}
+
+button.btn-primary {
+  background-color: #39a5dc;
+  color: #ffffff;
+}

@@ -1,0 +1,61 @@
+nav.navbar {
+  background: linear-gradient(90deg, #1d1d1d 50%, #39a5dc 50%);
+  height: 58px;
+  border: 0;
+  margin-bottom: 40px;
+}
+
+nav.navbar > div.container > a.logo {
+  background-image: url('./assets/LISA-logosign-transparent-s.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 85px;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+  padding-left: 60px;
+  color: white;
+  font-size: 25px;
+  font-family: Montserrat-SemiBold;
+  letter-spacing: 5px;
+}
+
+nav.navbar > div.container > a.logo:hover,
+nav.navbar > div.container > a.logo:active,
+nav.navbar > div.container > a.logo:focus {
+  color: white;
+  text-decoration: none;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  nav.navbar > div.container > a.logo:after {
+    content: 'LISA';
+  }
+}
+
+nav.navbar:before {
+  background-image: url('./assets/Masthead-3-clipped.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 142px;
+  width: 175px;
+  position: absolute;
+  top: -31px;
+  left: calc(50% - 88px);
+}
+
+nav > ul.navbar-nav > li.dropdown > a.nav-item-iconic,
+nav > ul.navbar-nav > li.dropdown > a.nav-item-iconic > span.pficon,
+nav > ul.navbar-nav > li.dropdown > a.nav-item-iconic > span.caret {
+  color: #edf7fc;
+}
+
+nav.navbar > div.navbar-header > button.navbar-toggle > span.icon-bar {
+  background: #edf7fc;
+}
+
+nav.navbar > div.container > nav.collapse > ul.navbar-nav > li.dropdown > ul.dropdown-menu {
+  margin-top: -20px;
+}

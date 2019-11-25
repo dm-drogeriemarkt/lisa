@@ -1,0 +1,15 @@
+.App {
+  padding-bottom: 15px;
+
+  /* Global Colors */
+
+  --black: #363636;
+  --dark-grey: #8b8d8f;
+  --light-grey: #ededed;
+
+  /* Global Colors */
+}
+
+a {
+  cursor: pointer;
+}

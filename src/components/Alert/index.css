@@ -1,0 +1,16 @@
+div.alert {
+  margin: 20px 0 0 0 ;
+}
+
+div.alert.alert-danger {
+  background: none;
+  padding: 6px 6px 6px 35px;
+  color: #cc0000;
+}
+
+div.alert.alert-danger > .pficon {
+  font-size: 20px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}

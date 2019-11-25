@@ -1,0 +1,9 @@
+div#overview.card-pf {
+  padding: 0 20px 20px 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+div#overview.card-pf h3 {
+  padding: 15px;
+}
