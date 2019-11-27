@@ -39,7 +39,7 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
 
   set(data, 'locationId', location.id)
 
-  set(data, 'computeAttributes.cpu', String(data.cpu))
+  set(data, 'computeAttributes.cpus', String(data.cpu))
   unset(data, 'cpu')
 
   set(data, 'computeAttributes.volumes_attributes.0.size_gb', String(data.size))

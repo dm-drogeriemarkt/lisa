@@ -23,7 +23,7 @@ export default {
       computeResourceId: 'MDE6Q29tcHV0ZVJlc291cmNlLTI=',
       puppetclassIds: ['MDE6UHVwcGV0Y2xhc3MtMQ=='],
       computeAttributes: {
-        cpu: '1',
+        cpus: '1',
         memory_mb: '4096',
         cluster: 'CLUSTER',
         guest_id: 'rhel7_64Guest',
