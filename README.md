@@ -84,7 +84,7 @@ build the production bundle and copy it to a ngninx container.
 Then you can run it.
 
 ```
-$ docker run -p 8080:80 my-lisa-image
+$ docker run -p 8080:8080 my-lisa-image
 ```
 LISA will be accessible on `localhost:8080`.
 
