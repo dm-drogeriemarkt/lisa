@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '8'
+services:
+- docker
 cache:
   directories:
   - node_modules
@@ -13,9 +15,17 @@ stages:
 jobs:
   include:
     - stage: test
+      name: Test
       script:
         - npm run lint
         - npx ajv -d src/settings/example.json -s src/settings/schema.json
         - npx ajv -d src/settings/test.json -s src/settings/schema.json
         - npm test
         - REACT_APP_SETTINGS_FILE=test npm run build
+    - stage: test
+      name: Docker
+      language: minimal
+      script:
+        - cp src/settings/example.json src/settings/production.json
+        - docker build -t lisa-image .
+
