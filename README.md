@@ -72,6 +72,24 @@ $ npm test
 $ npm start
 ```
 
+## Running in Docker / Production
+
+Create src/settings/production.json file. (See above)
+Then build the docker image.
+
+```
+$ docker build -t my-lisa-image .
+```
+This multi-stage docker build will install all dependencies,
+build the production bundle and copy it to a ngninx container.
+
+Then you can run it.
+
+```
+$ docker run -p 8080:8080 my-lisa-image
+```
+LISA will be accessible on `localhost:8080`.
+
 ## Copyright
 
 Copyright (c) 2018-present dmTECH GmbH, [dmtech.de](https://www.dmtech.de/)
