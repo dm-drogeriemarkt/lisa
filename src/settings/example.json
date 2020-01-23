@@ -50,6 +50,7 @@
     },
     "interfaces_attributes": [
       {
+        "type": "interface",
         "computeAttributes": {
           "type": "VirtualVmxnet3"
         }
