@@ -75,7 +75,6 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   update(data, 'computeAttributes.start', (value) => String(+value))
   update(data, 'computeAttributes.memoryHotAddEnabled', (value) => String(+value))
   update(data, 'computeAttributes.cpuHotAddEnabled', (value) => String(+value))
-  update(data, 'computeAttributes.corespersocket', (value) => String(+value))
 
   const datastoreClusterName = (datastoreTemplate, hostNumber) => {
     const datastoreDatacenterNumber = hostNumber % 2 === 0 ? '2' : '1'

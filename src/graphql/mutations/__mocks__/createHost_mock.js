@@ -32,7 +32,7 @@ export default {
         start: '0',
         memoryHotAddEnabled: '0',
         cpuHotAddEnabled: '0',
-        corespersocket: '0',
+        corespersocket: 1,
         volumes_attributes: [
           {
             size_gb: '50',
