@@ -42,6 +42,7 @@ export default {
       },
       interfacesAttributes: [
         {
+          type: 'interface',
           computeAttributes: {
             type: 'VirtualVmxnet3',
             network: '1'

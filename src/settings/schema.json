@@ -201,8 +201,7 @@
       "additionalProperties": false,
       "required": [
         "organization_id",
-        "architecture_id",
-        "interfaces_attributes"
+        "architecture_id"
       ],
       "properties": {
         "build": {
@@ -261,10 +260,12 @@
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": [
-              "computeAttributes"
-            ],
             "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["interface", "bmc", "bond", "bridge"],
+                "default": "interface"
+              },
               "computeAttributes": {
                 "type": "object",
                 "additionalProperties": false,
@@ -275,8 +276,9 @@
                   "type": {
                     "type": "string",
                     "examples": [
-                      "VirtualVmxnet1"
-                    ]
+                      "VirtualVmxnet3"
+                    ],
+                    "default": "VirtualVmxnet3"
                   }
                 }
               }

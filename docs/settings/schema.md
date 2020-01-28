@@ -148,7 +148,7 @@ prod
 | `build`                 | boolean | Optional     | `false` |
 | `compute_attributes`    | object  | Optional     |         |
 | `enabled`               | boolean | Optional     | `false` |
-| `interfaces_attributes` | array   | **Required** |         |
+| `interfaces_attributes` | array   | Optional     |         |
 | `managed`               | boolean | Optional     | `false` |
 | `organization_id`       | string  | **Required** |         |
 
@@ -265,7 +265,7 @@ MDE6QXJjaGl0ZWN0dXJlLTE=
 
 `interfaces_attributes`
 
-- is **required**
+- is optional
 - type: `object[]`\* between `1` and `1` items in the array
 
 ##### interfaces_attributes Type
@@ -274,24 +274,25 @@ Array type: `object[]`
 
 All items must be of the type: `object` with following properties:
 
-| Property            | Type   | Required     |
-| ------------------- | ------ | ------------ |
-| `computeAttributes` | object | **Required** |
+| Property            | Type   | Required | Default       |
+| ------------------- | ------ | -------- | ------------- |
+| `computeAttributes` | object | Optional |               |
+| `type`              | string | Optional | `"interface"` |
 
 #### computeAttributes
 
 `computeAttributes`
 
-- is **required**
+- is optional
 - type: `object`
 
 ##### computeAttributes Type
 
 `object` with following properties:
 
-| Property | Type   | Required     |
-| -------- | ------ | ------------ |
-| `type`   | string | **Required** |
+| Property | Type   | Required     | Default            |
+| -------- | ------ | ------------ | ------------------ |
+| `type`   | string | **Required** | `"VirtualVmxnet3"` |
 
 #### type
 
@@ -299,6 +300,7 @@ All items must be of the type: `object` with following properties:
 
 - is **required**
 - type: `string`
+- default: `"VirtualVmxnet3"`
 
 ##### type Type
 
@@ -307,8 +309,27 @@ All items must be of the type: `object` with following properties:
 ##### type Example
 
 ```json
-VirtualVmxnet1
+VirtualVmxnet3
 ```
+
+#### type
+
+`type`
+
+- is optional
+- type: `enum`
+- default: `"interface"`
+
+The value of this property **must** be equal to one of the [known values below](#default_configs-known-values).
+
+##### type Known Values
+
+| Value       | Description |
+| ----------- | ----------- |
+| `interface` |             |
+| `bmc`       |             |
+| `bond`      |             |
+| `bridge`    |             |
 
 #### managed
 

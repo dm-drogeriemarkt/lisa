@@ -49,7 +49,15 @@ defaultsDeep(settings, {
       memoryHotAddEnabled: false,
       cpuHotAddEnabled: false,
       corespersocket: false
-    }
+    },
+    interfacesAttributes: [
+      {
+        type: 'interface',
+        computeAttributes: {
+          type: 'VirtualVmxnet3'
+        }
+      }
+    ]
   },
   factNames: {
     cpu: 'processors::count',
