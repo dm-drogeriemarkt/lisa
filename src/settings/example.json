@@ -46,7 +46,7 @@
       "start": true,
       "memory_hot_add_enabled": true,
       "cpu_hot_add_enabled": false,
-      "corespersocket": true
+      "corespersocket": 1
     },
     "interfaces_attributes": [
       {

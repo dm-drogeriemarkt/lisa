@@ -48,7 +48,7 @@ defaultsDeep(settings, {
       start: false,
       memoryHotAddEnabled: false,
       cpuHotAddEnabled: false,
-      corespersocket: false
+      corespersocket: 1
     },
     interfacesAttributes: [
       {

@@ -247,8 +247,8 @@
               "default": false
             },
             "corespersocket": {
-              "type": "boolean",
-              "default": false
+              "type": "number",
+              "default": 1
             }
           }
         },

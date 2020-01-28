@@ -196,7 +196,7 @@ MDE6QXJjaGl0ZWN0dXJlLTE=
 
 | Property                 | Type    | Required | Default |
 | ------------------------ | ------- | -------- | ------- |
-| `corespersocket`         | boolean | Optional | `false` |
+| `corespersocket`         | number  | Optional | `1`     |
 | `cpu_hot_add_enabled`    | boolean | Optional | `false` |
 | `memory_hot_add_enabled` | boolean | Optional | `false` |
 | `start`                  | boolean | Optional | `false` |
@@ -206,12 +206,12 @@ MDE6QXJjaGl0ZWN0dXJlLTE=
 `corespersocket`
 
 - is optional
-- type: `boolean`
-- default: `false`
+- type: `number`
+- default: `1`
 
 ##### corespersocket Type
 
-`boolean`
+`number`
 
 #### cpu_hot_add_enabled
 
