@@ -2,7 +2,8 @@ import validate from './validate'
 import humps from 'lodash-humps'
 import { get, defaultsDeep } from 'lodash'
 
-const json = require(`./${process.env.REACT_APP_SETTINGS_FILE}`)
+const settingsFile = get(process.env, 'REACT_APP_SETTINGS_FILE', 'production')
+const json = require(`./${settingsFile}`)
 
 validate(json)
 
