@@ -1,7 +1,7 @@
 {
   "form_settings": {
     "default_values": {
-      "puppet_env": "MDE6RW52aXJvbm1lbnQtMQ==",
+      "puppet_env_id": "MDE6RW52aXJvbm1lbnQtMQ==",
       "puppetclass_ids": [
         "MDE6UHVwcGV0Y2xhc3MtMQ=="
       ]

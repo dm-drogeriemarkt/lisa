@@ -4,7 +4,7 @@ import Host from 'components/Host';
 import HOST_QUERY_MOCK from 'graphql/queries/__mocks__/host_mock'
 
 describe('<Host />', () => {
-  const { result: { data }} = HOST_QUERY_MOCK
+  const { result: { data }} = HOST_QUERY_MOCK[0]
 
   let wrapper;
   beforeEach(() => {

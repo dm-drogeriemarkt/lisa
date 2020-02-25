@@ -15,13 +15,13 @@ import CREATE_HOST_MUTATION_MOCK from 'graphql/mutations/__mocks__/createHost_mo
 
 test('Mounted NewHostContainer', async () => {
   const mocks = [
-    COMPUTE_RESOURCE_QUERY_MOCK,
-    HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK,
-    SUBNETS_BY_DOMAIN_QUERY_MOCK,
-    PUPPETMASTERS_QUERY_MOCK,
-    PUPPET_CLASSES_BY_ENVIRONMENT_QUERY_MOCK,
-    HOSTNAMES_ALREADY_TAKEN_MOCK,
-    CREATE_HOST_MUTATION_MOCK
+    ...COMPUTE_RESOURCE_QUERY_MOCK,
+    ...HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK,
+    ...SUBNETS_BY_DOMAIN_QUERY_MOCK,
+    ...PUPPETMASTERS_QUERY_MOCK,
+    ...HOSTNAMES_ALREADY_TAKEN_MOCK,
+    ...CREATE_HOST_MUTATION_MOCK,
+    ...PUPPET_CLASSES_BY_ENVIRONMENT_QUERY_MOCK
   ]
 
   const wrapper = mount(
@@ -38,7 +38,17 @@ test('Mounted NewHostContainer', async () => {
   const customPuppetConfigButton = wrapper.find('button').findWhere(x => x.text() === 'hosts_form.puppet_config.default.link')
   customPuppetConfigButton.simulate('click')
 
-  await wait(0)
+  await wait()
+  wrapper.update()
+
+  const puppetEnvIdSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.puppet_env_id"]')
+  puppetEnvIdSelect.instance().selectValue({ value: 'MDE6RW52aXJvbm1lbnQtMA==', label: 'env2' })
+
+  await wait()
+  wrapper.update()
+
+  const puppetclassIdsSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.puppetclass_ids"]')
+  puppetclassIdsSelect.instance().selectValue({ value: 'MDE6UHVwcGV0Y2xhc3MtMg==', label: 'ppclass2' })
 
   const projectInput = wrapper.find('input[name="project"]')
   projectInput.instance().value = 'project'
