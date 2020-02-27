@@ -24,7 +24,7 @@
       "puppet_master_id": "MDE6U21hcnRQcm94eS0x",
       "datastore_type_id": "Mirror",
       "app_tier_name": "development",
-      "puppet_env": "MDE6RW52aXJvbm1lbnQtMQ==",
+      "puppet_env_id": "MDE6RW52aXJvbm1lbnQtMQ==",
       "puppetclass_ids": ["MDE6UHVwcGV0Y2xhc3MtMQ=="]
     },
     "preset_resources": [

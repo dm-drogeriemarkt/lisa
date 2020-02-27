@@ -467,7 +467,7 @@ MDE6T3JnYW5pemF0aW9uLTE=
 | `location_code`       | string | Optional     | `"Code of the first location from locations"`                    |
 | `memory`              | number | Optional     | `4`                                                              |
 | `operatingsystem_id`  | string | Optional     | `"Id of the first operatingsystem from operatingsystems"`        |
-| `puppet_env`          | string | **Required** |                                                                  |
+| `puppet_env_id`       | string | **Required** |                                                                  |
 | `puppet_master_id`    | string | Optional     | `"It will be taken from the attributes of the default location"` |
 | `puppetclass_ids`     | array  | **Required** |                                                                  |
 | `size`                | number | Optional     | `50`                                                             |
@@ -570,20 +570,20 @@ A reference to the [operating system](#operatingsystems)
 
 `string`
 
-#### puppet_env
+#### puppet_env_id
 
 Environment global id from Foreman
 
-`puppet_env`
+`puppet_env_id`
 
 - is **required**
 - type: `string`
 
-##### puppet_env Type
+##### puppet_env_id Type
 
 `string`
 
-##### puppet_env Example
+##### puppet_env_id Example
 
 ```json
 MDE6RW52aXJvbm1lbnQtMQ==

@@ -48,8 +48,8 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   set(data, 'computeAttributes.memory_mb', String(data.memory * MB_PER_GB))
   unset(data, 'memory')
 
-  set(data, 'environmentId', data.puppetEnv)
-  unset(data, 'puppetEnv')
+  set(data, 'environmentId', data.puppetEnvId)
+  unset(data, 'puppetEnvId')
 
   set(data, 'puppetProxyId', data.puppetMasterId)
   unset(data, 'puppetMasterId')

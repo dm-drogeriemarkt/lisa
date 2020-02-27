@@ -124,7 +124,7 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "puppet_env",
+            "puppet_env_id",
             "puppetclass_ids"
           ],
           "properties": {
@@ -168,7 +168,7 @@
               "description": "A reference to the [datastore type](#datastore_types)",
               "default": "It will be taken from the attributes of the default location"
             },
-            "puppet_env": {
+            "puppet_env_id": {
               "type": "string",
               "description": "Environment global id from Foreman",
               "examples": [

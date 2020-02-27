@@ -9,7 +9,7 @@ import HostContainer from 'containers/HostContainer';
 test('Mounted HostContainer', async () => {
   const wrapper = mount(
     <MemoryRouter initialEntries={[{pathname: '/host/MDE6SG9zdC0x', key: 'testKey'}]}>
-      <MockedProvider mocks={[HOST_QUERY_MOCK]} addTypename={false}>
+      <MockedProvider mocks={[...HOST_QUERY_MOCK]} addTypename={false}>
         <HostContainer match={{params: { id: 'MDE6SG9zdC0x' }}} />
       </MockedProvider>
     </MemoryRouter>
@@ -18,5 +18,5 @@ test('Mounted HostContainer', async () => {
   await wait(0);
   wrapper.update();
 
-  expect(wrapper.find('Host')).toHaveProp(HOST_QUERY_MOCK.result)
+  expect(wrapper.find('Host')).toHaveProp(HOST_QUERY_MOCK[0].result)
 });
