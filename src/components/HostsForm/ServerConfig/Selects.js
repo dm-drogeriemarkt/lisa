@@ -1,77 +1,92 @@
-import React, { Component} from 'react';
+import React, { Fragment, useContext } from 'react';
 import SelectInput from 'components/HostsForm/SelectInput';
-
-import { appTiers } from 'settings'
+import { appTiers as appTiersSettings } from 'settings'
 import { HostsFormContext } from 'lib/Context'
+import { pluginsExtensions } from 'plugins'
 
-class Selects extends Component {
-  static contextType = HostsFormContext
+const Selects = () => {
+  const context = useContext(HostsFormContext)
 
-  updateAppTierName = ({ appTierName }) => {
-    const subnetId = undefined;
+  const {
+    attributes: {
+      appTierName,
+      datastoreType,
+      ownerId,
+      subnetId
+    },
+    currentLocation: {
+      datastoreTypes = []
+    },
+    owners=[],
+    subnets=[],
+    subnetsAreLoading,
+    updateAttribute
+  } = context
 
-    this.context.updateAttribute({ appTierName, subnetId });
+  const updateAppTierName = ({ appTierName }) => {
+    updateAttribute({ appTierName, subnetId: undefined });
   }
 
-  get appTiers() {
-    return appTiers.map(({ name, ...rest }) => ({ id: name, name, ...rest }))
+  const appTiers = () => {
+    return appTiersSettings.map(({ name, ...rest }) => ({ id: name, name, ...rest }))
   }
 
-  render() {
-    const {
-      attributes: {
-        appTierName,
-        datastoreType,
-        ownerId,
-        subnetId
-      },
-      currentLocation: {
-        datastoreTypes = []
-      },
-      owners=[],
-      subnets=[],
-      subnetsAreLoading,
-      updateAttribute
-    } = this.context;
+  const selects = [{
+    attributeName: 'appTierName',
+    value: appTierName,
+    updateAttribute: updateAppTierName,
+    options: appTiers()
+  }, {
+    attributeName: 'subnetId',
+    value: subnetId,
+    options: subnets,
+    updateAttribute: updateAttribute,
+    loading: subnetsAreLoading,
+    disabled: !appTierName,
+  }]
 
-    return (
-      <div>
-        <SelectInput
-          attributeName='appTierName'
-          value={appTierName}
-          updateAttribute={this.updateAppTierName}
-          options={this.appTiers}
-        />
+  if(datastoreTypes.length > 1) {
+    selects.push({
+      attributeName: 'datastoreType',
+      value: datastoreType,
+      updateAttribute: updateAttribute,
+      options: datastoreTypes
+    })
+  }
 
-        <SelectInput
-          attributeName='subnetId'
-          value={subnetId}
-          options={subnets}
-          loading={subnetsAreLoading}
-          disabled={!appTierName}
-          updateAttribute={updateAttribute}
-        />
+  if(owners.length > 1) {
+    selects.push({
+      attributeName: 'ownerId',
+      value: ownerId,
+      updateAttribute: updateAttribute,
+      options: owners
+    })
+  }
 
-        { datastoreTypes.length > 1 &&
+  pluginsExtensions.filter(({ slot }) => {
+    return slot === 'HostsForm/ServerConfig/Selects'
+  }).map(({ extension }) => {
+    return selects.push(extension(context))
+  })
+
+  return (
+    <Fragment>
+      { selects.map(({
+          attributeName, value, options, updateAttribute, loading, disabled
+        }, i) => (
           <SelectInput
-            attributeName='datastoreType'
-            value={datastoreType}
-            updateAttribute={updateAttribute}
-            options={datastoreTypes}
+            key={i}
+            attributeName={ attributeName }
+            value={ value }
+            options={ options }
+            updateAttribute={ updateAttribute }
+            loading={ loading }
+            disabled={ disabled }
           />
-        }
-
-        { owners.length > 1 &&
-          <SelectInput
-            attributeName='ownerId'
-            value={ownerId}
-            updateAttribute={updateAttribute}
-            options={owners}
-          />
-        }
-      </div>
-    )
-  }
+        )
+      )}
+    </Fragment>
+  )
 }
 
-export default Selects;
+export default Selects

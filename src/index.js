@@ -4,6 +4,7 @@ import './index.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
+import { merge } from 'lodash'
 
 import '../node_modules/patternfly/dist/css/patternfly.css';
 import '../node_modules/patternfly/dist/css/patternfly-additions.css';
@@ -16,7 +17,10 @@ import GraphqlClient from './graphql/client'
 
 import enJSON from './locales/en.json'
 import appTiersEnJSON from './locales/appTiers.en.json'
-T.setTexts({ ...enJSON, ...appTiersEnJSON })
+import { pluginsLocales } from './plugins'
+
+const locales = merge(enJSON, appTiersEnJSON, pluginsLocales)
+T.setTexts(locales)
 
 ReactDOM.render((
   <ApolloProvider client={GraphqlClient}>
