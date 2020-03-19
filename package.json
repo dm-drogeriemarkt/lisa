@@ -29,10 +29,10 @@
     "url-parse": "^1.4.3"
   },
   "scripts": {
-    "start": "NODE_PATH=src/ PORT=3001 react-scripts start ",
-    "build": "NODE_PATH=src/ react-scripts build",
-    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
-    "test:debug": "echo 'Open Chrome at chrome://inspect to start debugging' && NODE_PATH=src/ react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "start": "PORT=3001 react-scripts start ",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "test:debug": "echo 'Open Chrome at chrome://inspect to start debugging' && react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "upload": "s3-deploy './build/**' --cwd './build/' --region eu-central-1 --bucket ${WEBBUCKET} --deleteRemoved --private --signatureVersion v4",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
