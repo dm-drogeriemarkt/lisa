@@ -31,7 +31,7 @@ const Selects = () => {
     return appTiersSettings.map(({ name, ...rest }) => ({ id: name, name, ...rest }))
   }
 
-  const selects = [{
+  let selects = [{
     attributeName: 'appTierName',
     value: appTierName,
     updateAttribute: updateAppTierName,
@@ -66,25 +66,12 @@ const Selects = () => {
   pluginsExtensions.filter(({ slot }) => {
     return slot === 'HostsForm/ServerConfig/Selects'
   }).map(({ extension }) => {
-    return selects.push(extension(context))
+    return extension({ selects, context })
   })
 
   return (
     <Fragment>
-      { selects.map(({
-          attributeName, value, options, updateAttribute, loading, disabled
-        }, i) => (
-          <SelectInput
-            key={i}
-            attributeName={ attributeName }
-            value={ value }
-            options={ options }
-            updateAttribute={ updateAttribute }
-            loading={ loading }
-            disabled={ disabled }
-          />
-        )
-      )}
+      { selects.map(({ ...attrs }, i) => <SelectInput key={i} {...attrs} />) }
     </Fragment>
   )
 }
