@@ -22,7 +22,7 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
 
   const owner = owners.find(({ id }) => id === data.ownerId)
   const operatingsystem = operatingsystems.find(({ id }) => id === data.operatingsystemId)
-  const location = locations.find(({ code }) => code === data.locationCode)
+  const location = locations.find(({ id }) => id === data.locationId)
   const datastoreType = location.datastoreTypes.find(({ id }) => id === data.datastoreTypeId)
   const appTier = appTiers.find(({ name }) => name === data.appTierName)
   const medium = location.relations.media.find(({ operatingsystemId }) => operatingsystemId === operatingsystem.id)
@@ -35,9 +35,6 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   unset(data, 'role')
   unset(data, 'appTierName')
   unset(data, 'datastoreTypeId')
-  unset(data, 'locationCode')
-
-  set(data, 'locationId', location.id)
 
   set(data, 'computeAttributes.cpus', String(data.cpu))
   unset(data, 'cpu')
@@ -62,7 +59,7 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   set(data, 'computeAttributes.guest_id', operatingsystem.relations.guestOperatingsystemId)
   set(data, 'interfacesAttributes.0.computeAttributes.network', network.id)
 
-  const resource_pool = appTier.relations.locations.find(({ code }) => code === location.code).resourcePool
+  const resource_pool = appTier.relations.locations.find(({ id }) => id === location.id).resourcePool
   set(data, 'computeAttributes.resource_pool', resource_pool)
 
   const { computeAttributes: { pathPrefix }} = location

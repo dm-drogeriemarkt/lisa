@@ -1,62 +1,58 @@
-import React, { Component } from 'react';
-import { Card as PatternflyCard, CardTitle, CardBody, Icon, Col } from 'patternfly-react';
-import FlagIcon from 'components/FlagIcon';
-import './index.css';
+import React, { useContext } from 'react'
+import classNames from 'classnames'
+import { Card as PatternflyCard, CardTitle, CardBody, Icon, Col } from 'patternfly-react'
+import FlagIcon from 'components/FlagIcon'
+import './index.css'
 
-import { locations } from 'settings'
 import { HostsFormContext } from 'lib/Context'
 
-class Card extends Component {
-  static contextType = HostsFormContext
+const Card = ({
+  location: {
+    id,
+    country,
+    datastoreTypes,
+    label
+  }
+}) => {
+  const {
+    attributes: {
+      locationId: currentLocationId,
+      datastoreTypeId
+    },
+    updateAttribute
+  } = useContext(HostsFormContext)
 
-  updateLocation = () => {
-    const {
-      attributes: {
-        datastoreTypeId
-      },
-      updateAttribute
-    } = this.context;
+  const isSelected = id === currentLocationId
+  const reducedPerformance = label.reducedPerformance === 'true'
 
-    let newAttributes = { locationCode: this.location.code }
-    if (!this.location.datastoreTypes.some(({ id }) => id === datastoreTypeId)) {
-      newAttributes['datastoreTypeId'] = this.location.datastoreTypes[0].id;
+  const handleClick = () => {
+    let newAttributes = { locationId: id }
+    if (!datastoreTypes.some(({ id }) => id === datastoreTypeId)) {
+      newAttributes['datastoreTypeId'] = datastoreTypes[0].id
     }
-    updateAttribute(newAttributes);
+    updateAttribute(newAttributes)
   }
 
-  get location() {
-    return locations.find(({ code }) => code === this.props.code);
-  }
-
-  isSelected = () => {
-    return this.props.code === this.context.currentLocation.code
-  }
-
-  reducedPerformance = () => {
-    return this.location.label.reducedPerformance === 'true';
-  }
-
-  render() {
-    return (
-      <PatternflyCard className={ `location clickable ${this.isSelected() && 'card-pf-accented'}`} onClick={this.updateLocation}>
-        <div className="active-icon-wrapper">
-          <Col xs={6}>
-            { this.reducedPerformance() && <Icon type='pf' name='info' /> }
-          </Col>
-          <Col xs={6} className="text-right">
-            { this.isSelected() && <Icon type='pf' name='ok' /> }
-          </Col>
-        </div>
-        <CardTitle className="text-center">
-          <FlagIcon code={this.location.country} size={'4x'} />
-        </CardTitle>
-        <CardBody className="text-center">
-          <p className="location">{ this.location.label.location }</p>
-          <p className="explanation">{ this.location.label.explanation }</p>
-        </CardBody>
-      </PatternflyCard>
-    )
-  }
+  return (
+    <PatternflyCard onClick={ handleClick }
+      className={ classNames('location', 'clickable', { 'card-pf-accented': isSelected }) } >
+      <div className="active-icon-wrapper">
+        <Col xs={6}>
+          { reducedPerformance && <Icon type='pf' name='info' /> }
+        </Col>
+        <Col xs={6} className="text-right">
+          { isSelected && <Icon type='pf' name='ok' /> }
+        </Col>
+      </div>
+      <CardTitle className="text-center">
+        <FlagIcon code={ country } size={'4x'} />
+      </CardTitle>
+      <CardBody className="text-center">
+        <p className="location">{ label.location }</p>
+        <p className="explanation">{ label.explanation }</p>
+      </CardBody>
+    </PatternflyCard>
+  )
 }
 
-export default Card;
+export default Card

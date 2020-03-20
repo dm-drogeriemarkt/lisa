@@ -148,10 +148,10 @@
               "description": "A reference to the [operating system](#operatingsystems)",
               "default": "Id of the first operatingsystem from operatingsystems"
             },
-            "location_code": {
+            "location_id": {
               "type": "string",
               "description": "A reference to the [location](#locations-1)",
-              "default": "Code of the first location from locations"
+              "default": "Id of the first location from locations"
             },
             "compute_resource_id": {
               "type": "string",

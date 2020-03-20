@@ -72,11 +72,11 @@ class NewHostContainer extends Component {
   }
 
   get currentLocation() {
-    return locations.find(({ code }) => code === this.state.attributes.locationCode)
+    return locations.find(({ id }) => id === this.state.attributes.locationId)
   }
 
   refreshData = (changedAttributes) => {
-    if (changedAttributes.includes('locationCode')) {
+    if (changedAttributes.includes('locationId')) {
       this.refreshSubnetData();
       this.refreshPuppetMasterData();
     }
@@ -326,7 +326,7 @@ class NewHostContainer extends Component {
   }
 }
 
-const { location, domainName } = locations.find(({ code }) => code === formSettings.defaultValues.locationCode)
+const { location, domainName } = locations.find(({ id }) => id === formSettings.defaultValues.locationId)
 
 export default compose(
   withRouter,

@@ -1,31 +1,16 @@
-import React, { Component } from 'react';
-import Default from 'components/HostsForm/Default';
-import Custom from './Custom';
+import React, { useState } from 'react'
+import Default from 'components/HostsForm/Default'
+import Custom from './Custom'
 
-class Location extends Component {
-  constructor(props) {
-    super(props);
+const Location = () => {
+  const [customView, setCustomView] = useState(false)
+  const enableCustomView = () => setCustomView(true)
 
-    this.state = {
-      customView: false
-    };
-  }
-
-  enableCustomView = () => {
-    this.setState({ customView: true })
-  }
-
-  render() {
-    return (
-      <div className='location'>
-        { this.state.customView ? (
-          <Custom />
-        ) : (
-          <Default name='location' enableCustomView={this.enableCustomView} />
-        )}
-      </div>
-    )
-  }
+  return (
+    <div className='location'>
+      { customView ? <Custom /> : <Default name='location' enableCustomView={ enableCustomView } /> }
+    </div>
+  )
 }
 
-export default Location;
+export default Location

@@ -8,8 +8,8 @@ validate(json)
 
 const settings = humps(json)
 
-const locationCode = get(settings, 'formSettings.defaultValues.locationCode', get(settings, 'locations.0.code'))
-const defaultLocation = get(settings, 'locations', []).find(({ code }) => code === locationCode)
+const locationId = get(settings, 'formSettings.defaultValues.locationId', get(settings, 'locations.0.id'))
+const defaultLocation = get(settings, 'locations', []).find(({ id }) => id === locationId)
 
 defaultsDeep(settings, {
   formSettings: {
@@ -33,7 +33,7 @@ defaultsDeep(settings, {
       memory: 4,
       size: 50,
       operatingsystemId: get(settings, 'operatingsystems[0].id'),
-      locationCode: defaultLocation.code,
+      locationId: defaultLocation.id,
       computeResourceId: get(defaultLocation, 'relations.computeResourceId'),
       puppetMasterId: get(defaultLocation, 'relations.puppetCaProxyId'),
       datastoreTypeId: get(defaultLocation, 'datastoreTypes[0].id'),
