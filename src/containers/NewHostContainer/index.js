@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { compose, graphql, withApollo } from 'react-apollo';
+import { graphql, withApollo } from 'react-apollo';
 import { withRouter } from 'react-router-dom'
 import { Button, Col, Grid, Row } from 'patternfly-react';
-import { get, set } from 'lodash';
+import { get, set, flowRight } from 'lodash';
 import { Resources, Location, ServerConfig, PuppetConfig, HostsCreation } from 'components/HostsForm';
 import Alert from 'components/Alert';
 import Navigation from 'components/Navigation';
@@ -328,7 +328,7 @@ class NewHostContainer extends Component {
 
 const { location, domainName } = locations.find(({ id }) => id === formSettings.defaultValues.locationId)
 
-export default compose(
+export default flowRight(
   withRouter,
   withApollo,
   graphql(HOST_CREATION_FORM_INITIAL_DATA_QUERY, {

@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import wait from 'waait'
 import { MemoryRouter } from 'react-router-dom'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import NewHostContainer from 'containers/NewHostContainer'
 
 import COMPUTE_RESOURCE_QUERY_MOCK from 'graphql/queries/__mocks__/computeResource_mock'
