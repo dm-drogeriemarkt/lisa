@@ -26,8 +26,7 @@ const Manual = () => {
 
   let sliders = [
     {
-      attributeName: 'cpu',
-      label: T.translate(`hosts_form.cpu`),
+      label: T.translate('hosts_form.cpu'),
       value: cpu,
       minValue: formSettings.minCpuValue,
       maxValue: formSettings.maxCpuValue,
@@ -36,8 +35,7 @@ const Manual = () => {
       onChange: handleCpuChange
     },
     {
-      attributeName: 'memory',
-      label: T.translate(`hosts_form.memory`),
+      label: T.translate('hosts_form.memory'),
       value: memory,
       unit: 'GB',
       minValue: formSettings.minMemoryValue,
@@ -47,8 +45,7 @@ const Manual = () => {
       onChange: handleMemoryChange
     },
     {
-      attributeName: 'size',
-      label: T.translate(`hosts_form.size`),
+      label: T.translate('hosts_form.size'),
       value: size,
       unit: 'GB',
       minValue: formSettings.minSizeValue,
@@ -70,7 +67,6 @@ const Manual = () => {
   if(operatingsystems.length > 1) {
     const handleOperatingsystemChange = (value) => updateAttribute({ operatingsystemId: value })
     selects.push({
-      attributeName: 'operatingsystemId',
       updateAttribute: updateAttribute,
       value: operatingsystemId,
       options: operatingsystems,

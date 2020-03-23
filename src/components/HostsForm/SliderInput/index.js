@@ -6,7 +6,6 @@ import Slider, { Handle } from 'rc-slider';
 import Tooltip from 'rc-tooltip';
 
 const SliderInput = ({
-  attributeName,
   label,
   value,
   minValue,
