@@ -54,23 +54,23 @@ class Custom extends Component {
             <SelectInput
               attributeName='puppetMasterId'
               value={this.context.attributes.puppetMasterId}
-              updateAttribute={this.context.updateAttribute}
               options={this.context.puppetMasters}
+              onChange={this.context.updateAttribute}
               loading={this.context.puppetMastersAreLoading}
             />
 
             <SelectInput
               attributeName='puppetEnvId'
               value={this.context.attributes.puppetEnvId}
-              updateAttribute={this.updatePuppetEnv}
               options={this.context.puppetEnvs}
+              onChange={this.updatePuppetEnv}
             />
 
             <SelectInput
               attributeName='puppetclassIds'
               value={this.context.attributes.puppetclassIds}
-              updateAttribute={this.context.updateAttribute}
               options={this.state.puppetclassesOptions}
+              onChange={this.context.updateAttribute}
               loading={this.state.loading}
               multi={true}
             />

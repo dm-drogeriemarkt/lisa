@@ -4,7 +4,7 @@ import { defaultConfigs, operatingsystems, locations, appTiers } from '../settin
 
 const MB_PER_GB = 1024
 
-const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => {
+const hostsCreateParams = (formValues, { computeResource }) => {
   class HostParamsError extends Error {
     constructor(message) {
       super(message);
@@ -16,11 +16,9 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   let data = cloneDeep(formValues)
 
   if(!computeResource) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.compute_resource_not_found')) }
-  const subnet = subnets.find(({ id }) => id === data.subnetId)
-  const network = computeResource.networks.edges.map(({ node }) => node).find(({ vlanid }) => vlanid === subnet.vlanid)
-  if(!network) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.network_not_found', { subnet_vlanid: subnet.vlanid }))}
+  const network = computeResource.networks.edges.map(({ node }) => node).find(({ vlanid }) => vlanid === data.vlanid)
+  if(!network) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.network_not_found', { subnet_vlanid: data.vlanid }))}
 
-  const owner = owners.find(({ id }) => id === data.ownerId)
   const operatingsystem = operatingsystems.find(({ id }) => id === data.operatingsystemId)
   const location = locations.find(({ id }) => id === data.locationId)
   const datastoreType = location.datastoreTypes.find(({ id }) => id === data.datastoreTypeId)
@@ -35,6 +33,7 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   unset(data, 'role')
   unset(data, 'appTierName')
   unset(data, 'datastoreTypeId')
+  unset(data, 'vlanid')
 
   set(data, 'computeAttributes.cpus', String(data.cpu))
   unset(data, 'cpu')
@@ -59,12 +58,12 @@ const hostsCreateParams = (formValues, { owners, computeResource, subnets }) => 
   set(data, 'computeAttributes.guest_id', operatingsystem.relations.guestOperatingsystemId)
   set(data, 'interfacesAttributes.0.computeAttributes.network', network.id)
 
-  const resource_pool = appTier.relations.locations.find(({ id }) => id === location.id).resourcePool
+  const resource_pool = appTier.relations.locations.find(({ code }) => code === location.code).resourcePool
   set(data, 'computeAttributes.resource_pool', resource_pool)
 
   const { computeAttributes: { pathPrefix }} = location
-  const { name } = owner
-  set(data, 'computeAttributes.path', `${pathPrefix}${name}`)
+  set(data, 'computeAttributes.path', `${pathPrefix}${data.ownerName}`)
+  unset(data, 'ownerName')
 
   merge(data, defaultConfigs)
 

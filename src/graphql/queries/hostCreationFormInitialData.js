@@ -11,16 +11,5 @@ export default gql`
         }
       }
     }
-    currentUser {
-      usergroups {
-        edges {
-          cursor
-          node {
-            id
-            name
-          }
-        }
-      }
-    }
   }
 `;

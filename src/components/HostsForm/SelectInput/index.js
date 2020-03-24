@@ -15,7 +15,7 @@ class SelectInput extends Component {
   }
 
   handleChange = (newValue) => {
-    this.props.updateAttribute({
+    this.props.onChange({
       [this.props.attributeName]: this.attributeValue(newValue)
     });
   }
