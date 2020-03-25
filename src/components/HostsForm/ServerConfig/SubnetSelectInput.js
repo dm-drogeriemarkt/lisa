@@ -5,7 +5,7 @@ import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import SUBNETS_BY_DOMAIN_QUERY from 'graphql/queries/subnetsByDomain'
 
-const SubnetSelectInput = ({ onChange, ...attrs }) => {
+const SubnetSelectInput = ({ ...attrs }) => {
   const {
     updateAttribute,
     attributes: {
@@ -23,7 +23,6 @@ const SubnetSelectInput = ({ onChange, ...attrs }) => {
       search: `name=${appTierName}.${domainName} and location = ${location}`,
       location: location
     },
-    skip: !appTierName,
     onCompleted: (data) => {
       const domainId = get(data, 'domains.edges.0.node.id', undefined)
       updateAttribute({ domainId: domainId })
@@ -35,11 +34,17 @@ const SubnetSelectInput = ({ onChange, ...attrs }) => {
 
   const handleChange = ({ subnetId }) => {
     const { vlanid = undefined } = subnets.find(({ id }) => id === subnetId)
-    onChange({ subnetId, vlanid })
+    updateAttribute({ subnetId, vlanid })
   }
 
   return (
-    <SelectInput value={subnetId} options={subnets} onChange={handleChange} disabled={!appTierName} loading={loading} {...attrs} />
+    <SelectInput
+      value={subnetId}
+      options={subnets}
+      onChange={handleChange}
+      loading={loading}
+      {...attrs}
+    />
   )
 }
 

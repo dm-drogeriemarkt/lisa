@@ -5,7 +5,7 @@ import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import OWNERS_QUERY from 'graphql/queries/owners'
 
-const OwnerSelectInput = ({ onChange, ...attrs }) => {
+const OwnerSelectInput = ({...attrs}) => {
   const {
     updateAttribute,
     attributes: {
@@ -29,7 +29,7 @@ const OwnerSelectInput = ({ onChange, ...attrs }) => {
 
   const handleChange = ({ ownerId }) => {
     const { name: ownerName } = owners.find(({ id }) => id === ownerId)
-    onChange({ ownerId, ownerName })
+    updateAttribute({ ownerId, ownerName })
   }
 
   return (

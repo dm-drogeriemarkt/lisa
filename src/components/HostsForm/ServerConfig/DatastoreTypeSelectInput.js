@@ -2,7 +2,7 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 
-const DatastoreTypeSelectInput = ({ onChange: handleChange, ...attrs }) => {
+const DatastoreTypeSelectInput = ({ ...attrs }) => {
   const {
     updateAttribute,
     attributes: {
@@ -25,7 +25,7 @@ const DatastoreTypeSelectInput = ({ onChange: handleChange, ...attrs }) => {
           <SelectInput
             value={datastoreTypeId}
             options={datastoreTypes}
-            onChange={handleChange}
+            onChange={updateAttribute}
             {...attrs}
           />
       }

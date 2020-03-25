@@ -1,43 +1,26 @@
-import React, { Fragment, useContext } from 'react'
+import React from 'react'
+import Slot from 'components/Slot'
 import AppTierSelectInput from './AppTierSelectInput'
 import DatastoreTypeSelectInput from './DatastoreTypeSelectInput'
 import SubnetSelectInput from './SubnetSelectInput'
 import OwnerSelectInput from './OwnerSelectInput'
-import { HostsFormContext } from 'lib/Context'
-import { pluginsExtensions } from 'plugins'
 
 const Selects = () => {
-  const context = useContext(HostsFormContext)
-
-  let selects = [{
+  const selects = [{
     attributeName: 'appTierName',
-    component: AppTierSelectInput,
-    onChange: context.updateAttribute
+    components: [AppTierSelectInput]
   }, {
     attributeName: 'subnetId',
-    component: SubnetSelectInput,
-    onChange: context.updateAttribute
+    components: [SubnetSelectInput]
   }, {
     attributeName: 'ownerId',
-    component: OwnerSelectInput,
-    onChange: context.updateAttribute
+    components: [OwnerSelectInput]
   }, {
     attributeName: 'datastoreType',
-    component: DatastoreTypeSelectInput,
-    onChange: context.updateAttribute
+    components: [DatastoreTypeSelectInput]
   }]
 
-  pluginsExtensions.filter(({ slot }) => {
-    return slot === 'HostsForm/ServerConfig/Selects'
-  }).map(({ extension }) => {
-    return extension({ selects, context })
-  })
-
-  return (
-    <Fragment>
-      { selects.map(({ component: Component, ...attrs }, i) => <Component key={i} {...attrs} />) }
-    </Fragment>
-  )
+  return <Slot name='HostsForm/ServerConfig/Selects' elements={selects} />
 }
 
 export default Selects

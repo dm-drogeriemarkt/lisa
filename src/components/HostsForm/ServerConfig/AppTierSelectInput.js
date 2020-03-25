@@ -3,8 +3,9 @@ import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import { appTiers as appTiersSettings } from 'settings'
 
-const AppTierSelectInput = ({ onChange, ...attrs }) => {
+const AppTierSelectInput = ({...attrs}) => {
   const {
+    updateAttribute,
     attributes: {
       appTierName
     }
@@ -12,11 +13,11 @@ const AppTierSelectInput = ({ onChange, ...attrs }) => {
 
   const appTiers = appTiersSettings.map(({ name }) => ({ id: name, name }))
   const handleChange = ({ appTierName }) => {
-    onChange({ appTierName, subnetId: undefined });
+    updateAttribute({ appTierName, subnetId: undefined });
   }
 
   return (
-    <SelectInput value={appTierName} options={appTiers} onChange={handleChange} {...attrs} />
+    <SelectInput value={appTierName} options={appTiers} onChange={handleChange} allowEmpty={true} {...attrs} />
   )
 }
 

@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import { snakeCase } from 'lodash';
-import { Col, FormGroup, ControlLabel, Spinner } from 'patternfly-react';
+import { Icon, Col, FormGroup, ControlLabel, Spinner } from 'patternfly-react';
 import Select from 'react-select';
 import T from 'i18n-react';
 import './index.css';
 
 class SelectInput extends Component {
-  options() {
-    const { loading, options=[] } = this.props;
+  get options() {
+    const { loading, allowEmpty = false, options=[] } = this.props;
     if(loading) {
       return [{ value: undefined, label: <Spinner loading /> }]
     }
-    return options.map(({ id: value, name: label }) => ({ value, label }))
+    const result = options.map(({ id: value, name: label }) => ({ value, label }))
+    if(allowEmpty) {
+      const clearValue = { label: <Icon type='fa' name='times' /> }
+      return[clearValue, ...result]
+    } else {
+      return result
+    }
   }
 
   handleChange = (newValue) => {
@@ -40,7 +46,7 @@ class SelectInput extends Component {
           <Select
             value={value}
             onChange={this.handleChange}
-            options={this.options()}
+            options={this.options}
             clearable={false}
             required={true}
             searchable={true}
