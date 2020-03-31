@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { get, cloneDeep, remove } from 'lodash';
+import T from 'i18n-react';
 import { useQuery } from '@apollo/react-hooks';
 import { HostsFormContext } from 'lisa-core/lib/Context';
 import SelectInput from 'lisa-core/components/HostsForm/SelectInput';
@@ -51,7 +52,7 @@ var MODELS_QUERY = gql`
 const ModelSelectInput = ({ ...attrs
 }) => {
   const {
-    updateAttribute: handleChange,
+    updateAttribute,
     attributes: {
       modelId
     }
@@ -71,12 +72,25 @@ const ModelSelectInput = ({ ...attrs
       name
     };
   });
+  const label = T.translate('hosts_form.model_id');
+  const placeholder = T.translate('hosts_form.placeholders.model_id');
+
+  const handleChange = modelId => {
+    updateAttribute({
+      modelId,
+      subnetId: undefined
+    });
+  };
+
   return /*#__PURE__*/React.createElement(SelectInput, _extends({
+    label: label,
+    placeholder: placeholder,
     value: modelId,
     options: models,
     onChange: handleChange,
     loading: loading,
-    allowEmpty: true
+    clearable: true,
+    required: false
   }, attrs));
 };
 
@@ -90,9 +104,11 @@ const SubnetSelectInput = ({
     }
   } = useContext(HostsFormContext$1);
   const disabled = attrs.disabled || !!modelId;
+  const placeholder = disabled && modelId ? 'From model' : attrs.placeholder;
   return /*#__PURE__*/React.createElement(Component, _extends({
     components: components
   }, attrs, {
+    placeholder: placeholder,
     disabled: disabled
   }));
 };

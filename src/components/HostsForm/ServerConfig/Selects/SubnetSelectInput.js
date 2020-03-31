@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import T from 'i18n-react'
 import { useQuery } from '@apollo/react-hooks'
 import { get } from 'lodash'
 import { HostsFormContext } from 'lib/Context'
@@ -32,17 +33,22 @@ const SubnetSelectInput = ({ ...attrs }) => {
   const subnets = get(data, 'domains.edges.0.node.subnets.edges', [])
     .map(({ node: { id, name, vlanid }}) => ({ id, name, vlanid }))
 
-  const handleChange = ({ subnetId }) => {
-    const { vlanid = undefined } = subnets.find(({ id }) => id === subnetId)
+  const label = T.translate('hosts_form.subnet_id')
+  const placeholder = T.translate('hosts_form.placeholders.subnet_id')
+  const handleChange = (subnetId) => {
+    const { vlanid } = subnets.find(({ id }) => id === subnetId) || {}
     updateAttribute({ subnetId, vlanid })
   }
 
   return (
     <SelectInput
+      label={label}
+      placeholder={placeholder}
       value={subnetId}
       options={subnets}
       onChange={handleChange}
       loading={loading}
+      clearable={true}
       {...attrs}
     />
   )

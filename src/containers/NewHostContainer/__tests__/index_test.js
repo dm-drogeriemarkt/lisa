@@ -6,7 +6,7 @@ import { MockedProvider } from '@apollo/react-testing'
 import NewHostContainer from 'containers/NewHostContainer'
 
 import COMPUTE_RESOURCE_QUERY_MOCK from 'graphql/queries/__mocks__/computeResource_mock'
-import HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK from 'graphql/queries/__mocks__/hostCreationFormInitialData_mock'
+import PUPPET_ENVS_QUERY_MOCK from 'graphql/queries/__mocks__/puppetEnvs_mock'
 import OWNERS_MOCK from 'graphql/queries/__mocks__/owners_mock'
 import SUBNETS_BY_DOMAIN_QUERY_MOCK from 'graphql/queries/__mocks__/subnetsByDomain_mock'
 import PUPPETMASTERS_QUERY_MOCK from 'graphql/queries/__mocks__/puppetMasters_mock'
@@ -17,7 +17,7 @@ import CREATE_HOST_MUTATION_MOCK from 'graphql/mutations/__mocks__/createHost_mo
 test('Mounted NewHostContainer', async () => {
   const mocks = [
     ...COMPUTE_RESOURCE_QUERY_MOCK,
-    ...HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK,
+    ...PUPPET_ENVS_QUERY_MOCK,
     ...OWNERS_MOCK,
     ...SUBNETS_BY_DOMAIN_QUERY_MOCK,
     ...PUPPETMASTERS_QUERY_MOCK,
@@ -69,6 +69,7 @@ test('Mounted NewHostContainer', async () => {
   const submitButton = wrapper.find('button[type="submit"]')
   submitButton.simulate('submit')
 
+  await wait()
   await wait()
   await wait()
   await wait()

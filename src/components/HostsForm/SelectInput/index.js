@@ -1,65 +1,53 @@
-import React, { Component } from 'react';
-import { snakeCase } from 'lodash';
-import { Icon, Col, FormGroup, ControlLabel, Spinner } from 'patternfly-react';
-import Select from 'react-select';
-import T from 'i18n-react';
-import './index.css';
+import React from 'react'
+import { Col, FormGroup, ControlLabel, Spinner } from 'patternfly-react'
+import Select from 'react-select'
+import './index.css'
 
-class SelectInput extends Component {
-  get options() {
-    const { loading, allowEmpty = false, options=[] } = this.props;
-    if(loading) {
-      return [{ value: undefined, label: <Spinner loading /> }]
-    }
-    const result = options.map(({ id: value, name: label }) => ({ value, label }))
-    if(allowEmpty) {
-      const clearValue = { label: <Icon type='fa' name='times' /> }
-      return[clearValue, ...result]
-    } else {
-      return result
-    }
+const SelectInput = ({
+  label,
+  placeholder,
+  loading,
+  value,
+  options,
+  multi,
+  onChange,
+  disabled,
+  clearable = false,
+  required = true,
+  searchable = true
+}) => {
+  const selectOptions = loading ? [{ value: undefined, label: <Spinner loading /> }]
+    : options.map(({ id: value, name: label }) => ({ value, label }))
+
+  const handleChange = (value) => {
+    const newValue = value && (multi ? value.map(({ value }) => value) : value.value)
+    onChange(newValue)
   }
 
-  handleChange = (newValue) => {
-    this.props.onChange({
-      [this.props.attributeName]: this.attributeValue(newValue)
-    });
-  }
-
-  attributeValue(value) {
-    return this.props.multi ? value.map((v) => v.value) : value.value
-  }
-
-  render() {
-    const { loading, disabled, multi, attributeName, value = '' } = this.props;
-    const placeholder = loading ? 'hosts_form.placeholders.loading'
-      : `hosts_form.placeholders.${snakeCase(attributeName)}${disabled ? '_disabled' : ''}`;
-
-    return (
-      <FormGroup controlId='' bsSize='large' validationState='error'>
-        <Col xs={12}>
-          <ControlLabel>
-            {T.translate(`hosts_form.${snakeCase(attributeName)}`)}
-          </ControlLabel>
-        </Col>
-        <Col xs={12}>
-          <Select
-            value={value}
-            onChange={this.handleChange}
-            options={this.options}
-            clearable={false}
-            required={true}
-            searchable={true}
-            multi={multi}
-            disabled={disabled}
-            placeholder={T.translate(placeholder)}
-            menuContainerStyle={{zIndex: 2}}
-          />
-          <input className="hidden-input" value={value} required onChange={() => {}} />
-        </Col>
-      </FormGroup>
-    )
-  }
+  return (
+    <FormGroup controlId='' bsSize='large' validationState='error'>
+      <Col xs={12}>
+        <ControlLabel>
+          { label }
+        </ControlLabel>
+      </Col>
+      <Col xs={12}>
+        <Select
+          placeholder={placeholder}
+          value={value}
+          options={selectOptions}
+          multi={multi}
+          onChange={handleChange}
+          disabled={disabled}
+          clearable={clearable}
+          required={required}
+          searchable={searchable}
+          menuContainerStyle={{zIndex: 2}}
+        />
+        { required && <input className="hidden-input" defaultValue={value} required onChange={() => {}} /> }
+      </Col>
+    </FormGroup>
+  )
 }
 
-export default SelectInput;
+export default SelectInput

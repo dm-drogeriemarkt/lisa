@@ -1,4 +1,5 @@
 import React, { Fragment, useContext } from 'react'
+import T from 'i18n-react'
 import { useQuery } from '@apollo/react-hooks';
 import { get } from 'lodash'
 import { HostsFormContext } from 'lib/Context'
@@ -26,15 +27,24 @@ const OwnerSelectInput = ({...attrs}) => {
   })
 
   const owners = ownersFrom(data)
-
-  const handleChange = ({ ownerId }) => {
+  const handleChange = (ownerId) => {
     const { name: ownerName } = owners.find(({ id }) => id === ownerId)
     updateAttribute({ ownerId, ownerName })
   }
 
   return (
     <Fragment>
-      { owners.length > 1 && <SelectInput value={ownerId} loading={loading} onChange={handleChange} options={owners} {...attrs} /> }
+      { owners.length > 1 &&
+        <SelectInput
+          label={T.translate('hosts_form.owner_id')}
+          placeholder={T.translate('hosts_form.placeholders.owner_id')}
+          value={ownerId}
+          loading={loading}
+          onChange={handleChange}
+          options={owners}
+          {...attrs}
+        />
+      }
     </Fragment>
   )
 }
