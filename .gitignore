@@ -15,4 +15,3 @@ npm-debug.log*
 /src/settings/production.json
 
 /src/plugins/*.js
-/plugins/*.tgz
