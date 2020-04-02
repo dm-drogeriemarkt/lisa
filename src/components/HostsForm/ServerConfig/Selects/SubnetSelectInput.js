@@ -27,7 +27,8 @@ const SubnetSelectInput = ({ ...attrs }) => {
     onCompleted: (data) => {
       const domainId = get(data, 'domains.edges.0.node.id', undefined)
       updateAttribute({ domainId: domainId })
-    }
+    },
+    fetchPolicy: 'cache-and-network'
   })
 
   const subnets = get(data, 'domains.edges.0.node.subnets.edges', [])

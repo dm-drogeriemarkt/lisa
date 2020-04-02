@@ -5,7 +5,6 @@ import { get } from 'lodash'
 import SelectInput from 'components/HostsForm/SelectInput'
 import { HostsFormContext } from 'lib/Context'
 import PUPPET_MASTERS_QUERY from 'graphql/queries/puppetMasters'
-import { locations } from 'settings'
 import useLocation from 'hooks/useLocation'
 
 const PuppetMasterSelectInput = ({...attrs}) => {
@@ -23,7 +22,8 @@ const PuppetMasterSelectInput = ({...attrs}) => {
     variables: {
       search: `feature = Puppet and location = ${location}`
     },
-    skip: !location
+    skip: !location,
+    fetchPolicy: 'cache-and-network'
   })
   const puppetMasters = get(data, 'smartProxies.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 

@@ -16,6 +16,7 @@ const OwnerSelectInput = ({...attrs}) => {
   const ownersFrom = (data) => get(data, 'currentUser.usergroups.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
   const { loading, data } = useQuery(OWNERS_QUERY, {
+    fetchPolicy: 'cache-and-network',
     onCompleted: (data) => {
       const owners = ownersFrom(data)
 

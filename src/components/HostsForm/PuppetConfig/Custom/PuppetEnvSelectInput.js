@@ -14,7 +14,9 @@ const PuppetEnvSelectInput = ({...attrs}) => {
     }
   } = useContext(HostsFormContext)
 
-  const { loading, data } = useQuery(PUPPET_ENVS_QUERY)
+  const { loading, data } = useQuery(PUPPET_ENVS_QUERY, {
+    fetchPolicy: 'cache-and-network'
+  })
   const puppetEnvs = get(data, 'environments.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
   const handleChange = (puppetEnvId) => {

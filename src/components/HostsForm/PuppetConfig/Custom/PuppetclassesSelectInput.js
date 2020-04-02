@@ -19,7 +19,8 @@ const PuppetclassesSelectInput = ({...attrs}) => {
     variables: {
       id: puppetEnvId
     },
-    skip: !puppetEnvId
+    skip: !puppetEnvId,
+    fetchPolicy: 'cache-and-network'
   })
 
   const puppetclasses = get(data, 'environment.puppetclasses.edges', [])

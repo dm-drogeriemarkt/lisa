@@ -5,7 +5,6 @@ import { Col, FormGroup, FormControl, ControlLabel, Icon } from 'patternfly-reac
 
 import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
 import { HostsFormContext } from 'lib/Context'
-import { locations } from 'settings'
 import useLocation from 'hooks/useLocation'
 
 const HostNameInput = ({ number }) => {
@@ -32,7 +31,8 @@ const HostNameInput = ({ number }) => {
       last: 1,
       search: `name=${value}.${appTierName}.${domainName}`
     },
-    skip: !value
+    skip: !value,
+    fetchPolicy: 'cache-and-network'
   })
 
   const updateValue = (value) => {
