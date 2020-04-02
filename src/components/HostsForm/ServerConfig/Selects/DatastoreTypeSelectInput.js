@@ -2,17 +2,18 @@ import React, { Fragment, useContext, useEffect } from 'react'
 import T from 'i18n-react'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
+import useLocation from 'hooks/useLocation'
 
 const DatastoreTypeSelectInput = ({ ...attrs }) => {
   const {
     updateAttribute,
     attributes: {
-      datastoreTypeId
-    },
-    currentLocation: {
-      datastoreTypes = []
+      datastoreTypeId,
+      locationId
     }
   } = useContext(HostsFormContext)
+
+  const { datastoreTypes = [] } = useLocation(locationId)
 
   useEffect(() => {
     if(datastoreTypes.length === 1) {

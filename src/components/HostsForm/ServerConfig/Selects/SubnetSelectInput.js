@@ -5,19 +5,19 @@ import { get } from 'lodash'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import SUBNETS_BY_DOMAIN_QUERY from 'graphql/queries/subnetsByDomain'
+import useLocation from 'hooks/useLocation'
 
 const SubnetSelectInput = ({ ...attrs }) => {
   const {
     updateAttribute,
     attributes: {
       appTierName,
-      subnetId
-    },
-    currentLocation: {
-      location,
-      domainName
+      subnetId,
+      locationId
     }
   } = useContext(HostsFormContext)
+
+  const { location, domainName } = useLocation(locationId)
 
   const { loading, data } = useQuery(SUBNETS_BY_DOMAIN_QUERY, {
     variables: {

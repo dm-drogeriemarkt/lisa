@@ -6,6 +6,7 @@ import SelectInput from 'components/HostsForm/SelectInput'
 import { HostsFormContext } from 'lib/Context'
 import PUPPET_MASTERS_QUERY from 'graphql/queries/puppetMasters'
 import { locations } from 'settings'
+import useLocation from 'hooks/useLocation'
 
 const PuppetMasterSelectInput = ({...attrs}) => {
   const {
@@ -15,7 +16,8 @@ const PuppetMasterSelectInput = ({...attrs}) => {
       puppetMasterId
     }
   } = useContext(HostsFormContext)
-  const { location } = locations.find(({ id }) => id === locationId)
+
+  const { location } = useLocation(locationId)
 
   const { loading, data } = useQuery(PUPPET_MASTERS_QUERY, {
     variables: {

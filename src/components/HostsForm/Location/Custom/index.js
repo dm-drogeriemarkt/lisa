@@ -1,11 +1,12 @@
 import React, { Fragment, useContext } from 'react'
 import T from 'i18n-react'
 import { CardGrid, Row, Col } from 'patternfly-react'
+
 import Card from './Card'
 import Warning from './Warning'
-
 import { locations } from 'settings'
 import { HostsFormContext } from 'lib/Context'
+import useLocation from 'hooks/useLocation'
 
 const Custom = () => {
   const {
@@ -13,7 +14,13 @@ const Custom = () => {
       locationId
     }
   } = useContext(HostsFormContext)
-  const currentLocation = locations.find(({ id }) => id === locationId)
+
+  const {
+    location: currentLocation,
+    reducedPerformance,
+    explanation
+  } = useLocation(locationId)
+
 
   return (
     <Fragment>
@@ -29,8 +36,8 @@ const Custom = () => {
           }
         </Row>
       </CardGrid>
-      { currentLocation.reducedPerformance === 'true' && (
-        <Warning location={currentLocation.location} explanation={currentLocation.explanation} />
+      { reducedPerformance === 'true' && (
+        <Warning location={currentLocation} explanation={explanation} />
       )}
     </Fragment>
   )

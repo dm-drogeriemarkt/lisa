@@ -167,7 +167,6 @@ class NewHostContainer extends Component {
 
     return {
       attributes,
-      currentLocation: this.currentLocation,
       updateAttribute: this.updateAttribute
     }
   }

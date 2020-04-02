@@ -6,6 +6,7 @@ import { Col, FormGroup, FormControl, ControlLabel, Icon } from 'patternfly-reac
 import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
 import { HostsFormContext } from 'lib/Context'
 import { locations } from 'settings'
+import useLocation from 'hooks/useLocation'
 
 const HostNameInput = ({ number }) => {
   const {
@@ -19,11 +20,12 @@ const HostNameInput = ({ number }) => {
     }
   } = useContext(HostsFormContext)
 
+  const { domainName } = useLocation(locationId)
+
   const hostNumber = number.toString().padStart(2, '0')
   const defaultValue = `${project}-${role}-${hostNumber}`
   const value = get(hostNames, `name_${number}`, defaultValue)
 
-  const { domainName } = locations.find(({ id }) => id === locationId)
   const { data, loading } = useQuery(HOSTNAMES_ALREADY_TAKEN_QUERY, {
     variables: {
       first: 1,
