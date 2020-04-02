@@ -8,13 +8,13 @@ import PuppetclassesSelectInput from './PuppetclassesSelectInput'
 
 const Custom = () => {
   const selects = [{
-    attributeName: 'puppetMasterId',
+    id: 'puppetMasterId',
     components: [PuppetMasterSelectInput]
   }, {
-    attributeName: 'puppetEnvId',
+    id: 'puppetEnvId',
     components: [PuppetEnvSelectInput]
   }, {
-    attributeName: 'puppetclassIds',
+    id: 'puppetclassIds',
     components: [PuppetclassesSelectInput]
   }]
 

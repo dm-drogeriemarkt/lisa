@@ -116,12 +116,12 @@ const SubnetSelectInput = ({
 const ServerConfigSelects = elements => {
   const data = cloneDeep(elements);
   const [subnetIdSelect] = remove(data, ({
-    attributeName
-  }) => attributeName === 'subnetId');
+    id
+  }) => id === 'subnetId');
   return [...data, { ...subnetIdSelect,
     components: [SubnetSelectInput, ...subnetIdSelect.components]
   }, {
-    attributeName: 'modelId',
+    id: 'modelId',
     components: [ModelSelectInput]
   }];
 };

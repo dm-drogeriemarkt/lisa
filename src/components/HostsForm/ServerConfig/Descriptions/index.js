@@ -4,7 +4,7 @@ import AppTiers from './AppTiers'
 
 const Descriptions = () => {
   const descriptions = [{
-    attributeName: 'appTiers',
+    id: 'appTiers',
     components: [AppTiers]
   }]
 

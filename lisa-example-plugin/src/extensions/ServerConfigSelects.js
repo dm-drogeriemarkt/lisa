@@ -5,7 +5,7 @@ import SubnetSelectInput from '../components/SubnetSelectInput'
 
 const ServerConfigSelects = (elements) => {
   const data = cloneDeep(elements)
-  const [subnetIdSelect] = remove(data, ({ attributeName }) => attributeName === 'subnetId')
+  const [subnetIdSelect] = remove(data, ({ id }) => id === 'subnetId')
 
   return [
     ...data,
@@ -14,7 +14,7 @@ const ServerConfigSelects = (elements) => {
       components: [SubnetSelectInput, ...subnetIdSelect.components]
     },
     {
-      attributeName: 'modelId',
+      id: 'modelId',
       components: [ModelSelectInput]
     }
   ]

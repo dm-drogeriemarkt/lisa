@@ -37,7 +37,7 @@ test('Mounted NewHostContainer', async () => {
   await wait()
   wrapper.update()
 
-  const subnetSelect = wrapper.find('SelectInput[attributeName="subnetId"]').find('Select')
+  const subnetSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.subnet_id"]')
   subnetSelect.instance().selectValue({ value: 'MDE6U3VibmV0LTE=', label: 'subnet' })
 
   await wait()
