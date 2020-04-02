@@ -24,6 +24,8 @@ const SelectInput = ({
     onChange(newValue)
   }
 
+  const selectValue = !disabled && value
+
   return (
     <FormGroup controlId='' bsSize='large' validationState='error'>
       <Col xs={12}>
@@ -34,7 +36,7 @@ const SelectInput = ({
       <Col xs={12}>
         <Select
           placeholder={placeholder}
-          value={value}
+          value={selectValue}
           options={selectOptions}
           multi={multi}
           onChange={handleChange}
