@@ -464,7 +464,7 @@ MDE6T3JnYW5pemF0aW9uLTE=
 | `compute_resource_id` | string | Optional     | `"It will be taken from the attributes of the default location"` |
 | `cpu`                 | number | Optional     | `1`                                                              |
 | `datastore_type_id`   | string | Optional     | `"It will be taken from the attributes of the default location"` |
-| `location_id`         | string | Optional     | `"Id of the first location from locations"`                      |
+| `location_code`       | string | Optional     | `"Code of the first location from locations"`                    |
 | `memory`              | number | Optional     | `4`                                                              |
 | `operatingsystem_id`  | string | Optional     | `"Id of the first operatingsystem from operatingsystems"`        |
 | `puppet_env_id`       | string | **Required** |                                                                  |
@@ -528,17 +528,17 @@ A reference to the [datastore type](#datastore_types)
 
 `string`
 
-#### location_id
+#### location_code
 
 A reference to the [location](#locations-1)
 
-`location_id`
+`location_code`
 
 - is optional
 - type: `string`
-- default: `"Id of the first location from locations"`
+- default: `"Code of the first location from locations"`
 
-##### location_id Type
+##### location_code Type
 
 `string`
 

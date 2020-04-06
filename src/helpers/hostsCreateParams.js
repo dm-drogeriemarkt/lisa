@@ -20,7 +20,7 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   if(!network) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.network_not_found', { subnet_vlanid: data.vlanid }))}
 
   const operatingsystem = operatingsystems.find(({ id }) => id === data.operatingsystemId)
-  const location = locations.find(({ id }) => id === data.locationId)
+  const location = locations.find(({ code }) => code === data.locationCode)
   const datastoreType = location.datastoreTypes.find(({ id }) => id === data.datastoreTypeId)
   const appTier = appTiers.find(({ name }) => name === data.appTierName)
   const medium = location.relations.media.find(({ operatingsystemId }) => operatingsystemId === operatingsystem.id)
@@ -34,7 +34,9 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   unset(data, 'appTierName')
   unset(data, 'datastoreTypeId')
   unset(data, 'vlanid')
+  unset(data, 'locationCode')
 
+  set(data, 'locationId', location.id)
   set(data, 'computeAttributes.cpus', String(data.cpu))
   unset(data, 'cpu')
 

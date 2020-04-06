@@ -11,12 +11,12 @@ const PuppetMasterSelectInput = ({...attrs}) => {
   const {
     updateAttribute,
     attributes: {
-      locationId,
+      locationCode,
       puppetMasterId
     }
   } = useContext(HostsFormContext)
 
-  const { location } = useLocation(locationId)
+  const { location } = useLocation(locationCode)
 
   const { loading, data } = useQuery(PUPPET_MASTERS_QUERY, {
     variables: {

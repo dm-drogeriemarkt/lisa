@@ -14,12 +14,12 @@ const HostNameInput = ({ number }) => {
       role,
       project,
       appTierName,
-      locationId,
+      locationCode,
       hostNames = {}
     }
   } = useContext(HostsFormContext)
 
-  const { domainName } = useLocation(locationId)
+  const { domainName } = useLocation(locationCode)
 
   const hostNumber = number.toString().padStart(2, '0')
   const defaultValue = `${project}-${role}-${hostNumber}`

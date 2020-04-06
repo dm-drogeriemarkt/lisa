@@ -11,7 +11,7 @@ import useLocation from 'hooks/useLocation'
 const Custom = () => {
   const {
     attributes: {
-      locationId
+      locationCode
     }
   } = useContext(HostsFormContext)
 
@@ -19,7 +19,7 @@ const Custom = () => {
     location: currentLocation,
     reducedPerformance,
     explanation
-  } = useLocation(locationId)
+  } = useLocation(locationCode)
 
 
   return (

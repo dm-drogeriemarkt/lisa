@@ -9,11 +9,11 @@ const DatastoreTypeSelectInput = ({ ...attrs }) => {
     updateAttribute,
     attributes: {
       datastoreTypeId,
-      locationId
+      locationCode
     }
   } = useContext(HostsFormContext)
 
-  const { datastoreTypes = [] } = useLocation(locationId)
+  const { datastoreTypes = [] } = useLocation(locationCode)
 
   useEffect(() => {
     if(datastoreTypes.length === 1) {

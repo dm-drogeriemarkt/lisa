@@ -1,5 +1,5 @@
 import { locations } from 'settings'
 
-const useLocation = (locationId) => locations.find(({ id }) => id === locationId)
+const useLocation = (locationCode) => locations.find(({ code }) => code === locationCode)
 
 export default useLocation

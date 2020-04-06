@@ -13,11 +13,11 @@ const SubnetSelectInput = ({ ...attrs }) => {
     attributes: {
       appTierName,
       subnetId,
-      locationId
+      locationCode
     }
   } = useContext(HostsFormContext)
 
-  const { location, domainName } = useLocation(locationId)
+  const { location, domainName } = useLocation(locationCode)
 
   const { loading, data } = useQuery(SUBNETS_BY_DOMAIN_QUERY, {
     variables: {

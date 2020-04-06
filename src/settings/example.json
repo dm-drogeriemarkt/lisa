@@ -19,7 +19,7 @@
       "memory": 8,
       "size": 200,
       "operatingsystem_id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE=",
-      "location_id": "MDE6TG9jYXRpb24tNA==",
+      "location_code": "LAN",
       "compute_resource_id": "MDE6Q29tcHV0ZVJlc291cmNlLTI=",
       "puppet_master_id": "MDE6U21hcnRQcm94eS0x",
       "datastore_type_id": "Mirror",

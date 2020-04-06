@@ -8,7 +8,7 @@ import { HostsFormContext } from 'lib/Context'
 
 const Card = ({
   location: {
-    id,
+    code,
     country,
     datastoreTypes,
     label
@@ -16,17 +16,17 @@ const Card = ({
 }) => {
   const {
     attributes: {
-      locationId: currentLocationId,
+      locationCode: currentLocationCode,
       datastoreTypeId
     },
     updateAttribute
   } = useContext(HostsFormContext)
 
-  const isSelected = id === currentLocationId
+  const isSelected = code === currentLocationCode
   const reducedPerformance = label.reducedPerformance === 'true'
 
   const handleClick = () => {
-    let newAttributes = { locationId: id }
+    let newAttributes = { locationCode: code }
     if (!datastoreTypes.some(({ id }) => id === datastoreTypeId)) {
       newAttributes['datastoreTypeId'] = datastoreTypes[0].id
     }

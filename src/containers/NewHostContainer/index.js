@@ -50,7 +50,7 @@ class NewHostContainer extends Component {
   }
 
   get currentLocation() {
-    return locations.find(({ id }) => id === this.state.attributes.locationId)
+    return locations.find(({ code }) => code === this.state.attributes.locationCode)
   }
 
   validateHostCreationForm() {
