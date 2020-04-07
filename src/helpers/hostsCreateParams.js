@@ -1,5 +1,5 @@
 import T from 'i18n-react'
-import { cloneDeep, merge, update, set, unset } from 'lodash'
+import { get, cloneDeep, merge, update, set, unset } from 'lodash'
 import { defaultConfigs, operatingsystems, locations, appTiers } from '../settings'
 
 const MB_PER_GB = 1024
@@ -16,9 +16,8 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   let data = cloneDeep(formValues)
 
   if(!computeResource) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.compute_resource_not_found')) }
-  const network = computeResource.networks.edges.map(({ node }) => node).find(({ vlanid }) => vlanid === data.vlanid)
-  if(!network) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.network_not_found', { subnet_vlanid: data.vlanid }))}
 
+  const network = computeResource.networks.edges.map(({ node }) => node).find(({ vlanid }) => vlanid === data.vlanid)
   const operatingsystem = operatingsystems.find(({ id }) => id === data.operatingsystemId)
   const location = locations.find(({ code }) => code === data.locationCode)
   const datastoreType = location.datastoreTypes.find(({ id }) => id === data.datastoreTypeId)
@@ -58,7 +57,9 @@ const hostsCreateParams = (formValues, { computeResource }) => {
 
   set(data, 'computeAttributes.cluster', location.relations.cluster)
   set(data, 'computeAttributes.guest_id', operatingsystem.relations.guestOperatingsystemId)
-  set(data, 'interfacesAttributes.0.computeAttributes.network', network.id)
+
+  const networkId = get(network, 'id')
+  set(data, 'interfacesAttributes.0.computeAttributes.network', networkId)
 
   const resource_pool = appTier.relations.locations.find(({ code }) => code === location.code).resourcePool
   set(data, 'computeAttributes.resource_pool', resource_pool)
