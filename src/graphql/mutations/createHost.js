@@ -1,54 +1,44 @@
-import gql from 'graphql-tag';
+import { mutation as generateMutation, params as applyParams, types } from 'typed-graphqlify'
+import gql from 'graphql-tag'
+import { merge } from 'lodash'
+import { pluginsExtensions } from 'plugins'
 
-export default gql`
-  mutation CreateHostMutation (
-    $name: String!,
-    $build: Boolean!,
-    $enabled: Boolean!,
-    $managed: Boolean!,
-    $ownerId: ID,
-    $locationId: ID!,
-    $organizationId: ID!,
-    $environmentId: ID!,
-    $architectureId: ID!,
-    $domainId: ID,
-    $operatingsystemId: ID!,
-    $mediumId: ID!,
-    $ptableId: ID!,
-    $subnetId: ID,
-    $computeResourceId: ID,
-    $puppetProxyId: ID!,
-    $puppetCaProxyId: ID!,
-    $puppetclassIds: [ID!]!,
-    $computeAttributes: RawJson,
-    $interfacesAttributes: [InterfaceAttributesInput!],
-  ) {
-    createHost(input: {
-      name: $name,
-      build: $build,
-      enabled: $enabled,
-      managed: $managed,
-      ownerId: $ownerId,
-      locationId: $locationId,
-      organizationId: $organizationId,
-      environmentId: $environmentId,
-      architectureId: $architectureId,
-      domainId: $domainId,
-      operatingsystemId: $operatingsystemId,
-      mediumId: $mediumId,
-      ptableId: $ptableId,
-      subnetId: $subnetId,
-      computeResourceId: $computeResourceId,
-      puppetProxyId: $puppetProxyId,
-      puppetCaProxyId: $puppetCaProxyId,
-      puppetclassIds: $puppetclassIds,
-      computeAttributes: $computeAttributes,
-      interfacesAttributes: $interfacesAttributes,
-    }) {
-      host {
-        id
-        name
-      }
+const SLOT = 'GraphQL/Mutations/CreateHostMutation/Input'
+const CORE_INPUT = {
+  $name: 'String!',
+  $build: 'Boolean!',
+  $enabled: 'Boolean!',
+  $managed: 'Boolean!',
+  $ownerId: 'ID',
+  $locationId: 'ID!',
+  $organizationId: 'ID!',
+  $environmentId: 'ID!',
+  $architectureId: 'ID!',
+  $domainId: 'ID',
+  $operatingsystemId: 'ID!',
+  $mediumId: 'ID!',
+  $ptableId: 'ID!',
+  $subnetId: 'ID',
+  $computeResourceId: 'ID',
+  $puppetProxyId: 'ID!',
+  $puppetCaProxyId: 'ID!',
+  $puppetclassIds: '[ID!]!',
+  $computeAttributes: 'RawJson',
+  $interfacesAttributes: '[InterfaceAttributesInput!]'
+}
+
+const inputExtensions = pluginsExtensions.filter(({ slot }) => slot === SLOT).map(({ extension }) => extension)
+const input = merge(CORE_INPUT, ...inputExtensions)
+const mutationParams = Object.keys(input).reduce((acc, curr) => {
+  return Object.assign(acc, { [curr.substr(1)]: curr })
+}, {})
+const mutationString = generateMutation('CreateHostMutation', applyParams(input, {
+  createHost: applyParams({ input: mutationParams }, {
+    host: {
+      id: types.string,
+      name: types.string,
     }
-  }
-`;
+  })
+}))
+
+export default gql`${mutationString}`
