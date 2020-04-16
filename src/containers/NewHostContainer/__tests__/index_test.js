@@ -2,11 +2,12 @@ import React from 'react'
 import { mount } from 'enzyme'
 import wait from 'waait'
 import { MemoryRouter } from 'react-router-dom'
-import { MockedProvider } from 'react-apollo/test-utils'
+import { MockedProvider } from '@apollo/react-testing'
 import NewHostContainer from 'containers/NewHostContainer'
 
 import COMPUTE_RESOURCE_QUERY_MOCK from 'graphql/queries/__mocks__/computeResource_mock'
-import HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK from 'graphql/queries/__mocks__/hostCreationFormInitialData_mock'
+import PUPPET_ENVS_QUERY_MOCK from 'graphql/queries/__mocks__/puppetEnvs_mock'
+import OWNERS_MOCK from 'graphql/queries/__mocks__/owners_mock'
 import SUBNETS_BY_DOMAIN_QUERY_MOCK from 'graphql/queries/__mocks__/subnetsByDomain_mock'
 import PUPPETMASTERS_QUERY_MOCK from 'graphql/queries/__mocks__/puppetMasters_mock'
 import PUPPET_CLASSES_BY_ENVIRONMENT_QUERY_MOCK from 'graphql/queries/__mocks__/puppetClassesByEnvironment_mock'
@@ -16,7 +17,8 @@ import CREATE_HOST_MUTATION_MOCK from 'graphql/mutations/__mocks__/createHost_mo
 test('Mounted NewHostContainer', async () => {
   const mocks = [
     ...COMPUTE_RESOURCE_QUERY_MOCK,
-    ...HOST_CREATION_FORM_INITIAL_DATA_QUERY_MOCK,
+    ...PUPPET_ENVS_QUERY_MOCK,
+    ...OWNERS_MOCK,
     ...SUBNETS_BY_DOMAIN_QUERY_MOCK,
     ...PUPPETMASTERS_QUERY_MOCK,
     ...HOSTNAMES_ALREADY_TAKEN_MOCK,
@@ -32,11 +34,17 @@ test('Mounted NewHostContainer', async () => {
     </MemoryRouter>
   )
 
+  await wait()
+  wrapper.update()
+
   const subnetSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.subnet_id"]')
   subnetSelect.instance().selectValue({ value: 'MDE6U3VibmV0LTE=', label: 'subnet' })
 
+  await wait()
+  wrapper.update()
+
   const customPuppetConfigButton = wrapper.find('button').findWhere(x => x.text() === 'hosts_form.puppet_config.default.link')
-  customPuppetConfigButton.simulate('click')
+  customPuppetConfigButton.first().simulate('click')
 
   await wait()
   wrapper.update()
@@ -61,6 +69,8 @@ test('Mounted NewHostContainer', async () => {
   const submitButton = wrapper.find('button[type="submit"]')
   submitButton.simulate('submit')
 
+  await wait()
+  await wait()
   await wait()
   await wait()
   wrapper.update()

@@ -1,0 +1,2 @@
+import plugin from 'lisa-example-plugin'
+export default plugin

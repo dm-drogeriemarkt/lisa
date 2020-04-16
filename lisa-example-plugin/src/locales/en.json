@@ -1,0 +1,8 @@
+{
+  "hosts_form": {
+    "model_id": "Model",
+    "placeholders": {
+      "model_id": "Select Model"
+    }
+  }
+}

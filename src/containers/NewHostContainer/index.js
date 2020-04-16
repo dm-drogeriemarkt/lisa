@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
-import { compose, graphql, withApollo } from 'react-apollo';
+import { withApollo } from 'react-apollo';
 import { withRouter } from 'react-router-dom'
 import { Button, Col, Grid, Row } from 'patternfly-react';
-import { get, set } from 'lodash';
+import { flowRight } from 'lodash';
 import { Resources, Location, ServerConfig, PuppetConfig, HostsCreation } from 'components/HostsForm';
 import Alert from 'components/Alert';
 import Navigation from 'components/Navigation';
 import Progress from 'components/HostsForm/Progress';
-import HOST_CREATION_FORM_INITIAL_DATA_QUERY from 'graphql/queries/hostCreationFormInitialData';
-import SUBNETS_BY_DOMAIN_QUERY from 'graphql/queries/subnetsByDomain';
 import COMPUTE_RESOURCE_QUERY from 'graphql/queries/computeResource';
-import PUPPET_MASTERS_QUERY from 'graphql/queries/puppetMasters';
-import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
 import CREATE_HOST_MUTATION from 'graphql/mutations/createHost';
 import hostsCreateParams from 'helpers/hostsCreateParams';
 import { parseErrorMessage, parseErrorCode } from 'helpers/graphqlErrorParser';
@@ -29,29 +25,12 @@ class NewHostContainer extends Component {
         hostCount: 1,
         ...formSettings.defaultValues
       },
-      hostnamesAlreadyTaken: [],
       createdHosts: [],
       errors: [],
       errorCode: '',
       isValid: false,
-      subnets: [],
-      progressVisible: false,
-      subnetsAreLoading: false,
-      puppetMastersAreLoading: false
+      progressVisible: false
     };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    set(state, 'puppetMasters', props.puppetMasters)
-    set(state, 'subnets', props.subnets)
-    set(state, 'attributes.domainId', props.domainId)
-
-    if(props.owners.length === 1) {
-      const ownerId = get(props.owners, '[0].id')
-      set(state, 'attributes.ownerId', ownerId)
-    }
-
-    return state
   }
 
   updateAttribute = (props) => {
@@ -66,80 +45,12 @@ class NewHostContainer extends Component {
     }
 
     this.setState({ attributes }, () => {
-      this.validateHostCreationForm();
-      this.refreshData(Object.keys(props));
+      this.validateHostCreationForm()
     });
   }
 
   get currentLocation() {
     return locations.find(({ code }) => code === this.state.attributes.locationCode)
-  }
-
-  refreshData = (changedAttributes) => {
-    if (changedAttributes.includes('locationCode')) {
-      this.refreshSubnetData();
-      this.refreshPuppetMasterData();
-    }
-    if (changedAttributes.includes('appTierName')) {
-      this.refreshSubnetData();
-      this.refreshAlreadyTakenHostnames();
-    }
-    if(changedAttributes.includes('hostNames')) {
-      this.refreshAlreadyTakenHostnames();
-    }
-  }
-
-  refreshSubnetData = () => {
-    if (!this.state.attributes.appTierName) { return; }
-
-    this.setState({ subnetsAreLoading: true }, () => {
-      this.props.refetchSubnets({
-        search: `name=${this.state.attributes.appTierName}.${this.currentLocation.domainName} and location = ${this.currentLocation.location}`,
-        location: this.currentLocation.location
-      }).then(({ data }) => {
-        this.updateAttribute({ domainId: get(data, 'domains.edges.0.node.id') })
-        const subnets = get(data, 'domains.edges.0.node.subnets.edges', [])
-          .map(({ node: { id, name, vlanid }}) => ({ id, name, vlanid }))
-        this.setState({ subnets, subnetsAreLoading: false })
-      })
-    })
-  }
-
-  refreshPuppetMasterData = () => {
-    this.setState({ puppetMastersAreLoading: true }, () => {
-      this.props.client.query({
-        query: PUPPET_MASTERS_QUERY,
-        variables: { search: `feature = Puppet and location = ${this.currentLocation.location}` }
-      }).then(({ data }) => {
-        const puppetMasters = get(data, 'smartProxies.edges', []).map(({ node: { id, name }}) => ({ id, name }))
-        this.setState({ puppetMasters, puppetMastersAreLoading: false })
-      });
-    })
-  }
-
-  refreshAlreadyTakenHostnames = () => {
-    const hostnames = Object.values(get(this.state, 'attributes.hostNames', []))
-
-    if(hostnames.length) {
-      const { appTierName } = this.state.attributes
-      const { domainName } = this.currentLocation
-      const maxHostsCount = get(formSettings, 'maxHostsCountValue')
-      const search = hostnames.map(name => `name=${name}.${appTierName}.${domainName}`).join(' OR ')
-
-      this.props.client.query({
-        query: HOSTNAMES_ALREADY_TAKEN_QUERY,
-        variables: {
-          first: maxHostsCount,
-          last: maxHostsCount,
-          search
-        }
-      }).then(({ data: { hosts: { edges }}}) => {
-        const hostnamesAlreadyTaken = edges.map(({ node: { name }}) => name.split('.', 1)[0])
-        this.setState({ hostnamesAlreadyTaken }, () => {
-          this.validateHostCreationForm()
-        })
-      })
-    }
   }
 
   validateHostCreationForm() {
@@ -166,9 +77,7 @@ class NewHostContainer extends Component {
       const hostsParams = hostsCreateParams(
         this.state.attributes,
         {
-          computeResource,
-          owners: this.props.owners,
-          subnets: this.state.subnets
+          computeResource
         }
       )
 
@@ -252,27 +161,12 @@ class NewHostContainer extends Component {
   }
 
   get contextValue() {
-    const { owners, puppetEnvs } = this.props
-
     const {
-      attributes,
-      hostnamesAlreadyTaken,
-      puppetMasters,
-      subnets,
-      subnetsAreLoading,
-      puppetMastersAreLoading
+      attributes
     } = this.state
 
     return {
-      owners,
-      puppetEnvs,
       attributes,
-      hostnamesAlreadyTaken,
-      puppetMasters,
-      subnets,
-      subnetsAreLoading,
-      puppetMastersAreLoading,
-      currentLocation: this.currentLocation,
       updateAttribute: this.updateAttribute
     }
   }
@@ -326,45 +220,7 @@ class NewHostContainer extends Component {
   }
 }
 
-const { location, domainName } = locations.find(({ code }) => code === formSettings.defaultValues.locationCode)
-
-export default compose(
+export default flowRight(
   withRouter,
-  withApollo,
-  graphql(HOST_CREATION_FORM_INITIAL_DATA_QUERY, {
-    props: ({ data: { environments, currentUser }}) => {
-      const mapElement = ({ node: { id, name }}) => ({ id, name })
-
-      const puppetEnvs = get(environments, 'edges', []).map(mapElement)
-      const owners = get(currentUser, 'usergroups.edges', []).map(mapElement)
-
-      return { puppetEnvs, owners }
-    }
-  }),
-  graphql(PUPPET_MASTERS_QUERY, {
-    options: {
-      variables: {
-        search: `feature = Puppet and location = ${location}`
-      }
-    },
-    props: ({ data: { smartProxies }}) => {
-      const puppetMasters = get(smartProxies, 'edges', []).map(({ node: { id, name }}) => ({ id, name }))
-      return { puppetMasters }
-    }
-  }),
-  graphql(SUBNETS_BY_DOMAIN_QUERY, {
-    options: {
-      variables: {
-        search: `name=${formSettings.defaultValues.appTierName}.${domainName} and location = ${location}`,
-        location: location
-      }
-    },
-    props: ({ data: { refetch: refetchSubnets, domains }}) => {
-      const domainId = get(domains, 'edges.0.node.id')
-      const subnets = get(domains, 'edges.0.node.subnets.edges', [])
-        .map(({ node: { id, name, vlanid }}) => ({ id, name, vlanid }))
-
-      return { refetchSubnets, domainId, subnets }
-    }
-  })
+  withApollo
 )(NewHostContainer);

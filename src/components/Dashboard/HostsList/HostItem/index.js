@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, ListViewIcon, ListViewItem } from 'patternfly-react';
 import { get } from 'lodash';
 import { Link } from 'react-router-dom';
-import Loader from './Loader';
+import Loader from 'components/Loader';
 import InfoItem from './InfoItem';
 import ActionsDropdown from './ActionsDropdown';
 import { description } from 'helpers/hardware';

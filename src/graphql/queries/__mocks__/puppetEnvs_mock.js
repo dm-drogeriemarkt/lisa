@@ -1,9 +1,9 @@
-import HOST_CREATION_FORM_INITIAL_DATA_QUERY from 'graphql/queries/hostCreationFormInitialData';
+import PUPPET_ENVS_QUERY from 'graphql/queries/puppetEnvs';
 
 export default [
   {
     request: {
-      query: HOST_CREATION_FORM_INITIAL_DATA_QUERY
+      query: PUPPET_ENVS_QUERY
     },
     result: {
       data: {

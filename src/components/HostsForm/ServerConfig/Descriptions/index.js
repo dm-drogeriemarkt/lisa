@@ -1,17 +1,19 @@
-import React from 'react';
-import T from 'i18n-react';
-import './index.css';
-import { appTiers } from 'settings'
+import React from 'react'
+import Slot from 'components/Slot'
+import AppTiers from './AppTiers'
 
-const Descriptions = () => (
-  <ul className="server-config-descriptions">
-    <li>{T.translate('app_tiers.label')}</li>
-    {
-      appTiers.map(({ name }, i) => (
-        <li key={i}>{T.translate(`app_tiers.${name}`)}</li>
-      ))
-    }
-  </ul>
-)
+const Descriptions = () => {
+  const descriptions = [{
+    id: 'appTiers',
+    components: [AppTiers]
+  }]
 
-export default Descriptions;
+  return (
+    <Slot
+      name='HostsForm/ServerConfig/Descriptions'
+      elements={descriptions}
+    />
+  )
+}
+
+export default Descriptions
