@@ -16,8 +16,11 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   let data = cloneDeep(formValues)
 
   if(!computeResource) { throw new HostParamsError(T.translate('hosts_form.errors.host_params.compute_resource_not_found')) }
-
   const network = computeResource.networks.edges.map(({ node }) => node).find(({ vlanid }) => vlanid === data.vlanid)
+  if(!network && data.vlanid !== -1) { // skip validation if vlanid is equal to -1
+    throw new HostParamsError(T.translate('hosts_form.errors.host_params.network_not_found', { subnet_vlanid: data.vlanid }))
+  }
+
   const operatingsystem = operatingsystems.find(({ id }) => id === data.operatingsystemId)
   const location = locations.find(({ code }) => code === data.locationCode)
   const datastoreType = location.datastoreTypes.find(({ id }) => id === data.datastoreTypeId)
