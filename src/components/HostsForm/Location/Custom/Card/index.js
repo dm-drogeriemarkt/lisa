@@ -11,7 +11,10 @@ const Card = ({
     code,
     country,
     datastoreTypes,
-    label
+    label,
+    relations: {
+      computeResourceId
+    }
   }
 }) => {
   const {
@@ -26,7 +29,7 @@ const Card = ({
   const reducedPerformance = label.reducedPerformance === 'true'
 
   const handleClick = () => {
-    let newAttributes = { locationCode: code }
+    let newAttributes = { locationCode: code, computeResourceId }
     if (!datastoreTypes.some(({ id }) => id === datastoreTypeId)) {
       newAttributes['datastoreTypeId'] = datastoreTypes[0].id
     }
