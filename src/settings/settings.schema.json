@@ -1,8 +1,9 @@
 {
-  "$id": "https://github.com/dm-drogeriemarkt-de/lisa/blob/master/src/settings/schema.json",
+  "$id": "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
+  "title": "base",
   "required": [
     "form_settings",
     "default_configs",
@@ -12,11 +13,10 @@
   ],
   "properties": {
     "form_settings": {
+      "title": "form_settings",
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "default_values"
-      ],
+      "required": ["default_values"],
       "properties": {
         "max_host_count_value": {
           "type": "number",
@@ -88,18 +88,15 @@
         },
         "preset_resources": {
           "type": "array",
+          "title": "preset_resources",
           "description": "A set of attributes that can be assigned to a host with one click on a form element",
           "uniqueItems": true,
           "default": [],
           "items": {
             "type": "object",
+            "title": "preset_resources",
             "additionalProperties": false,
-            "required": [
-              "cpu",
-              "memory",
-              "size",
-              "operatingsystem_id"
-            ],
+            "required": ["cpu", "memory", "size", "operatingsystem_id"],
             "properties": {
               "cpu": {
                 "type": "number",
@@ -122,11 +119,9 @@
         },
         "default_values": {
           "type": "object",
+          "title": "default_values",
           "additionalProperties": false,
-          "required": [
-            "puppet_env_id",
-            "puppetclass_ids"
-          ],
+          "required": ["puppet_env_id", "puppetclass_ids"],
           "properties": {
             "cpu": {
               "type": "number",
@@ -171,21 +166,18 @@
             "puppet_env_id": {
               "type": "string",
               "description": "Environment global id from Foreman",
-              "examples": [
-                "MDE6RW52aXJvbm1lbnQtMQ=="
-              ]
+              "examples": ["MDE6RW52aXJvbm1lbnQtMQ=="]
             },
             "puppetclass_ids": {
               "type": "array",
+              "title": "puppetclass_ids",
               "description": "Puppetclass global ids from Foreman",
               "uniqueItems": true,
               "minimum": 1,
               "items": {
                 "type": "string"
               },
-              "examples": [
-                "MDE6UHVwcGV0Y2xhc3MtMQ=="
-              ]
+              "examples": ["MDE6UHVwcGV0Y2xhc3MtMQ=="]
             },
             "app_tier_name": {
               "type": "string",
@@ -198,11 +190,9 @@
     },
     "default_configs": {
       "type": "object",
+      "title": "default_configs",
       "additionalProperties": false,
-      "required": [
-        "organization_id",
-        "architecture_id"
-      ],
+      "required": ["organization_id", "architecture_id"],
       "properties": {
         "build": {
           "type": "boolean",
@@ -219,19 +209,16 @@
         "organization_id": {
           "type": "string",
           "description": "Organization global id from Foreman",
-          "examples": [
-            "MDE6T3JnYW5pemF0aW9uLTE="
-          ]
+          "examples": ["MDE6T3JnYW5pemF0aW9uLTE="]
         },
         "architecture_id": {
           "type": "string",
           "description": "Architecture global id from Foreman",
-          "examples": [
-            "MDE6QXJjaGl0ZWN0dXJlLTE="
-          ]
+          "examples": ["MDE6QXJjaGl0ZWN0dXJlLTE="]
         },
         "compute_attributes": {
           "type": "object",
+          "title": "compute_attributes",
           "additionalProperties": false,
           "properties": {
             "start": {
@@ -254,11 +241,13 @@
         },
         "interfaces_attributes": {
           "type": "array",
+          "title": "interfaces_attributes",
           "uniqueItems": true,
           "minItems": 1,
           "maxItems": 1,
           "items": {
             "type": "object",
+            "title": "items",
             "additionalProperties": false,
             "properties": {
               "type": {
@@ -268,16 +257,13 @@
               },
               "computeAttributes": {
                 "type": "object",
+                "title": "computeAttributes",
                 "additionalProperties": false,
-                "required": [
-                  "type"
-                ],
+                "required": ["type"],
                 "properties": {
                   "type": {
                     "type": "string",
-                    "examples": [
-                      "VirtualVmxnet3"
-                    ],
+                    "examples": ["VirtualVmxnet3"],
                     "default": "VirtualVmxnet3"
                   }
                 }
@@ -289,10 +275,12 @@
     },
     "locations": {
       "type": "array",
+      "title": "locations",
       "uniqueItems": true,
       "minItems": 1,
       "items": {
         "type": "object",
+        "title": "items",
         "additionalProperties": false,
         "required": [
           "id",
@@ -326,25 +314,19 @@
           "country": {
             "type": "string",
             "description": "Country code",
-            "examples": [
-              "pl",
-              "de"
-            ]
+            "examples": ["pl", "de"]
           },
           "domain_name": {
             "type": "string",
             "description": "Domain name",
-            "examples": [
-              "example.com"
-            ]
+            "examples": ["example.com"]
           },
           "label": {
             "type": "object",
+            "title": "label",
             "description": "These values will be visible on the host creation form",
             "additionalProperties": false,
-            "required": [
-              "location"
-            ],
+            "required": ["location"],
             "properties": {
               "location": {
                 "type": "string"
@@ -359,57 +341,47 @@
           },
           "compute_attributes": {
             "type": "object",
+            "title": "compute_attributes",
             "additionalProperties": false,
-            "required": [
-              "path_prefix"
-            ],
+            "required": ["path_prefix"],
             "properties": {
               "path_prefix": {
                 "type": "string",
                 "description": "A owner name will be added at the end of this value",
-                "examples": [
-                  "/Datencenter/Location/vm/Linux/"
-                ]
+                "examples": ["/Datencenter/Location/vm/Linux/"]
               }
             }
           },
           "datastore_types": {
             "type": "array",
+            "title": "datastore_types",
             "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "object",
+              "title": "items",
               "additionalProperties": false,
-              "required": [
-                "id",
-                "name",
-                "template"
-              ],
+              "required": ["id", "name", "template"],
               "properties": {
                 "id": {
                   "type": "string",
-                  "examples": [
-                    "Mirror"
-                  ]
+                  "examples": ["Mirror"]
                 },
                 "name": {
                   "type": "string",
-                  "examples": [
-                    "Mirror"
-                  ]
+                  "examples": ["Mirror"]
                 },
                 "template": {
                   "type": "string",
                   "description": "`#DC` will be replaced with datastore datacenter number (1 or 2) and will be send in the request as `storage_pod` attribute",
-                  "examples": [
-                    "PL-#DC#-LAN"
-                  ]
+                  "examples": ["PL-#DC#-LAN"]
                 }
               }
             }
           },
           "relations": {
             "type": "object",
+            "title": "relations",
             "additionalProperties": false,
             "required": [
               "cluster",
@@ -421,42 +393,33 @@
               "cluster": {
                 "type": "string",
                 "description": "Cluster name",
-                "examples": [
-                  "CLUSTER"
-                ]
+                "examples": ["CLUSTER"]
               },
               "compute_resource_id": {
                 "type": "string",
                 "description": "ComputeResource global id from Foreman",
-                "examples": [
-                  "MDE6Q29tcHV0ZVJlc291cmNlLTI="
-                ]
+                "examples": ["MDE6Q29tcHV0ZVJlc291cmNlLTI="]
               },
               "puppet_ca_proxy_id": {
                 "type": "string",
                 "description": "SmartProxy global id from Foreman",
-                "examples": [
-                  "MDE6Q29tcHV0ZVJlc291cmNlLTI="
-                ]
+                "examples": ["MDE6Q29tcHV0ZVJlc291cmNlLTI="]
               },
               "media": {
                 "type": "array",
+                "title": "media",
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
                   "type": "object",
+                  "title": "items",
                   "additionalProperties": false,
-                  "required": [
-                    "id",
-                    "operatingsystem_id"
-                  ],
+                  "required": ["id", "operatingsystem_id"],
                   "properties": {
                     "id": {
                       "type": "string",
                       "description": "Medium global id from Foreman",
-                      "examples": [
-                        "MDE6TWVkaXVtLTEw"
-                      ]
+                      "examples": ["MDE6TWVkaXVtLTEw"]
                     },
                     "operatingsystem_id": {
                       "type": "string",
@@ -472,51 +435,39 @@
     },
     "operatingsystems": {
       "type": "array",
+      "title": "operatingsystems",
       "uniqueItems": true,
       "minItems": 1,
       "items": {
         "type": "object",
+        "title": "items",
         "additionalProperties": false,
-        "required": [
-          "id",
-          "name",
-          "relations"
-        ],
+        "required": ["id", "name", "relations"],
         "properties": {
           "id": {
             "type": "string",
             "description": "Operatingsystem global id from Foreman",
-            "examples": [
-              "MDE6T3BlcmF0aW5nc3lzdGVtLTE="
-            ]
+            "examples": ["MDE6T3BlcmF0aW5nc3lzdGVtLTE="]
           },
           "name": {
             "type": "string",
             "description": "Operating system name",
-            "examples": [
-              "RedHat 7.6"
-            ]
+            "examples": ["RedHat 7.6"]
           },
           "relations": {
             "type": "object",
+            "title": "relations",
             "additionalProperties": false,
-            "required": [
-              "guest_operatingsystem_id",
-              "ptable_id"
-            ],
+            "required": ["guest_operatingsystem_id", "ptable_id"],
             "properties": {
               "guest_operatingsystem_id": {
                 "type": "string",
-                "examples": [
-                  "rhel7_64Guest"
-                ]
+                "examples": ["rhel7_64Guest"]
               },
               "ptable_id": {
                 "type": "string",
                 "description": "Ptable global id from Foreman",
-                "examples": [
-                  "MDE6UHRhYmxlLTEwNw=="
-                ]
+                "examples": ["MDE6UHRhYmxlLTEwNw=="]
               }
             }
           }
@@ -525,54 +476,44 @@
     },
     "app_tiers": {
       "type": "array",
+      "title": "app_tiers",
       "uniqueItems": true,
       "items": {
         "type": "object",
+        "title": "items",
         "additionalProperties": false,
-        "required": [
-          "name",
-          "relations"
-        ],
+        "required": ["name", "relations"],
         "properties": {
           "name": {
             "type": "string",
             "description": "App tier name",
-            "examples": [
-              "development"
-            ]
+            "examples": ["development"]
           },
           "relations": {
             "type": "object",
+            "title": "relations",
             "additionalProperties": false,
-            "required": [
-              "locations"
-            ],
+            "required": ["locations"],
             "properties": {
               "locations": {
                 "type": "array",
+                "title": "locations",
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
                   "type": "object",
+                  "title": "items",
                   "additionalProperties": false,
-                  "required": [
-                    "code",
-                    "resource_pool"
-                  ],
+                  "required": ["code", "resource_pool"],
                   "properties": {
                     "code": {
                       "type": "string",
                       "description": "A reference to the [location](#locations-1)",
-                      "examples": [
-                        "LAN"
-                      ]
+                      "examples": ["LAN"]
                     },
                     "resource_pool": {
                       "type": "string",
-                      "examples": [
-                        "default",
-                        "prod"
-                      ]
+                      "examples": ["default", "prod"]
                     }
                   }
                 }
@@ -584,6 +525,7 @@
     },
     "fact_names": {
       "type": "object",
+      "title": "fact_names",
       "additionalProperties": false,
       "properties": {
         "cpu": {
