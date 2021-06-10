@@ -24,8 +24,8 @@ jobs:
       - run: npm run lint
       - name: npm test
         run: |
-          npx ajv -d src/settings/example.json -s src/settings/schema.json
-          npx ajv -d src/settings/test.json -s src/settings/schema.json
+          npx ajv -d src/settings/example.json -s src/settings/settings.schema.json
+          npx ajv -d src/settings/test.json -s src/settings/settings.schema.json
           npm test
       - run: REACT_APP_SETTINGS_FILE=test npm run build
 

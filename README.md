@@ -11,7 +11,7 @@ This README outlines the details of collaborating on this React.js application.
 | --------------- |
 | >= 1.24         |
 
-LISA is known to work with Node version >= 8 and < 12.
+LISA is known to work with Node version >= 8 and <= 14.
 
 ## Installation
 
@@ -31,13 +31,13 @@ $ cp .env.example .env.local
 
 To start using LISA you have to define:
 
-- [default attributes](docs/settings/schema.md#default_configs-type) for new hosts
-- [default values](docs/settings/schema.md#default_values-type) for the hosts creation form
-- at least one [location](docs/settings/schema.md#locations-type-1)
-- at least one [operatingsystem](docs/settings/schema.md#operatingsystems-type)
-- at least one [app tier](docs/settings/schema.md#app_tiers-type)
+- [default attributes](docs/settings/settings.md#default_configs-type) for new hosts
+- [default values](docs/settings/settings-properties-form_settings.md#default_values) for the hosts creation form
+- at least one [location](docs/settings/settings.md#locations-Type)
+- at least one [operatingsystem](docs/settings/settings.md#operatingsystems-type)
+- at least one [app tier](docs/settings/settings.md#app_tiers-type)
 
-You can also define [preset resources](docs/settings/schema.md#preset_resources) that can be used to easily set predefined attributes for a new host.
+You can also define [preset resources](docs/settings/settings-properties-form_settings.md#preset_resources) that can be used to easily set predefined attributes for a new host.
 
 You can use `example.json` to build the settings file, copy the file and replace the settings with your own.
 
@@ -80,6 +80,7 @@ Then build the docker image.
 ```
 $ docker build -t my-lisa-image .
 ```
+
 This multi-stage docker build will install all dependencies,
 build the production bundle and copy it to a ngninx container.
 
@@ -88,21 +89,11 @@ Then you can run it.
 ```
 $ docker run -p 8080:8080 my-lisa-image
 ```
+
 LISA will be accessible on `localhost:8080`.
 
 ## Copyright
 
 Copyright (c) 2018-present dmTECH GmbH, [dmtech.de](https://www.dmtech.de/)
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+This project is licensed under the MIT License - see the LICENSE file for details
