@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# Untitled string in root Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/type
 ```
 
 
@@ -11,6 +11,25 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## type Type
 
-unknown
+`string`
+
+## type Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value         | Explanation |
+| :------------ | ----------- |
+| `"interface"` |             |
+| `"bmc"`       |             |
+| `"bond"`      |             |
+| `"bridge"`    |             |
+
+## type Default Value
+
+The default value is:
+
+```json
+"interface"
+```

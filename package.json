@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "upload": "s3-deploy './build/**' --cwd './build/' --region eu-central-1 --bucket ${WEBBUCKET} --deleteRemoved --private --signatureVersion v4",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
-    "docs": "npx jsonschema2md -x - -d src/settings/ -o docs/settings/ -n"
+    "docs": "npx jsonschema2md -x - -d src/settings/ -o docs/settings/"
   },
   "husky": {
     "hooks": {

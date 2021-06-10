@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# root.locations.items.datastore_types Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/datastore_types
 ```
 
 
@@ -11,6 +11,12 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## datastore_types Type
 
-unknown
+`object[]` ([root.locations.items.datastore_types.items](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsdatastore_types-rootlocationsitemsdatastore_typesitems.md))
+
+## datastore_types Constraints
+
+**minimum number of items**: the minimum number of items for this array is: `1`
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

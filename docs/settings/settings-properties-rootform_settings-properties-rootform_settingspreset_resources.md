@@ -1,16 +1,28 @@
-# Untitled undefined type in root Schema
+# root.form_settings.preset_resources Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources
 ```
 
-
+A set of attributes that can be assigned to a host with one click on a form element
 
 
 | Abstract            | Extensible | Status         | Identifiable            | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## preset_resources Type
 
-unknown
+`object[]` ([root.form_settings.preset_resources.items](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems.md))
+
+## preset_resources Constraints
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.
+
+## preset_resources Default Value
+
+The default value is:
+
+```json
+[]
+```
