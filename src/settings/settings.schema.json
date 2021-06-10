@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
-  "title": "base",
+  "title": "root",
   "required": [
     "form_settings",
     "default_configs",
@@ -13,7 +13,7 @@
   ],
   "properties": {
     "form_settings": {
-      "title": "form_settings",
+      "title": "root.form_settings",
       "type": "object",
       "additionalProperties": false,
       "required": ["default_values"],
@@ -88,13 +88,13 @@
         },
         "preset_resources": {
           "type": "array",
-          "title": "preset_resources",
+          "title": "root.form_settings.preset_resources",
           "description": "A set of attributes that can be assigned to a host with one click on a form element",
           "uniqueItems": true,
           "default": [],
           "items": {
             "type": "object",
-            "title": "preset_resources",
+            "title": "root.form_settings.preset_resources.items",
             "additionalProperties": false,
             "required": ["cpu", "memory", "size", "operatingsystem_id"],
             "properties": {
@@ -119,7 +119,7 @@
         },
         "default_values": {
           "type": "object",
-          "title": "default_values",
+          "title": "root.form_settings.default_values",
           "additionalProperties": false,
           "required": ["puppet_env_id", "puppetclass_ids"],
           "properties": {
@@ -170,7 +170,7 @@
             },
             "puppetclass_ids": {
               "type": "array",
-              "title": "puppetclass_ids",
+              "title": "root.form_settings.default_values.puppetclass_ids",
               "description": "Puppetclass global ids from Foreman",
               "uniqueItems": true,
               "minimum": 1,
@@ -190,7 +190,7 @@
     },
     "default_configs": {
       "type": "object",
-      "title": "default_configs",
+      "title": "root.default_configs",
       "additionalProperties": false,
       "required": ["organization_id", "architecture_id"],
       "properties": {
@@ -218,7 +218,7 @@
         },
         "compute_attributes": {
           "type": "object",
-          "title": "compute_attributes",
+          "title": "root.default_configs.compute_attributes",
           "additionalProperties": false,
           "properties": {
             "start": {
@@ -241,13 +241,13 @@
         },
         "interfaces_attributes": {
           "type": "array",
-          "title": "interfaces_attributes",
+          "title": "root.default_configs.interfaces_attributes",
           "uniqueItems": true,
           "minItems": 1,
           "maxItems": 1,
           "items": {
             "type": "object",
-            "title": "items",
+            "title": "root.default_configs.interfaces_attributes.items",
             "additionalProperties": false,
             "properties": {
               "type": {
@@ -257,7 +257,7 @@
               },
               "computeAttributes": {
                 "type": "object",
-                "title": "computeAttributes",
+                "title": "root.default_configs.interfaces_attributes.items.computeAttributes",
                 "additionalProperties": false,
                 "required": ["type"],
                 "properties": {
@@ -275,12 +275,12 @@
     },
     "locations": {
       "type": "array",
-      "title": "locations",
+      "title": "root.locations",
       "uniqueItems": true,
       "minItems": 1,
       "items": {
         "type": "object",
-        "title": "items",
+        "title": "root.locations.items",
         "additionalProperties": false,
         "required": [
           "id",
@@ -323,7 +323,7 @@
           },
           "label": {
             "type": "object",
-            "title": "label",
+            "title": "root.locations.items.label",
             "description": "These values will be visible on the host creation form",
             "additionalProperties": false,
             "required": ["location"],
@@ -341,7 +341,7 @@
           },
           "compute_attributes": {
             "type": "object",
-            "title": "compute_attributes",
+            "title": "root.locations.items.compute_attributes",
             "additionalProperties": false,
             "required": ["path_prefix"],
             "properties": {
@@ -354,12 +354,12 @@
           },
           "datastore_types": {
             "type": "array",
-            "title": "datastore_types",
+            "title": "root.locations.items.datastore_types",
             "uniqueItems": true,
             "minItems": 1,
             "items": {
               "type": "object",
-              "title": "items",
+              "title": "root.locations.items.datastore_types.items",
               "additionalProperties": false,
               "required": ["id", "name", "template"],
               "properties": {
@@ -381,7 +381,7 @@
           },
           "relations": {
             "type": "object",
-            "title": "relations",
+            "title": "root.locations.items.relations",
             "additionalProperties": false,
             "required": [
               "cluster",
@@ -407,12 +407,12 @@
               },
               "media": {
                 "type": "array",
-                "title": "media",
+                "title": "root.locations.items.relations.media",
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
                   "type": "object",
-                  "title": "items",
+                  "title": "root.locations.items.relations.media.items",
                   "additionalProperties": false,
                   "required": ["id", "operatingsystem_id"],
                   "properties": {
@@ -435,12 +435,12 @@
     },
     "operatingsystems": {
       "type": "array",
-      "title": "operatingsystems",
+      "title": "root.operatingsystems",
       "uniqueItems": true,
       "minItems": 1,
       "items": {
         "type": "object",
-        "title": "items",
+        "title": "root.operatingsystems.items",
         "additionalProperties": false,
         "required": ["id", "name", "relations"],
         "properties": {
@@ -456,7 +456,7 @@
           },
           "relations": {
             "type": "object",
-            "title": "relations",
+            "title": "root.operatingsystems.items.relations",
             "additionalProperties": false,
             "required": ["guest_operatingsystem_id", "ptable_id"],
             "properties": {
@@ -476,11 +476,11 @@
     },
     "app_tiers": {
       "type": "array",
-      "title": "app_tiers",
+      "title": "root.app_tiers",
       "uniqueItems": true,
       "items": {
         "type": "object",
-        "title": "items",
+        "title": "root.app_tiers.items",
         "additionalProperties": false,
         "required": ["name", "relations"],
         "properties": {
@@ -491,18 +491,18 @@
           },
           "relations": {
             "type": "object",
-            "title": "relations",
+            "title": "root.app_tiers.items.relations",
             "additionalProperties": false,
             "required": ["locations"],
             "properties": {
               "locations": {
                 "type": "array",
-                "title": "locations",
+                "title": "root.app_tiers.items.relations.locations",
                 "uniqueItems": true,
                 "minItems": 1,
                 "items": {
                   "type": "object",
-                  "title": "items",
+                  "title": "root.app_tiers.items.relations.locations.items",
                   "additionalProperties": false,
                   "required": ["code", "resource_pool"],
                   "properties": {
@@ -525,7 +525,7 @@
     },
     "fact_names": {
       "type": "object",
-      "title": "fact_names",
+      "title": "root.fact_names",
       "additionalProperties": false,
       "properties": {
         "cpu": {

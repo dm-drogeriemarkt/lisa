@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# Untitled string in root Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items/properties/resource_pool
 ```
 
 
@@ -11,6 +11,16 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## resource_pool Type
 
-unknown
+`string`
+
+## resource_pool Examples
+
+```json
+"default"
+```
+
+```json
+"prod"
+```

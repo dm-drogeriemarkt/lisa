@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# Untitled number in root Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_host_count_value
 ```
 
 
@@ -11,6 +11,14 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## max_host_count_value Type
 
-unknown
+`number`
+
+## max_host_count_value Default Value
+
+The default value is:
+
+```json
+10
+```

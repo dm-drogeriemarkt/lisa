@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# root.app_tiers Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers
 ```
 
 
@@ -11,6 +11,10 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## app_tiers Type
 
-unknown
+`object[]` ([root.app_tiers.items](settings-properties-rootapp_tiers-rootapp_tiersitems.md))
+
+## app_tiers Constraints
+
+**unique items**: all items in this array must be unique. Duplicates are not allowed.

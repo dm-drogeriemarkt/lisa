@@ -1,7 +1,7 @@
 # Untitled undefined type in root Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties
 ```
 
 

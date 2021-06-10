@@ -1,7 +1,7 @@
-# Untitled undefined type in root Schema
+# Untitled string in root Schema
 
 ```txt
-https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties
+https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu
 ```
 
 
@@ -11,6 +11,14 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :------------------ | ---------- | -------------- | ----------------------- | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
 | Can be instantiated | No         | Unknown status | Unknown identifiability | Forbidden         | Allowed               | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
-## properties Type
+## cpu Type
 
-unknown
+`string`
+
+## cpu Default Value
+
+The default value is:
+
+```json
+"processors::count"
+```
