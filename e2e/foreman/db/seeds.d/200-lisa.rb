@@ -1,14 +1,20 @@
 all_locations = Location.all
 all_organizations = Organization.all
 
+def puppet_class_importer
+  ForemanPuppet::PuppetClassImporter
+rescue NameError
+  PuppetClassImporter
+end
+
 smart_proxy = SmartProxy.create!(
   name: 'SmartProxyLisa',
   url: 'http://localhost:8800',
   locations: all_locations,
   organizations: all_organizations
 ).tap do |smart_proxy|
-  PuppetClassImporter.new({ url: smart_proxy.url }).changes['new'].map do |key, value|
-    PuppetClassImporter.new.send(:add_classes_to_foreman, key, value)
+  puppet_class_importer.new({ url: smart_proxy.url }).changes['new'].map do |key, value|
+    puppet_class_importer.new.send(:add_classes_to_foreman, key, value)
   end
 end
 

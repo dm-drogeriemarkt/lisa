@@ -17,11 +17,11 @@ jobs:
         ports: ['5432:5432']
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     strategy:
-      fail-fast: true
+      fail-fast: false
       max-parallel: 2
       matrix:
-        foreman-core-branch: [2.5-stable, develop]
-        foreman-puppet-branch: [null, master]
+        foreman-core-branch: [2.5-stable, develop, puppet_extraction]
+        foreman-puppet-branch: [null, master, graphql_extensions]
         ruby-version: [2.7]
         node-version: [12.x]
         exclude:
@@ -33,12 +33,12 @@ jobs:
           path: lisa
       - uses: actions/checkout@v2
         with:
-          repository: theforeman/foreman
+          repository: kamils-iRonin/foreman
           ref: ${{ matrix.foreman-core-branch }}
           path: foreman
       - uses: actions/checkout@v2
         with:
-          repository: theforeman/foreman_puppet
+          repository: kamils-iRonin/foreman_puppet
           ref: ${{ matrix.foreman-puppet-branch }}
           path: foreman_puppet
         if: ${{ matrix.foreman-puppet-branch != null }}
