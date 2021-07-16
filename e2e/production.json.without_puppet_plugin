@@ -1,0 +1,73 @@
+{
+  "form_settings": {
+    "default_values": {
+      "puppet_env_id": "MDE6RW52aXJvbm1lbnQtMQ==",
+      "puppetclass_ids": [
+        "MDE6UHVwcGV0Y2xhc3MtMQ=="
+      ]
+    }
+  },
+  "default_configs": {
+    "organization_id": "MDE6T3JnYW5pemF0aW9uLTE=",
+    "architecture_id": "MDE6QXJjaGl0ZWN0dXJlLTE="
+  },
+  "locations": [
+    {
+      "id": "MDE6TG9jYXRpb24tMg==",
+      "name": "LAN",
+      "code": "LAN",
+      "location": "LAN",
+      "country": "de",
+      "domain_name": "example.com",
+      "label": {
+        "location": "Karlsruhe",
+        "explanation": "Datacenter 1 (LAN)",
+        "reduced_performance": false
+      },
+      "relations": {
+        "cluster": "Solutionscluster",
+        "compute_resource_id": "MDE6Q29tcHV0ZVJlc291cmNlLTE=",
+        "puppet_ca_proxy_id": "MDE6U21hcnRQcm94eS0x",
+        "media": [
+          {
+            "id": "MDE6TWVkaXVtLTE=",
+            "operatingsystem_id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE="
+          }
+        ]
+      },
+      "datastore_types": [
+        {
+          "id": "datastore-123456",
+          "name": "datastore1",
+          "template": "#DC#-LAN"
+        }
+      ],
+      "compute_attributes": {
+        "path_prefix": "/Datencenter/LAN/vm/Linux/"
+      }
+    }
+  ],
+  "operatingsystems": [
+    {
+      "id": "MDE6T3BlcmF0aW5nc3lzdGVtLTE=",
+      "name": "OSLisa",
+      "relations": {
+        "guest_operatingsystem_id": "rhel7_64Guest",
+        "ptable_id": "MDE6UHRhYmxlLTEyOQ=="
+      }
+    }
+  ],
+  "app_tiers": [
+    {
+      "name": "development",
+      "relations": {
+        "locations": [
+          {
+            "code": "LAN",
+            "resource_pool": "default"
+          }
+        ]
+      }
+    }
+  ]
+}
