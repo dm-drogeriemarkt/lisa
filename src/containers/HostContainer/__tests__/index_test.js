@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils'
 import wait from 'waait';
 import { MemoryRouter, Routes, Route } from 'react-router-dom'
 import { MockedProvider } from '@apollo/client/testing'
@@ -27,8 +28,10 @@ test('Mounted HostContainer', async () => {
     </MemoryRouter>
   )
 
-  await wait(0);
-  wrapper.update();
+  await act(async () => {
+    await wait(0);
+    wrapper.update();
+  })
 
   expect(wrapper.find('Host')).toHaveProp(HOST_QUERY_MOCK[0].result)
 });

@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useMemo } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
-import { get } from 'lodash'
+import { get, intersection } from 'lodash'
 import useUser from 'hooks/useUser'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
@@ -26,8 +26,19 @@ const PuppetclassesSelectInput = ({...attrs}) => {
     fetchPolicy: 'cache-and-network'
   })
 
-  const puppetclasses = get(data, 'environment.puppetclasses.edges', [])
-    .map(({ node: { id, name }}) => ({ id, name }))
+  const options = useMemo(() => {
+    return get(data, 'environment.puppetclasses.edges', [])
+      .map(({ node: { id, name } }) => ({ id, name }))
+  }, [data]);
+
+  useEffect(() => {
+    if(!loading) {
+      const newOptionsIds = options.map(({ id }) => (id));
+      const newPuppetclassIds = intersection(puppetclassIds, newOptionsIds)
+
+      updateAttribute({ puppetclassIds: newPuppetclassIds })
+    }
+  }, [options, loading])
 
   const handleChange = (puppetclassIds) => {
     updateAttribute({ puppetclassIds })
@@ -40,7 +51,7 @@ const PuppetclassesSelectInput = ({...attrs}) => {
       value={puppetclassIds}
       loading={loading}
       onChange={handleChange}
-      options={puppetclasses}
+      options={options}
       multi={true}
       {...attrs}
     />

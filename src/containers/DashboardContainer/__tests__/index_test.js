@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { act } from 'react-dom/test-utils'
 import wait from 'waait';
 import { MemoryRouter } from 'react-router-dom'
 import { MockedProvider } from '@apollo/client/testing'
@@ -23,8 +24,10 @@ test('Mounted DashboardContainer', async () => {
     </MemoryRouter>
   )
 
-  await wait(0);
-  wrapper.update();
+  await act(async () => {
+    await wait(0);
+    wrapper.update();
+  });
 
   expect(wrapper.find('Dashboard')).toHaveProp(HOSTS_QUERY_MOCK[0].result)
 });

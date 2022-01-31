@@ -1,5 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { act } from 'react-dom/test-utils'
 import wait from 'waait'
 import { MemoryRouter } from 'react-router-dom'
 import { MockedProvider } from '@apollo/client/testing'
@@ -42,8 +43,10 @@ test('Mounted NewHostContainer', async () => {
     </MemoryRouter>
   )
 
-  await wait()
-  wrapper.update()
+  await act(async () => {
+    await wait()
+    wrapper.update()
+  });
 
   const subnetSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.subnet_id"]')
   subnetSelect.instance().selectValue({ value: 'MDE6U3VibmV0LTE=', label: 'subnet' })
@@ -68,13 +71,12 @@ test('Mounted NewHostContainer', async () => {
   roleInput.simulate('change')
 
   const submitButton = wrapper.find('button[type="submit"]')
-  submitButton.simulate('submit')
+  await act(async () => {
+    await submitButton.simulate('submit')
+  });
 
   await wait()
-  await wait()
-  await wait()
-  await wait()
-  wrapper.update()
+  await wrapper.update()
 
   expect(wrapper.find('NewHostContainer').state('createdHosts')).toEqual([{ name: 'project-role-01', number: 1 }])
   expect(

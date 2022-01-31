@@ -10,7 +10,7 @@ const Slot = ({ name, elements }) => {
     <Fragment>
       { withExtensions.map(({
         components: [InitialComponent, ...components], ...attrs
-      }, i) => <InitialComponent key={i} components={components} {...attrs} />) }
+      }, i) => <InitialComponent key={i} components={components} {...attrs} />)}
     </Fragment>
   )
 }
