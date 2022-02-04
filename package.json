@@ -10,7 +10,7 @@
     "bytes": "^3.0.0",
     "classnames": "^2.2.6",
     "graphql": "^14.0.2",
-    "graphql-tag": "^2.10.0",
+    "graphql-tag": "^2.12.6",
     "hoek": "^6.1.3",
     "i18n-react": "^0.7.0",
     "lodash": "^4.17.21",
