@@ -6,34 +6,35 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
 
 ## items Type
 
 `object` ([root.operatingsystems.items](settings-properties-rootoperatingsystems-rootoperatingsystemsitems.md))
 
-# root.operatingsystems.items Properties
+# items Properties
 
-| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                               |
-| :---------------------- | -------- | -------- | -------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)               | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")                                        |
-| [name](#name)           | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")                                    |
-| [relations](#relations) | `object` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations") |
+| Property                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                          |
+| :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [id](#id)               | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")                                        |
+| [name](#name)           | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")                                    |
+| [relations](#relations) | `object` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations") |
 
 ## id
 
 Operatingsystem global id from Foreman
 
-
 `id`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")
 
 ### id Type
 
@@ -49,13 +50,15 @@ Operatingsystem global id from Foreman
 
 Operating system name
 
-
 `name`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")
 
 ### name Type
 
@@ -71,13 +74,15 @@ Operating system name
 
 
 
-
 `relations`
 
--   is required
--   Type: `object` ([root.operatingsystems.items.relations](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md))
--   cannot be null
--   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations")
+*   is required
+
+*   Type: `object` ([root.operatingsystems.items.relations](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md))
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations")
 
 ### relations Type
 

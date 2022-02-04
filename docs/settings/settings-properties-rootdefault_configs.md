@@ -6,38 +6,39 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
 
 ## default_configs Type
 
 `object` ([root.default_configs](settings-properties-rootdefault_configs.md))
 
-# root.default_configs Properties
+# default_configs Properties
 
-| Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                               |
-| :---------------------------------------------- | --------- | -------- | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [build](#build)                                 | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-build.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/build")                                                    |
-| [enabled](#enabled)                             | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-enabled.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/enabled")                                                |
-| [managed](#managed)                             | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-managed.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/managed")                                                |
-| [organization_id](#organization_id)             | `string`  | Required | cannot be null | [root](settings-properties-rootdefault_configs-properties-organization_id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/organization_id")                                |
-| [architecture_id](#architecture_id)             | `string`  | Required | cannot be null | [root](settings-properties-rootdefault_configs-properties-architecture_id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/architecture_id")                                |
-| [compute_attributes](#compute_attributes)       | `object`  | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes")       |
-| [interfaces_attributes](#interfaces_attributes) | `array`   | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes") |
+| Property                                        | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                                          |
+| :---------------------------------------------- | :-------- | :------- | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [build](#build)                                 | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-build.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/build")                                                    |
+| [enabled](#enabled)                             | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/enabled")                                                |
+| [managed](#managed)                             | `boolean` | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-managed.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/managed")                                                |
+| [organization_id](#organization_id)             | `string`  | Required | cannot be null | [root](settings-properties-rootdefault_configs-properties-organization_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/organization_id")                                |
+| [architecture_id](#architecture_id)             | `string`  | Required | cannot be null | [root](settings-properties-rootdefault_configs-properties-architecture_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/architecture_id")                                |
+| [compute_attributes](#compute_attributes)       | `object`  | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes")       |
+| [interfaces_attributes](#interfaces_attributes) | `array`   | Optional | cannot be null | [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes") |
 
 ## build
 
 
 
-
 `build`
 
--   is optional
--   Type: `boolean`
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-build.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/build")
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-build.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/build")
 
 ### build Type
 
@@ -47,13 +48,15 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-
 `enabled`
 
--   is optional
--   Type: `boolean`
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-enabled.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/enabled")
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/enabled")
 
 ### enabled Type
 
@@ -63,13 +66,15 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-
 `managed`
 
--   is optional
--   Type: `boolean`
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-managed.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/managed")
+*   is optional
+
+*   Type: `boolean`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-managed.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/managed")
 
 ### managed Type
 
@@ -79,13 +84,15 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 Organization global id from Foreman
 
-
 `organization_id`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-organization_id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/organization_id")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-organization_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/organization_id")
 
 ### organization_id Type
 
@@ -101,13 +108,15 @@ Organization global id from Foreman
 
 Architecture global id from Foreman
 
-
 `architecture_id`
 
--   is required
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-architecture_id.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/architecture_id")
+*   is required
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-architecture_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/architecture_id")
 
 ### architecture_id Type
 
@@ -123,13 +132,15 @@ Architecture global id from Foreman
 
 
 
-
 `compute_attributes`
 
--   is optional
--   Type: `object` ([root.default_configs.compute_attributes](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md))
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes")
+*   is optional
+
+*   Type: `object` ([root.default_configs.compute_attributes](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md))
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes")
 
 ### compute_attributes Type
 
@@ -139,13 +150,15 @@ Architecture global id from Foreman
 
 
 
-
 `interfaces_attributes`
 
--   is optional
--   Type: `object[]` ([root.default_configs.interfaces_attributes.items](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems.md))
--   cannot be null
--   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes")
+*   is optional
+
+*   Type: `object[]` ([root.default_configs.interfaces_attributes.items](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems.md))
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes")
 
 ### interfaces_attributes Type
 

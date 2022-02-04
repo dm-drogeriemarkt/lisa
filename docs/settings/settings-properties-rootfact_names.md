@@ -6,34 +6,35 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
-| :------------------ | ---------- | -------------- | ------------ | :---------------- | --------------------- | ------------------- | ---------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
 
 ## fact_names Type
 
 `object` ([root.fact_names](settings-properties-rootfact_names.md))
 
-# root.fact_names Properties
+# fact_names Properties
 
-| Property          | Type     | Required | Nullable       | Defined by                                                                                                                                                                                    |
-| :---------------- | -------- | -------- | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cpu](#cpu)       | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-cpu.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")       |
-| [memory](#memory) | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-memory.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory") |
-| [disk](#disk)     | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-disk.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")     |
+| Property          | Type     | Required | Nullable       | Defined by                                                                                                                                                                               |
+| :---------------- | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cpu](#cpu)       | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")       |
+| [memory](#memory) | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory") |
+| [disk](#disk)     | `string` | Optional | cannot be null | [root](settings-properties-rootfact_names-properties-disk.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")     |
 
 ## cpu
 
 
 
-
 `cpu`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootfact_names-properties-cpu.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootfact_names-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")
 
 ### cpu Type
 
@@ -51,13 +52,15 @@ The default value is:
 
 
 
-
 `memory`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootfact_names-properties-memory.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootfact_names-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory")
 
 ### memory Type
 
@@ -75,13 +78,15 @@ The default value is:
 
 
 
-
 `disk`
 
--   is optional
--   Type: `string`
--   cannot be null
--   defined in: [root](settings-properties-rootfact_names-properties-disk.md "https&#x3A;//github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootfact_names-properties-disk.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")
 
 ### disk Type
 
