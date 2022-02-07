@@ -16,7 +16,7 @@
     "lodash": "^4.17.21",
     "lodash-humps": "^3.1.5",
     "node-sass": "^4.11.0",
-    "patternfly-react": "^2.39.17",
+    "patternfly-react": "^2.40.0",
     "rc-pagination": "^3.1.15",
     "rc-slider": "^9.7.5",
     "react": "^16.13.1",
