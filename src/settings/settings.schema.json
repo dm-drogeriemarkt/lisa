@@ -18,6 +18,11 @@
       "additionalProperties": false,
       "required": ["client_id", "authority"],
       "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of OIDC/OAuth2 provider",
+          "examples": ["Keycloak"]
+        },
         "client_id": {
           "type": "string",
           "description": "Your client application's identifier as registered with the OIDC/OAuth2 provider",

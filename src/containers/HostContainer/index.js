@@ -1,22 +1,29 @@
 import React from 'react';
 import T from 'i18n-react';
-import { Query } from '@apollo/client/react/components';
+import { useQuery } from '@apollo/client'
 import { Spinner } from 'patternfly-react';
 import Host from 'components/Host';
 import HOST_QUERY from 'graphql/queries/host';
 import Notification from 'components/Notification';
+import useUser from 'hooks/useUser'
+import { useParams } from 'react-router-dom';
 
-const HostContainer = (ownProps) => (
-  <div className='text-center'>
-    <Query query={HOST_QUERY} variables={{ id: ownProps.match.params.id }}>
-      {({ data, loading, error }) => {
-        if (loading) return <Notification><Spinner loading /></Notification>
-        if (error) return <Notification><h1>{T.translate('dashboard.error')}</h1></Notification>
+const HostContainer = () => {
+  const { token } = useUser();
+  const { id } = useParams();
+  const { data, loading, error } = useQuery(
+    HOST_QUERY, { variables: { id }, context: { token }}
+  );
 
-        return <Host data={data} />
-      }}
-    </Query>
-  </div>
-);
+  return (
+    <div className='text-center'>
+      {
+        (loading && <Notification><Spinner loading /></Notification>) ||
+        (error && <Notification><h1>{T.translate('dashboard.error')}</h1></Notification>) ||
+        <Host data={data} />
+      }
+    </div>
+  )
+}
 
 export default HostContainer;

@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
+import useUser from 'hooks/useUser'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import SUBNETS_BY_DOMAIN_QUERY from 'graphql/queries/subnetsByDomain'
 import useLocation from 'hooks/useLocation'
 
 const SubnetSelectInput = ({ ...attrs }) => {
+  const { token } = useUser();
   const {
     updateAttribute,
     attributes: {
@@ -20,6 +22,7 @@ const SubnetSelectInput = ({ ...attrs }) => {
   const { location, domainName } = useLocation(locationCode)
 
   const { loading, data } = useQuery(SUBNETS_BY_DOMAIN_QUERY, {
+    context: { token },
     variables: {
       search: `name=${appTierName}.${domainName} and location = ${location}`,
       location: location

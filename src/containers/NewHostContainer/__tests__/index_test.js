@@ -3,6 +3,8 @@ import { mount } from 'enzyme'
 import wait from 'waait'
 import { MemoryRouter } from 'react-router-dom'
 import { MockedProvider } from '@apollo/client/testing'
+import { AuthProvider as OidcAuthProvider } from 'lib/auth/oidc';
+import { AuthProvider as ForemanAuthProvider } from 'lib/auth/foreman';
 import NewHostContainer from 'containers/NewHostContainer'
 
 import COMPUTE_RESOURCE_QUERY_MOCK from 'graphql/queries/__mocks__/computeResource_mock'
@@ -15,6 +17,8 @@ import HOSTNAMES_ALREADY_TAKEN_MOCK from 'graphql/queries/__mocks__/hostnamesAlr
 import CREATE_HOST_MUTATION_MOCK from 'graphql/mutations/__mocks__/createHost_mock'
 
 test('Mounted NewHostContainer', async () => {
+  const oidcConfig = { clientId: 'cid123', authority: 'ath', autoSignIn: false };
+
   const mocks = [
     ...COMPUTE_RESOURCE_QUERY_MOCK,
     ...PUPPET_ENVS_QUERY_MOCK,
@@ -29,7 +33,11 @@ test('Mounted NewHostContainer', async () => {
   const wrapper = mount(
     <MemoryRouter initialEntries={['/host-new']}>
       <MockedProvider mocks={ mocks } addTypename={false}>
-        <NewHostContainer />
+        <ForemanAuthProvider>
+          <OidcAuthProvider {...oidcConfig}>
+            <NewHostContainer />
+          </OidcAuthProvider>
+        </ForemanAuthProvider>
       </MockedProvider>
     </MemoryRouter>
   )

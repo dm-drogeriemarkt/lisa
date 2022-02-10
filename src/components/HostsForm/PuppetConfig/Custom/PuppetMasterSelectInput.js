@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
+import useUser from 'hooks/useUser'
 import SelectInput from 'components/HostsForm/SelectInput'
 import { HostsFormContext } from 'lib/Context'
 import PUPPET_MASTERS_QUERY from 'graphql/queries/puppetMasters'
 import useLocation from 'hooks/useLocation'
 
 const PuppetMasterSelectInput = ({...attrs}) => {
+  const { token } = useUser();
   const {
     updateAttribute,
     attributes: {
@@ -23,7 +25,8 @@ const PuppetMasterSelectInput = ({...attrs}) => {
       search: `feature = Puppet and location = ${location}`
     },
     skip: !location,
-    fetchPolicy: 'cache-and-network'
+    fetchPolicy: 'cache-and-network',
+    context: { token }
   })
   const puppetMasters = get(data, 'smartProxies.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 

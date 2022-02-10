@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { get } from 'lodash';
 import T from 'i18n-react';
 import { Query } from '@apollo/client/react/components';
 import { Spinner } from 'patternfly-react';
 
+import useUser from 'hooks/useUser'
 import Notification from 'components/Notification';
 import Toolbar from 'components/Dashboard/Toolbar';
 import Dashboard from 'components/Dashboard';
@@ -32,16 +34,23 @@ class DashboardContainer extends Component {
   render() {
     const { page, perPage, sortBy, sortDirection, search, filterValue } = this.state;
 
+    const token = get(this.props, 'user.token', null)
+
     return (
       <div>
         <h1 className='text-center dashboard-title'>{T.translate('dashboard.dashboard')}</h1>
-        <Query query={HOSTS_QUERY} fetchPolicy='cache-and-network' variables={{
-          first: page * perPage,
-          last: perPage,
-          sortBy,
-          sortDirection,
-          search
-        }}>
+        <Query
+          query={HOSTS_QUERY}
+          fetchPolicy='cache-and-network'
+          variables={{
+            first: page * perPage,
+            last: perPage,
+            sortBy,
+            sortDirection,
+            search
+          }}
+          context={{ token }}
+        >
           {({ data, loading, error, refetch }) => {
             const updateAttribute = (attrs, refetchHosts = true) => {
               this.setState(attrs, () => {
@@ -86,4 +95,13 @@ class DashboardContainer extends Component {
   }
 }
 
-export default DashboardContainer;
+// TODO: refactor DashboardContainer to function component
+const DashboardContainerWithUser = (props) => {
+  const user = useUser();
+
+  return (
+    <DashboardContainer user={user} {...props} />
+  )
+}
+
+export default DashboardContainerWithUser;

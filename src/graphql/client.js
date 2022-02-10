@@ -4,7 +4,7 @@ import { BatchHttpLink } from '@apollo/client/link/batch-http';
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers
-  const token = localStorage.getItem('token')
+  const { token } = operation.getContext();
   operation.setContext(({ headers = {} }) => ({
     headers: {
       ...headers,

@@ -18,8 +18,33 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 | Property                 | Type     | Required | Nullable       | Defined by                                                                                                                                                                                   |
 | :----------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [name](#name)            | `string` | Optional | cannot be null | [root](settings-properties-rootoidc_auth-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth/properties/name")           |
 | [client\_id](#client_id) | `string` | Required | cannot be null | [root](settings-properties-rootoidc_auth-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth/properties/client_id") |
 | [authority](#authority)  | `string` | Required | cannot be null | [root](settings-properties-rootoidc_auth-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth/properties/authority") |
+
+## name
+
+Name of OIDC/OAuth2 provider
+
+`name`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootoidc_auth-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth/properties/name")
+
+### name Type
+
+`string`
+
+### name Examples
+
+```json
+"Keycloak"
+```
 
 ## client\_id
 
