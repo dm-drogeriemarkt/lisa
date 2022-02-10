@@ -1,4 +1,8 @@
 {
+  "oidc_auth": {
+    "client_id": "account",
+    "authority": "http://localhost:8080/auth/realms/master/"
+  },
   "form_settings": {
     "max_host_count_value": 10,
     "host_creation_duration": 10000,

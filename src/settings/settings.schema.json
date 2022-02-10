@@ -12,6 +12,24 @@
     "app_tiers"
   ],
   "properties": {
+    "oidc_auth": {
+      "title": "root.oidc_auth",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["client_id", "authority"],
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "Your client application's identifier as registered with the OIDC/OAuth2 provider",
+          "examples": ["account"]
+        },
+        "authority": {
+          "type": "string",
+          "description": "The URL of the OIDC/OAuth2 provider",
+          "examples": ["http://localhost:8080/auth/realms/master/"]
+        }
+      }
+    },
     "form_settings": {
       "title": "root.form_settings",
       "type": "object",

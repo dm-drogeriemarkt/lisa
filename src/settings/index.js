@@ -67,6 +67,7 @@ defaultsDeep(settings, {
 })
 
 const {
+  oidcAuth,
   formSettings,
   defaultConfigs,
   locations,
@@ -76,6 +77,7 @@ const {
 } = settings
 
 export {
+  oidcAuth,
   formSettings,
   defaultConfigs,
   locations,

@@ -42,6 +42,8 @@
 
 *   [root.locations.items.relations.media.items](./settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items`
 
+*   [root.oidc\_auth](./settings-properties-rootoidc_auth.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth`
+
 *   [root.operatingsystems.items](./settings-properties-rootoperatingsystems-rootoperatingsystemsitems.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items`
 
 *   [root.operatingsystems.items.relations](./settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations`
