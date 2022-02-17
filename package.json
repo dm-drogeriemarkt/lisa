@@ -37,12 +37,8 @@
     "eject": "react-scripts eject",
     "upload": "s3-deploy './build/**' --cwd './build/' --region eu-central-1 --bucket ${WEBBUCKET} --deleteRemoved --private --signatureVersion v4",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
-    "docs": "npx jsonschema2md -x - -d src/settings/ -o docs/settings/"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run docs && git add docs/settings/*.md"
-    }
+    "docs": "npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "^6.1.4",
@@ -50,7 +46,7 @@
     "ajv-cli": "^3.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "husky": "^3.0.9",
+    "husky": "^7.0.4",
     "jest-enzyme": "^7.0.1",
     "s3-deploy": "^0.10.0",
     "waait": "^1.0.2"
