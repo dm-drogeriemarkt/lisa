@@ -1,8 +1,6 @@
-import { ApolloClient } from 'apollo-boost';
-import { ApolloLink, from } from 'apollo-link';
-import { BatchHttpLink } from 'apollo-link-batch-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { onError } from 'apollo-link-error';
+import { ApolloClient, InMemoryCache, ApolloLink, from } from '@apollo/client';
+import { onError } from '@apollo/client/link/error';
+import { BatchHttpLink } from '@apollo/client/link/batch-http';
 
 const authMiddleware = new ApolloLink((operation, forward) => {
   // add the authorization to the headers

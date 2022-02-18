@@ -12,7 +12,7 @@ import '../node_modules/patternfly-react/dist/css/patternfly-react.css';
 import 'react-select/dist/react-select.css';
 
 import T from 'i18n-react';
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider } from '@apollo/client'
 import GraphqlClient from './graphql/client'
 
 import enJSON from './locales/en.json'

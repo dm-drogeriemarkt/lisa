@@ -1,5 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
 import { Col, FormGroup, FormControl, ControlLabel, Icon } from 'patternfly-react'
 

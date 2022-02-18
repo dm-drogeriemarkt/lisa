@@ -5,7 +5,7 @@ export default [
     request: {
       query: PUPPETMASTERS_QUERY,
       variables: {
-        search: 'feature = Puppet and location = DE-KA-LAN'
+        search: 'feature = Puppet and location = LAN'
       }
     },
     result: {

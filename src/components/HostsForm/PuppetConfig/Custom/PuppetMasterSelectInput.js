@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import T from 'i18n-react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
 import SelectInput from 'components/HostsForm/SelectInput'
 import { HostsFormContext } from 'lib/Context'
