@@ -1,6 +1,6 @@
 import React from 'react';
 import T from 'i18n-react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import { Spinner } from 'patternfly-react';
 import Host from 'components/Host';
 import HOST_QUERY from 'graphql/queries/host';

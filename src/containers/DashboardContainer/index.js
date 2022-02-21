@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import T from 'i18n-react';
-import { Query } from 'react-apollo';
+import { Query } from '@apollo/client/react/components';
 import { Spinner } from 'patternfly-react';
 
 import Notification from 'components/Notification';

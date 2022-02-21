@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from 'react'
 import T from 'i18n-react'
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import { get } from 'lodash'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
@@ -16,7 +16,6 @@ const OwnerSelectInput = ({...attrs}) => {
   const ownersFrom = (data) => get(data, 'currentUser.usergroups.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
   const { loading, data } = useQuery(OWNERS_QUERY, {
-    fetchPolicy: 'cache-and-network',
     onCompleted: (data) => {
       const owners = ownersFrom(data)
 

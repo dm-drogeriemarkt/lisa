@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import wait from 'waait'
 import { MemoryRouter } from 'react-router-dom'
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import NewHostContainer from 'containers/NewHostContainer'
 
 import COMPUTE_RESOURCE_QUERY_MOCK from 'graphql/queries/__mocks__/computeResource_mock'
@@ -40,20 +40,13 @@ test('Mounted NewHostContainer', async () => {
   const subnetSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.subnet_id"]')
   subnetSelect.instance().selectValue({ value: 'MDE6U3VibmV0LTE=', label: 'subnet' })
 
-  await wait()
-  wrapper.update()
-
   const customPuppetConfigButton = wrapper.find('button').findWhere(x => x.text() === 'hosts_form.puppet_config.default.link')
   customPuppetConfigButton.first().simulate('click')
 
-  await wait()
   wrapper.update()
 
   const puppetEnvIdSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.puppet_env_id"]')
   puppetEnvIdSelect.instance().selectValue({ value: 'MDE6RW52aXJvbm1lbnQtMA==', label: 'env2' })
-
-  await wait()
-  wrapper.update()
 
   const puppetclassIdsSelect = wrapper.find('Select[placeholder="hosts_form.placeholders.puppetclass_ids"]')
   puppetclassIdsSelect.instance().selectValue({ value: 'MDE6UHVwcGV0Y2xhc3MtMg==', label: 'ppclass2' })

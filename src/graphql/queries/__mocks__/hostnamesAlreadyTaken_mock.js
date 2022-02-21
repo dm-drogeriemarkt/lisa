@@ -5,8 +5,8 @@ export default [
     request: {
       query: HOSTNAMES_ALREADY_TAKEN_QUERY,
       variables: {
-        first: 10,
-        last: 10,
+        first: 1,
+        last: 1,
         search: 'name=project-role-01.development.example.com'
       }
     },

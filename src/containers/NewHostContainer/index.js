@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withApollo } from 'react-apollo';
+import { withApollo } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom'
 import { Button, Col, Grid, Row } from 'patternfly-react';
 import { flowRight } from 'lodash';
