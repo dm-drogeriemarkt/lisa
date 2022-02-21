@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { withApollo } from '@apollo/client/react/hoc';
-import { withRouter } from 'react-router-dom'
 import { Button, Col, Grid, Row } from 'patternfly-react';
 import { flowRight } from 'lodash';
 import { Resources, Location, ServerConfig, PuppetConfig, HostsCreation } from 'components/HostsForm';
@@ -116,7 +116,7 @@ class NewHostContainer extends Component {
     })
 
     if(createdHosts.length >= this.state.attributes.hostCount) {
-      this.props.history.push('/')
+      return this.props.redirectToDashboard()
     }
   }
 
@@ -220,7 +220,14 @@ class NewHostContainer extends Component {
   }
 }
 
+// TODO: rewrite to function component
+function NewHostContainerFunction(props) {
+  const navigate = useNavigate();
+  const redirectToDashboard = () => navigate('/');
+
+  return (<NewHostContainer redirectToDashboard={redirectToDashboard} {...props} />)
+}
+
 export default flowRight(
-  withRouter,
   withApollo
-)(NewHostContainer);
+)(NewHostContainerFunction);

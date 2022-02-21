@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from '../components/navbar';
 import Router from './router';
-import { withRouter } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -15,4 +14,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
