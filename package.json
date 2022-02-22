@@ -12,7 +12,6 @@
     "i18n-react": "^0.7.0",
     "lodash": "^4.17.21",
     "lodash-humps": "^3.1.5",
-    "node-sass": "^4.11.0",
     "patternfly-react": "^2.40.0",
     "rc-pagination": "^3.1.15",
     "rc-slider": "^9.7.5",
@@ -23,6 +22,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.4.0",
     "react-select": "^1.3.0",
+    "sass": "^1.49.8",
     "typed-graphqlify": "^2.3.0",
     "url-parse": "^1.5.6"
   },
