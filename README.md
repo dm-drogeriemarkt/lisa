@@ -55,7 +55,7 @@ irb(main):001:0> Foreman::GlobalId.for(Location.find_by(name: 'My-Location'))
 Run the following command to validate your settings:
 
 ```
-$ npx ajv -d src/settings/development.json -s src/settings/schema.json
+$ npx ajv -d src/settings/development.json -s src/settings/settings.schema.json
 ```
 
 Please also update the app tiers locales file. (`src/locales/appTiers.en.json`)
