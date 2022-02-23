@@ -4,19 +4,17 @@ export function isAuthenticated() {
   return !!localStorage.getItem('token');
 }
 
-export function login(args) {
-  return signInUser({
-    username: args['username'],
-    password: args['password']
-  }).then(({ data }) => {
-    if (data.signInUser && data.signInUser.token) {
-      localStorage.setItem('token', data.signInUser.token)
-      localStorage.setItem('username', data.signInUser.user.fullname)
-      return true;
-    } else {
-      return false;
-    }
-  })
+export function login({ username, password }) {
+  return signInUser({ username, password })
+    .then(({ data }) => {
+      if (data.signInUser && data.signInUser.token) {
+        localStorage.setItem('token', data.signInUser.token)
+        localStorage.setItem('username', data.signInUser.user.fullname)
+        return true;
+      } else {
+        return false;
+      }
+    })
 }
 
 export function logout() {

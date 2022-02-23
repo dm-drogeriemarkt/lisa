@@ -1,18 +1,16 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { isAuthenticated } from '../lib/Auth';
+import { Navigate, useLocation } from 'react-router-dom';
+import { isAuthenticated } from 'lib/Auth';
 
-const AuthenticatedRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    isAuthenticated() ? (
-      <Component {...props} />
-    ) : (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: props.location }
-      }} />
-    )
-  )} />
-)
+function AuthenticatedRoute({ children }) {
+  const location = useLocation();
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
+}
 
 export default AuthenticatedRoute;
+
