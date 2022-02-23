@@ -16,7 +16,7 @@ Puppetclass global ids from Foreman
 
 ## puppetclass_ids Constraints
 
-**minimum**: the value of this number must greater than or equal to: `1`
+**minimum number of items**: the minimum number of items for this array is: `1`
 
 **unique items**: all items in this array must be unique. Duplicates are not allowed.
 

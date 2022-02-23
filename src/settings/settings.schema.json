@@ -170,10 +170,10 @@
             },
             "puppetclass_ids": {
               "type": "array",
+              "minItems": 1,
               "title": "root.form_settings.default_values.puppetclass_ids",
               "description": "Puppetclass global ids from Foreman",
               "uniqueItems": true,
-              "minimum": 1,
               "items": {
                 "type": "string"
               },
