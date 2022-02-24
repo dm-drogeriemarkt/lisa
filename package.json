@@ -38,7 +38,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@adobe/jsonschema2md": "^6.1.4",
+    "@adobe/jsonschema2md": "^7.0.0",
     "ajv-cli": "^5.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",

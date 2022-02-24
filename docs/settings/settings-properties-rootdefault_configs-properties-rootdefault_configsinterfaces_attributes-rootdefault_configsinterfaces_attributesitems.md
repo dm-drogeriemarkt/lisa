@@ -1,4 +1,4 @@
-# root.default_configs.interfaces_attributes.items Schema
+# root.default\_configs.interfaces\_attributes.items Schema
 
 ```txt
 https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items
@@ -6,13 +6,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
 ## items Type
 
-`object` ([root.default_configs.interfaces_attributes.items](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems.md))
+`object` ([root.default\_configs.interfaces\_attributes.items](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems.md))
 
 # items Properties
 
@@ -66,7 +66,7 @@ The default value is:
 
 *   is optional
 
-*   Type: `object` ([root.default_configs.interfaces_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
+*   Type: `object` ([root.default\_configs.interfaces\_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
 
 *   cannot be null
 
@@ -74,4 +74,4 @@ The default value is:
 
 ### computeAttributes Type
 
-`object` ([root.default_configs.interfaces_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
+`object` ([root.default\_configs.interfaces\_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
