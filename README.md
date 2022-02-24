@@ -11,7 +11,7 @@ This README outlines the details of collaborating on this React.js application.
 | --------------- |
 | >= 1.24         |
 
-LISA is known to work with Node version >= 12 and <= 14.
+LISA is known to work with Node version >= 12 and <= 16.
 
 ## Installation
 
