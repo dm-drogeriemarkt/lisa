@@ -6,9 +6,9 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
 ## relations Type
 
@@ -16,12 +16,12 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 # relations Properties
 
-| Property                                    | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
-| :------------------------------------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [cluster](#cluster)                         | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-cluster.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/cluster")                         |
-| [compute_resource_id](#compute_resource_id) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-compute_resource_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/compute_resource_id") |
-| [puppet_ca_proxy_id](#puppet_ca_proxy_id)   | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-puppet_ca_proxy_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/puppet_ca_proxy_id")   |
-| [media](#media)                             | `array`  | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media")  |
+| Property                                      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                            |
+| :-------------------------------------------- | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [cluster](#cluster)                           | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-cluster.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/cluster")                         |
+| [compute\_resource\_id](#compute_resource_id) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-compute_resource_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/compute_resource_id") |
+| [puppet\_ca\_proxy\_id](#puppet_ca_proxy_id)  | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-puppet_ca_proxy_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/puppet_ca_proxy_id")   |
+| [media](#media)                               | `array`  | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media")  |
 
 ## cluster
 
@@ -47,7 +47,7 @@ Cluster name
 "CLUSTER"
 ```
 
-## compute_resource_id
+## compute\_resource\_id
 
 ComputeResource global id from Foreman
 
@@ -61,17 +61,17 @@ ComputeResource global id from Foreman
 
 *   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-compute_resource_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/compute_resource_id")
 
-### compute_resource_id Type
+### compute\_resource\_id Type
 
 `string`
 
-### compute_resource_id Examples
+### compute\_resource\_id Examples
 
 ```json
 "MDE6Q29tcHV0ZVJlc291cmNlLTI="
 ```
 
-## puppet_ca_proxy_id
+## puppet\_ca\_proxy\_id
 
 SmartProxy global id from Foreman
 
@@ -85,11 +85,11 @@ SmartProxy global id from Foreman
 
 *   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-puppet_ca_proxy_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/puppet_ca_proxy_id")
 
-### puppet_ca_proxy_id Type
+### puppet\_ca\_proxy\_id Type
 
 `string`
 
-### puppet_ca_proxy_id Examples
+### puppet\_ca\_proxy\_id Examples
 
 ```json
 "MDE6Q29tcHV0ZVJlc291cmNlLTI="

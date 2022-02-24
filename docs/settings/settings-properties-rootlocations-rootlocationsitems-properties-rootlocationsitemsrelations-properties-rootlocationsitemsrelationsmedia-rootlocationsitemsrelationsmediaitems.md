@@ -6,9 +6,9 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
 ## items Type
 
@@ -16,10 +16,10 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 # items Properties
 
-| Property                                  | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                   |
-| :---------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [id](#id)                                 | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties/id")                                 |
-| [operatingsystem_id](#operatingsystem_id) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties/operatingsystem_id") |
+| Property                                   | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                                                                                   |
+| :----------------------------------------- | :------- | :------- | :------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [id](#id)                                  | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties/id")                                 |
+| [operatingsystem\_id](#operatingsystem_id) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties/operatingsystem_id") |
 
 ## id
 
@@ -45,7 +45,7 @@ Medium global id from Foreman
 "MDE6TWVkaXVtLTEw"
 ```
 
-## operatingsystem_id
+## operatingsystem\_id
 
 A reference to the [operating system](#operatingsystems)
 
@@ -59,6 +59,6 @@ A reference to the [operating system](#operatingsystems)
 
 *   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items/properties/operatingsystem_id")
 
-### operatingsystem_id Type
+### operatingsystem\_id Type
 
 `string`

@@ -1,4 +1,4 @@
-# root.app_tiers.items.relations Schema
+# root.app\_tiers.items.relations Schema
 
 ```txt
 https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations
@@ -6,13 +6,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
 ## relations Type
 
-`object` ([root.app_tiers.items.relations](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md))
+`object` ([root.app\_tiers.items.relations](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md))
 
 # relations Properties
 
@@ -28,7 +28,7 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 *   is required
 
-*   Type: `object[]` ([root.app_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
+*   Type: `object[]` ([root.app\_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
 
 *   cannot be null
 
@@ -36,7 +36,7 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 ### locations Type
 
-`object[]` ([root.app_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
+`object[]` ([root.app\_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
 
 ### locations Constraints
 

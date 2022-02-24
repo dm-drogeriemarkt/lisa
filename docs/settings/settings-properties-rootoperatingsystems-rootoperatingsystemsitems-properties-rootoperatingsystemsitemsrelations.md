@@ -6,9 +6,9 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 
 
-| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                              |
-| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :-------------------------------------------------------------------------------------- |
-| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json*](../../src/settings/settings.schema.json "open original schema") |
+| Abstract            | Extensible | Status         | Identifiable | Custom Properties | Additional Properties | Access Restrictions | Defined In                                                                               |
+| :------------------ | :--------- | :------------- | :----------- | :---------------- | :-------------------- | :------------------ | :--------------------------------------------------------------------------------------- |
+| Can be instantiated | No         | Unknown status | No           | Forbidden         | Forbidden             | none                | [settings.schema.json\*](../../src/settings/settings.schema.json "open original schema") |
 
 ## relations Type
 
@@ -16,12 +16,12 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 # relations Properties
 
-| Property                                              | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                  |
-| :---------------------------------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [guest_operatingsystem_id](#guest_operatingsystem_id) | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-guest_operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/guest_operatingsystem_id") |
-| [ptable_id](#ptable_id)                               | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-ptable_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/ptable_id")                               |
+| Property                                                | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                                                                  |
+| :------------------------------------------------------ | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [guest\_operatingsystem\_id](#guest_operatingsystem_id) | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-guest_operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/guest_operatingsystem_id") |
+| [ptable\_id](#ptable_id)                                | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-ptable_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/ptable_id")                               |
 
-## guest_operatingsystem_id
+## guest\_operatingsystem\_id
 
 
 
@@ -35,17 +35,17 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 *   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-guest_operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/guest_operatingsystem_id")
 
-### guest_operatingsystem_id Type
+### guest\_operatingsystem\_id Type
 
 `string`
 
-### guest_operatingsystem_id Examples
+### guest\_operatingsystem\_id Examples
 
 ```json
 "rhel7_64Guest"
 ```
 
-## ptable_id
+## ptable\_id
 
 Ptable global id from Foreman
 
@@ -59,11 +59,11 @@ Ptable global id from Foreman
 
 *   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations-properties-ptable_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations/properties/ptable_id")
 
-### ptable_id Type
+### ptable\_id Type
 
 `string`
 
-### ptable_id Examples
+### ptable\_id Examples
 
 ```json
 "MDE6UHRhYmxlLTEwNw=="
