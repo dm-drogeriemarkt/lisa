@@ -24,7 +24,7 @@
     "react-select": "^1.3.0",
     "sass": "^1.49.8",
     "typed-graphqlify": "^2.3.0",
-    "url-parse": "^1.5.9"
+    "url-parse": "^1.5.10"
   },
   "scripts": {
     "start": "PORT=3001 react-scripts start ",
