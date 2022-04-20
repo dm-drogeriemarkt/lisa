@@ -1,6 +1,6 @@
 import React, { useContext} from 'react'
 import T from 'i18n-react'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
 import { HostsFormContext } from 'lisa-core/lib/Context'
 import SelectInput from 'lisa-core/components/HostsForm/SelectInput'
