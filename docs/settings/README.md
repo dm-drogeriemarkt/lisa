@@ -14,6 +14,12 @@
 
 *   [root.app\_tiers.items.relations.locations.items](./settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items`
 
+*   [root.auth](./settings-properties-rootauth.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth`
+
+*   [root.auth.foreman](./settings-properties-rootauth-properties-rootauthforeman.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/foreman`
+
+*   [root.auth.oidc](./settings-properties-rootauth-properties-rootauthoidc.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc`
+
 *   [root.default\_configs](./settings-properties-rootdefault_configs.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs`
 
 *   [root.default\_configs.compute\_attributes](./settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes`
@@ -41,8 +47,6 @@
 *   [root.locations.items.relations](./settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations`
 
 *   [root.locations.items.relations.media.items](./settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations-properties-rootlocationsitemsrelationsmedia-rootlocationsitemsrelationsmediaitems.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations/properties/media/items`
-
-*   [root.oidc\_auth](./settings-properties-rootoidc_auth.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth`
 
 *   [root.operatingsystems.items](./settings-properties-rootoperatingsystems-rootoperatingsystemsitems.md) – `https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items`
 

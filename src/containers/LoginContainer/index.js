@@ -3,6 +3,7 @@ import { Brand, Card, CardTitle, CardBody, Flex, FlexItem } from '@patternfly/re
 import ForemanAuth from './ForemanAuth'
 import OidcAuth from './OidcAuth'
 import { isEnabled as isOidcAuthEnabled } from 'lib/auth/oidc';
+import { isEnabled as isForemanAuthEnabled } from 'lib/auth/foreman';
 import logo from './assets/LISA-logo-claim-white-m.jpg'
 import { css } from '@patternfly/react-styles'
 import alignment from '@patternfly/react-styles/css/utilities/Alignment/alignment.js'
@@ -16,9 +17,11 @@ const LoginContainer = () => (
     </CardTitle>
     <CardBody>
       <Flex direction={{ default: 'column' }}>
-        <FlexItem>
-          <ForemanAuth />
-        </FlexItem>
+        { isForemanAuthEnabled &&
+          <FlexItem>
+            <ForemanAuth />
+          </FlexItem>
+        }
         { isOidcAuthEnabled &&
           <FlexItem>
             <OidcAuth />

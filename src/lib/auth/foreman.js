@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext, createContext } from 'react';
 import { useMutation } from '@apollo/client';
+import { auth as authSettings } from 'settings'
 import SIGN_IN_USER from 'graphql/mutations/signInUser';
 import { get } from 'lodash';
 
@@ -24,6 +25,7 @@ function useProvideAuth() {
   };
 }
 
+export const isEnabled = get(authSettings, 'foreman.enabled');
 export const authContext = createContext();
 
 export function AuthProvider({ children }) {

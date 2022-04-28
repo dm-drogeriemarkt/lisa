@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './containers/App';
-import { oidcAuth as oidcAuthSettings } from './settings';
+import { auth as authSettings } from './settings';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import { merge } from 'lodash'
@@ -26,7 +26,7 @@ import { pluginsLocales } from './plugins'
 const locales = merge(enJSON, appTiersEnJSON, pluginsLocales)
 T.setTexts(locales)
 
-const { clientId, authority } = oidcAuthSettings || {};
+const { oidc: { clientId, authority }} = authSettings;
 const oidcConfig = { clientId, authority, autoSignIn: false };
 
 ReactDOM.render((

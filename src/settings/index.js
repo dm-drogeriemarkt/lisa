@@ -12,6 +12,15 @@ const locationCode = get(settings, 'formSettings.defaultValues.locationCode', ge
 const defaultLocation = get(settings, 'locations', []).find(({ code }) => code === locationCode)
 
 defaultsDeep(settings, {
+  auth: {
+    foreman: {
+      enabled: true
+    },
+    oidc: {
+      enabled: false,
+      name: 'OIDC'
+    }
+  },
   formSettings: {
     maxHostsCountValue: 10,
     hostCreationDuration: 10000,
@@ -67,7 +76,7 @@ defaultsDeep(settings, {
 })
 
 const {
-  oidcAuth,
+  auth,
   formSettings,
   defaultConfigs,
   locations,
@@ -77,7 +86,7 @@ const {
 } = settings
 
 export {
-  oidcAuth,
+  auth,
   formSettings,
   defaultConfigs,
   locations,

@@ -18,7 +18,7 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 | Property                              | Type     | Required | Nullable       | Defined by                                                                                                                                                       |
 | :------------------------------------ | :------- | :------- | :------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [oidc\_auth](#oidc_auth)              | `object` | Optional | cannot be null | [root](settings-properties-rootoidc_auth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth")               |
+| [auth](#auth)                         | `object` | Optional | cannot be null | [root](settings-properties-rootauth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth")                         |
 | [form\_settings](#form_settings)      | `object` | Required | cannot be null | [root](settings-properties-rootform_settings.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings")       |
 | [default\_configs](#default_configs)  | `object` | Required | cannot be null | [root](settings-properties-rootdefault_configs.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs")   |
 | [locations](#locations)               | `array`  | Required | cannot be null | [root](settings-properties-rootlocations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations")               |
@@ -26,23 +26,23 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 | [app\_tiers](#app_tiers)              | `array`  | Required | cannot be null | [root](settings-properties-rootapp_tiers.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers")               |
 | [fact\_names](#fact_names)            | `object` | Optional | cannot be null | [root](settings-properties-rootfact_names.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names")             |
 
-## oidc\_auth
+## auth
 
 
 
-`oidc_auth`
+`auth`
 
 *   is optional
 
-*   Type: `object` ([root.oidc\_auth](settings-properties-rootoidc_auth.md))
+*   Type: `object` ([root.auth](settings-properties-rootauth.md))
 
 *   cannot be null
 
-*   defined in: [root](settings-properties-rootoidc_auth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/oidc_auth")
+*   defined in: [root](settings-properties-rootauth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth")
 
-### oidc\_auth Type
+### auth Type
 
-`object` ([root.oidc\_auth](settings-properties-rootoidc_auth.md))
+`object` ([root.auth](settings-properties-rootauth.md))
 
 ## form\_settings
 
