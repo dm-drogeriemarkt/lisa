@@ -18,7 +18,8 @@ defaultsDeep(settings, {
     },
     oidc: {
       enabled: false,
-      name: 'OIDC'
+      name: 'OIDC',
+      usernameKey: 'profile.preferred_username'
     }
   },
   formSettings: {

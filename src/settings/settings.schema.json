@@ -52,6 +52,11 @@
               "type": "string",
               "description": "The URL of the OIDC/OAuth2 provider",
               "examples": ["http://localhost:8080/auth/realms/master/"]
+            },
+            "username_key": {
+              "type": "string",
+              "description": "The key to the username value",
+              "default": "profile.preferred_username"
             }
           }
         }

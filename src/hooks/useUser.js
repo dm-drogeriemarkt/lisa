@@ -1,4 +1,5 @@
 import { get } from 'lodash'
+import { auth as authSettings } from 'settings'
 import { isEnabled, useAuth as useOidcAuth } from 'lib/auth/oidc'
 import { useAuth as useForemanAuth } from 'lib/auth/foreman'
 
@@ -19,8 +20,10 @@ export function useOidcUser() {
     return null
   }
 
+  const usernameKey = get(authSettings, 'oidc.usernameKey')
+
   return userData ? {
-    username: get(userData, 'profile.preferred_username', null),
+    username: get(userData, usernameKey, null),
     token: get(userData, 'access_token', null),
     signOut
   } : null

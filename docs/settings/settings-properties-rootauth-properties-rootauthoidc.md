@@ -16,12 +16,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 # oidc Properties
 
-| Property                 | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                 |
-| :----------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [enabled](#enabled)      | `boolean` | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/enabled")     |
-| [name](#name)            | `string`  | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/name")           |
-| [client\_id](#client_id) | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/client_id") |
-| [authority](#authority)  | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/authority") |
+| Property                       | Type      | Required | Nullable       | Defined by                                                                                                                                                                                                                       |
+| :----------------------------- | :-------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [enabled](#enabled)            | `boolean` | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/enabled")           |
+| [name](#name)                  | `string`  | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/name")                 |
+| [client\_id](#client_id)       | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/client_id")       |
+| [authority](#authority)        | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/authority")       |
+| [username\_key](#username_key) | `string`  | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-username_key.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/username_key") |
 
 ## enabled
 
@@ -111,4 +112,30 @@ The URL of the OIDC/OAuth2 provider
 
 ```json
 "http://localhost:8080/auth/realms/master/"
+```
+
+## username\_key
+
+The key to the username value
+
+`username_key`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-username_key.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/username_key")
+
+### username\_key Type
+
+`string`
+
+### username\_key Default Value
+
+The default value is:
+
+```json
+"profile.preferred_username"
 ```
