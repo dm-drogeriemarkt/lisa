@@ -5,6 +5,7 @@ import DashboardContainer from './DashboardContainer';
 import NewHostContainer from './NewHostContainer';
 import HostContainer from './HostContainer'
 import LoginContainer from './LoginContainer';
+import OidcRedirectContainer from './OidcRedirectContainer';
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
           </AuthenticatedRoute>
         }/>
         <Route exact path='/login' element={<LoginContainer />} />
+        <Route exact path='/oidc-redirect' element={<OidcRedirectContainer />} />
       </Routes>
     </main>
   )

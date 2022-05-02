@@ -27,17 +27,23 @@ const locales = merge(enJSON, appTiersEnJSON, pluginsLocales)
 T.setTexts(locales)
 
 const { oidc: { clientId, authority }} = authSettings;
-const oidcConfig = { clientId, authority, autoSignIn: false };
+const redirectUri = `${window.location.origin}/oidc-redirect/`
+const oidcConfig = {
+  clientId,
+  authority,
+  redirectUri,
+  autoSignIn: false,
+};
 
 ReactDOM.render((
-  <ApolloProvider client={GraphqlClient}>
-    <BrowserRouter>
-      <ForemanAuthProvider>
-        <OidcAuthProvider {...oidcConfig}>
+  <BrowserRouter>
+    <ApolloProvider client={GraphqlClient}>
+      <OidcAuthProvider {...oidcConfig}>
+        <ForemanAuthProvider>
           <App />
-        </OidcAuthProvider>
-      </ForemanAuthProvider>
-    </BrowserRouter>
-  </ApolloProvider>
+        </ForemanAuthProvider>
+      </OidcAuthProvider>
+    </ApolloProvider>
+  </BrowserRouter>
 ), document.getElementById('root'));
 registerServiceWorker();
