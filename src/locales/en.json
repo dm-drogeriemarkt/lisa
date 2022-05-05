@@ -2,7 +2,8 @@
   "form": {
     "validations": {
       "required": "required"
-    }
+    },
+    "submit": "Submit"
   },
   "navigation": {
     "dashboard": "< Dashboard"

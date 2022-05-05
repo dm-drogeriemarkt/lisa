@@ -6,6 +6,13 @@ import { status as checkApiStatus } from 'lib/foremanApi';
 
 function OidcRedirectContainer() {
   const [isAuthorized, setIsAuthorized] = useState(null)
+  const [oidcRedirectUri] = useState(() => {
+    const initialState = sessionStorage.getItem('oidcRedirectUri') || '/';
+    sessionStorage.removeItem('oidcRedirectUri');
+
+    return initialState;
+  });
+
   const { token } = useOidcUser();
 
   useEffect(() => {
@@ -19,7 +26,7 @@ function OidcRedirectContainer() {
   }, [token]);
 
   if(isAuthorized === true) {
-    return <Navigate to="/" replace />
+    return <Navigate to={oidcRedirectUri} replace />
   }
 
   if(isAuthorized === false) {

@@ -81,7 +81,7 @@ function ForemanAuth() {
         )}
       />
 
-      <Button type="submit" variant="primary">Submit</Button>
+      <Button type="submit" variant="primary">{T.translate('form.submit')}</Button>
 
     </Form>
   )
