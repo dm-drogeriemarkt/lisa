@@ -15,7 +15,8 @@
     "password": "Password",
     "username": "Username",
     "username_or_password_incorrect": "Incorrect username or password",
-    "oidc": "Login with {name}"
+    "oidc": "Login with {name}",
+    "oidc_error": "Failed to authenticate with {name}" 
   },
   "dashboard": {
     "dashboard": "Dashboard",

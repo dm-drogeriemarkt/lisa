@@ -30,7 +30,7 @@ function OidcRedirectContainer() {
   }
 
   if(isAuthorized === false) {
-    return <Navigate to="/login" replace />
+    return <Navigate to="/login" state={{ oidcError: true }} replace />
   }
 
   return <Spinner />

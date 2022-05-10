@@ -34,7 +34,7 @@ function ForemanAuth() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {error && <Alert variant="danger" title={T.translate('login.username_or_password_incorrect')} />}
+      {error && <Alert variant="danger" title={T.translate('login.username_or_password_incorrect')} className="pf-u-p-md" />}
 
       <Controller
         name="username"
