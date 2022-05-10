@@ -26,11 +26,12 @@ import { pluginsLocales } from './plugins'
 const locales = merge(enJSON, appTiersEnJSON, pluginsLocales)
 T.setTexts(locales)
 
-const { oidc: { clientId, authority }} = authSettings;
+const { oidc: { clientId, authority, scope }} = authSettings;
 const redirectUri = `${window.location.origin}/oidc-redirect/`
 const oidcConfig = {
   clientId,
   authority,
+  scope,
   redirectUri,
   autoSignIn: false,
 };

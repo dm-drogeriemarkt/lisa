@@ -23,6 +23,7 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | [client\_id](#client_id)       | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/client_id")       |
 | [authority](#authority)        | `string`  | Required | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/authority")       |
 | [username\_key](#username_key) | `string`  | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-username_key.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/username_key") |
+| [scope](#scope)                | `string`  | Optional | cannot be null | [root](settings-properties-rootauth-properties-rootauthoidc-properties-scope.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/scope")               |
 
 ## enabled
 
@@ -138,4 +139,30 @@ The default value is:
 
 ```json
 "profile.preferred_username"
+```
+
+## scope
+
+List of required permissions
+
+`scope`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-scope.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/scope")
+
+### scope Type
+
+`string`
+
+### scope Default Value
+
+The default value is:
+
+```json
+"openid"
 ```

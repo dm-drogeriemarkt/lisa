@@ -57,6 +57,11 @@
               "type": "string",
               "description": "The key to the username value",
               "default": "profile.preferred_username"
+            },
+            "scope": {
+              "type": "string",
+              "description": "List of required permissions",
+              "default": "openid"
             }
           }
         }
