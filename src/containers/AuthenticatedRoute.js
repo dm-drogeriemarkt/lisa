@@ -1,11 +1,12 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { isAuthenticated } from 'lib/Auth';
+import useUser from 'hooks/useUser';
 
 function AuthenticatedRoute({ children }) {
   const location = useLocation();
+  const { token } = useUser();
 
-  if (!isAuthenticated()) {
+  if (!token) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
@@ -13,4 +14,3 @@ function AuthenticatedRoute({ children }) {
 }
 
 export default AuthenticatedRoute;
-

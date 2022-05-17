@@ -1,4 +1,10 @@
 {
+  "form": {
+    "validations": {
+      "required": "required"
+    },
+    "submit": "Submit"
+  },
   "navigation": {
     "dashboard": "< Dashboard"
   },
@@ -8,8 +14,9 @@
     "logout": "Logout",
     "password": "Password",
     "username": "Username",
-    "username_and_password_required": "Username and password are required",
-    "username_or_password_incorrect": "Incorrect username or password"
+    "username_or_password_incorrect": "Incorrect username or password",
+    "oidc": "Login with {name}",
+    "oidc_error": "Failed to authenticate with {name}" 
   },
   "dashboard": {
     "dashboard": "Dashboard",

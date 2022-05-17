@@ -2,11 +2,13 @@ import React, { useContext } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
+import useUser from 'hooks/useUser'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import PUPPET_CLASSES_BY_ENVIRONMENT_QUERY from 'graphql/queries/puppetClassesByEnvironment'
 
 const PuppetclassesSelectInput = ({...attrs}) => {
+  const { token } = useUser();
   const {
     updateAttribute,
     attributes: {
@@ -19,6 +21,7 @@ const PuppetclassesSelectInput = ({...attrs}) => {
     variables: {
       id: puppetEnvId
     },
+    context: { token },
     skip: !puppetEnvId,
     fetchPolicy: 'cache-and-network'
   })

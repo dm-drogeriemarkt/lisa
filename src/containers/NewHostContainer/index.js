@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { withApollo } from '@apollo/client/react/hoc';
 import { Button, Col, Grid, Row } from 'patternfly-react';
 import { flowRight } from 'lodash';
+import useUser from 'hooks/useUser';
 import { Resources, Location, ServerConfig, PuppetConfig, HostsCreation } from 'components/HostsForm';
 import Alert from 'components/Alert';
 import Navigation from 'components/Navigation';
@@ -71,7 +72,8 @@ class NewHostContainer extends Component {
         query: COMPUTE_RESOURCE_QUERY,
         variables: {
           id: this.currentLocation.relations.computeResourceId
-        }
+        },
+        context: { token: this.props.token }
       })
 
       const hostsParams = hostsCreateParams(
@@ -87,7 +89,8 @@ class NewHostContainer extends Component {
         if (!this.state.createdHosts.find((h) => h.number === hostNumber)) {
           this.props.client.mutate({
             mutation: CREATE_HOST_MUTATION,
-            variables: params
+            variables: params,
+            context: { token: this.props.token }
           }).then(({ data }) => this.submitSuccess(data, hostNumber))
             .catch(error => this.submitError(error, hostNumber))
         }
@@ -223,9 +226,10 @@ class NewHostContainer extends Component {
 // TODO: rewrite to function component
 function NewHostContainerFunction(props) {
   const navigate = useNavigate();
+  const { token } = useUser();
   const redirectToDashboard = () => navigate('/');
 
-  return (<NewHostContainer redirectToDashboard={redirectToDashboard} {...props} />)
+  return (<NewHostContainer token={token} redirectToDashboard={redirectToDashboard} {...props} />)
 }
 
 export default flowRight(

@@ -3,11 +3,13 @@ import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
 import { Col, FormGroup, FormControl, ControlLabel, Icon } from 'patternfly-react'
 
+import useUser from 'hooks/useUser'
 import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
 import { HostsFormContext } from 'lib/Context'
 import useLocation from 'hooks/useLocation'
 
 const HostNameInput = ({ number }) => {
+  const { token } = useUser();
   const {
     updateAttribute,
     attributes: {
@@ -31,6 +33,7 @@ const HostNameInput = ({ number }) => {
       last: 1,
       search: `name=${value}.${appTierName}.${domainName}`
     },
+    context: { token },
     skip: !value,
     fetchPolicy: 'cache-and-network'
   })

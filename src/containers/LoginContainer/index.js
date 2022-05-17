@@ -1,106 +1,35 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardGrid,
-  Col,
-  ControlLabel,
-  Form,
-  FormControl,
-  FormGroup,
-  Row
-} from 'patternfly-react';
-import T from 'i18n-react';
-import Alert from 'components/Alert';
-import { login } from 'lib/Auth';
-import './index.css';
+import React from 'react';
+import { Brand, Card, CardTitle, CardBody, Flex, FlexItem } from '@patternfly/react-core';
+import ForemanAuth from './ForemanAuth'
+import OidcAuth from './OidcAuth'
+import { isEnabled as isOidcAuthEnabled } from 'lib/auth/oidc';
+import { isEnabled as isForemanAuthEnabled } from 'lib/auth/foreman';
+import logo from './assets/LISA-logo-claim-white-m.jpg'
+import { css } from '@patternfly/react-styles'
+import alignment from '@patternfly/react-styles/css/utilities/Alignment/alignment.js'
+import sizing from '@patternfly/react-styles/css/utilities/Sizing/sizing.js'
+import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing.js'
 
-const LoginContainer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState(null)
-
-  const validateForm = () => {
-    if (username.length === 0 || password.length === 0) {
-      setErrorMessage('login.username_and_password_required');
-      return false;
-    }
-
-    return true;
-  }
-
-  const submit = async () => {
-    if (!validateForm()) { return }
-
-    const authenticated = await login({ username, password });
-    if (authenticated) {
-      const from = location.state?.from?.pathname || '/';
-      navigate(from, { replace: true });
-    } else {
-      setErrorMessage('login.username_or_password_incorrect');
-    }
-  }
-
-  return (
-    <CardGrid>
-      <Row>
-        <Col xs={12} sm={8} smOffset={2} md={6} mdOffset={3}>
-          <Card className="login">
-            <div className="logo" />
-            <CardBody>
-              <Form horizontal>
-                <h1 className="text-center">{T.translate('login.header')}</h1>
-                <Row>
-                  <Col xs={8} xsOffset={2}>
-                    <FormGroup controlId='username' bsSize='large'>
-                      <ControlLabel>
-                        {T.translate('login.username')}
-                      </ControlLabel>
-                      <FormControl
-                        name='username'
-                        autoFocus
-                        placeholder={T.translate('login.username')}
-                        onChange={({ target: { value } }) => setUsername(value)}
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={8} xsOffset={2}>
-                    <FormGroup controlId='password' bsSize='large'>
-                      <ControlLabel>
-                        {T.translate('login.password')}
-                      </ControlLabel>
-                      <FormControl
-                        name='password'
-                        type='password'
-                        placeholder={T.translate('login.password')}
-                        onChange={({ target: { value } }) => setPassword(value)}
-                      />
-                    </FormGroup>
-                  </Col>
-                </Row>
-                { errorMessage && <Alert type="error" message={errorMessage} /> }
-                <Row>
-                  <Col xs={8} xsOffset={2}>
-                    <FormGroup>
-                      <Button className="login" bsStyle='primary' bsSize='large' onClick={submit}>
-                        {T.translate('login.login')}
-                      </Button>
-                    </FormGroup>
-                  </Col>
-                </Row>
-              </Form>
-            </CardBody>
-          </Card>
-        </Col>
-      </Row>
-    </CardGrid>
-  )
-}
+const LoginContainer = () => (
+  <Card isCompact isFlat className={css(sizing.w_50, spacing.mxAuto, spacing.pXl)}>
+    <CardTitle>
+      <Brand src={logo} alt="LISA" className={css(sizing.w_100, alignment.textAlignCenter)} />
+    </CardTitle>
+    <CardBody>
+      <Flex direction={{ default: 'column' }}>
+        { isForemanAuthEnabled &&
+          <FlexItem>
+            <ForemanAuth />
+          </FlexItem>
+        }
+        { isOidcAuthEnabled &&
+          <FlexItem>
+            <OidcAuth />
+          </FlexItem>
+        }
+      </Flex>
+    </CardBody>
+  </Card>
+)
 
 export default LoginContainer;

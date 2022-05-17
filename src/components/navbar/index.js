@@ -2,19 +2,20 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Icon, Dropdown, MenuItem, Grid } from 'patternfly-react';
 import NavbarCollapse from './NavbarCollapse';
-import { isAuthenticated, getUsername, logout } from 'lib/Auth';
 import T from 'i18n-react';
 import './index.css';
+import useUser from 'hooks/useUser'
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { username, token, signOut } = useUser()
 
   const logoutAndRedirect = () => {
-    logout();
+    signOut();
     navigate('/login');
   }
 
-  if (isAuthenticated()) {
+  if (token) {
     return (
       <nav className='navbar navbar-pf-vertical'>
         <Grid>
@@ -22,7 +23,7 @@ const Navbar = () => {
           <NavbarCollapse>
             <Dropdown componentClass='li' id='user'>
               <Dropdown.Toggle useAnchor className='nav-item-iconic'>
-                <Icon type='pf' name='user' /> {getUsername()}
+                <Icon type='pf' name='user' /> {username}
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <MenuItem onClick={logoutAndRedirect}>

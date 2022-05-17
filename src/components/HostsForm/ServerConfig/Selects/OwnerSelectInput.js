@@ -2,11 +2,13 @@ import React, { Fragment, useContext } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client';
 import { get } from 'lodash'
+import useUser from 'hooks/useUser'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import OWNERS_QUERY from 'graphql/queries/owners'
 
 const OwnerSelectInput = ({...attrs}) => {
+  const { token } = useUser();
   const {
     updateAttribute,
     attributes: {
@@ -16,6 +18,7 @@ const OwnerSelectInput = ({...attrs}) => {
   const ownersFrom = (data) => get(data, 'currentUser.usergroups.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
   const { loading, data } = useQuery(OWNERS_QUERY, {
+    context: { token },
     onCompleted: (data) => {
       const owners = ownersFrom(data)
 

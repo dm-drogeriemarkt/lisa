@@ -12,6 +12,61 @@
     "app_tiers"
   ],
   "properties": {
+    "auth": {
+      "title": "root.auth",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "foreman": {
+          "title": "root.auth.foreman",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        "oidc": {
+          "title": "root.auth.oidc",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["client_id", "authority"],
+          "properties": {
+            "enabled": {
+              "type": "boolean",
+              "default": false
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of OIDC/OAuth2 provider",
+              "examples": ["Keycloak"]
+            },
+            "client_id": {
+              "type": "string",
+              "description": "Your client application's identifier as registered with the OIDC/OAuth2 provider",
+              "examples": ["account"]
+            },
+            "authority": {
+              "type": "string",
+              "description": "The URL of the OIDC/OAuth2 provider",
+              "examples": ["http://localhost:8080/auth/realms/master/"]
+            },
+            "username_key": {
+              "type": "string",
+              "description": "The key to the username value",
+              "default": "profile.preferred_username"
+            },
+            "scope": {
+              "type": "string",
+              "description": "List of required permissions",
+              "default": "openid"
+            }
+          }
+        }
+      }
+    },
     "form_settings": {
       "title": "root.form_settings",
       "type": "object",
