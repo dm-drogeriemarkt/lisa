@@ -17,7 +17,7 @@
     "lodash-humps": "^3.1.5",
     "oidc-react": "^1.5.1",
     "patternfly-react": "^2.40.0",
-    "rc-pagination": "^3.1.15",
+    "rc-pagination": "^3.1.16",
     "rc-slider": "^9.7.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
