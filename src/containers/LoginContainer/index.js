@@ -13,7 +13,7 @@ import spacing from '@patternfly/react-styles/css/utilities/Spacing/spacing.js'
 const LoginContainer = () => (
   <Card isCompact isFlat className={css(sizing.w_50, spacing.mxAuto, spacing.pXl)}>
     <CardTitle>
-      <Brand src={logo} alt="LISA" className={css(sizing.w_100, alignment.textAlignCenter)} />
+      <Brand src={logo} alt="LISA" className={css(sizing.w_50, alignment.textAlignCenter)} />
     </CardTitle>
     <CardBody>
       <Flex direction={{ default: 'column' }}>
