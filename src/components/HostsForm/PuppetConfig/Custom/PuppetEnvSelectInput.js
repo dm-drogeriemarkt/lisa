@@ -20,10 +20,10 @@ const PuppetEnvSelectInput = ({...attrs}) => {
     fetchPolicy: 'cache-and-network',
     context: { token }
   })
-  const puppetEnvs = get(data, 'environments.edges', []).map(({ node: { id, name }}) => ({ id, name }))
+  const puppetEnvs = get(data, 'environments.edges', []).map(({ node: { id, name } }) => ({ id, name }))
 
   const handleChange = (puppetEnvId) => {
-    updateAttribute({ puppetEnvId, puppetclassIds: [] })
+    updateAttribute({ puppetEnvId })
   }
 
   return (

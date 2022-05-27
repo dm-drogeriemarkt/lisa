@@ -13,14 +13,14 @@ export default [
               cursor: 'MQ==',
               node: {
                 id: 'MDE6RW52aXJvbm1lbnQtMQ==',
-                name: 'env1'
+                name: 'env1',
               }
             },
             {
               cursor: 'Mw==',
               node: {
                 id: 'MDE6RW52aXJvbm1lbnQtMA==',
-                name: 'env2'
+                name: 'env2',
               }
             }
           ]
