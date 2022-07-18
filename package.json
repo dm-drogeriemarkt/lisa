@@ -18,7 +18,7 @@
     "oidc-react": "^1.5.1",
     "patternfly-react": "^2.40.0",
     "rc-pagination": "^3.1.15",
-    "rc-slider": "^9.7.5",
+    "rc-slider": "^10.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flag-icon-css": "^1.0.24",
