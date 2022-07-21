@@ -9,7 +9,7 @@ jobs:
       fail-fast: true
       max-parallel: 2
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [14.x, 16.x, 18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -27,7 +27,14 @@ jobs:
           npx ajv -d src/settings/example.json -s src/settings/settings.schema.json
           npx ajv -d src/settings/test.json -s src/settings/settings.schema.json
           npm test
-      - run: REACT_APP_SETTINGS_FILE=test npm run build
+      - name: Build without --openssl-legacy-provider
+        run: REACT_APP_SETTINGS_FILE=test npm run build
+        if: ${{ contains(fromJson('["14.x", "16.x"]'), matrix.node-version) }}
+      - name: Build with --openssl-legacy-provider
+        run: REACT_APP_SETTINGS_FILE=test npm run build
+        if: ${{ contains(fromJson('["18.x"]'), matrix.node-version) }}
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
 
   docker:
     runs-on: ubuntu-latest
