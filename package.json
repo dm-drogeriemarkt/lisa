@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "^7.0.0",
-    "@babel/eslint-parser": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-react": "^7.17.12",
     "ajv-cli": "^5.0.0",
     "enzyme": "^3.8.0",
