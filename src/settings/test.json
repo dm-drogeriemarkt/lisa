@@ -43,7 +43,7 @@
         }
       ],
       "compute_attributes": {
-        "path_prefix": "/Datencenter/LAN/vm/Linux/"
+        "path": "/Datencenter/LAN/vm/Linux/"
       }
     }
   ],

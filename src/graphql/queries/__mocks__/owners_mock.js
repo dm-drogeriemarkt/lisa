@@ -8,6 +8,8 @@ export default [
     result: {
       data: {
         currentUser: {
+          id: 'MDE6VXNlci0xNg==',
+          fullname: 'Joe Doe',
           usergroups: {
             edges: [
               {
