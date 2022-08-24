@@ -1,7 +1,6 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useContext, useState } from 'react'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client';
-import { get } from 'lodash'
 import useUser from 'hooks/useUser'
 import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
@@ -9,42 +8,38 @@ import OWNERS_QUERY from 'graphql/queries/owners'
 
 const OwnerSelectInput = ({...attrs}) => {
   const { token } = useUser();
+  const [options, setOptions] = useState([])
   const {
     updateAttribute,
     attributes: {
       ownerId
     }
   } = useContext(HostsFormContext)
-  const ownersFrom = (data) => get(data, 'currentUser.usergroups.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
-  const { loading, data } = useQuery(OWNERS_QUERY, {
+  const { loading } = useQuery(OWNERS_QUERY, {
     context: { token },
     onCompleted: (data) => {
-      const owners = ownersFrom(data)
-
-      if(owners.length === 1) {
-        const { id: ownerId, name: ownerName } = owners[0]
-        updateAttribute({ ownerId, ownerName })
-      }
+      const { currentUser: { id, fullname: name, usergroups: { edges: usergroups } } } = data
+      setOptions([
+        { id, name },
+        ...usergroups.map(({ node: { id, name } }) => ({ id, name }))
+      ]);
+      updateAttribute({ ownerId: id })
     }
   })
 
-  const owners = ownersFrom(data)
-  const handleChange = (ownerId) => {
-    const { name: ownerName } = owners.find(({ id }) => id === ownerId)
-    updateAttribute({ ownerId, ownerName })
-  }
+  const handleChange = (ownerId) => updateAttribute({ ownerId });
 
   return (
     <Fragment>
-      { owners.length > 1 &&
+      { options.length > 1 &&
         <SelectInput
           label={T.translate('hosts_form.owner_id')}
           placeholder={T.translate('hosts_form.placeholders.owner_id')}
           value={ownerId}
           loading={loading}
           onChange={handleChange}
-          options={owners}
+          options={options}
           {...attrs}
         />
       }

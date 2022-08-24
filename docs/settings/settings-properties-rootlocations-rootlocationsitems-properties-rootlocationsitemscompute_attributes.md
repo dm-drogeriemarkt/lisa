@@ -16,15 +16,15 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 # compute\_attributes Properties
 
-| Property                     | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                              |
-| :--------------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [path\_prefix](#path_prefix) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes-properties-path_prefix.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes/properties/path_prefix") |
+| Property      | Type     | Required | Nullable       | Defined by                                                                                                                                                                                                                                                                                |
+| :------------ | :------- | :------- | :------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [path](#path) | `string` | Required | cannot be null | [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes-properties-path.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes/properties/path") |
 
-## path\_prefix
+## path
 
-A owner name will be added at the end of this value
+A path where the virtual machine is located
 
-`path_prefix`
+`path`
 
 *   is required
 
@@ -32,13 +32,13 @@ A owner name will be added at the end of this value
 
 *   cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes-properties-path_prefix.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes/properties/path_prefix")
+*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes-properties-path.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes/properties/path")
 
-### path\_prefix Type
+### path Type
 
 `string`
 
-### path\_prefix Examples
+### path Examples
 
 ```json
 "/Datencenter/Location/vm/Linux/"

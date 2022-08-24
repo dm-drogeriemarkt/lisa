@@ -89,7 +89,7 @@
         ]
       },
       "compute_attributes": {
-        "path_prefix": "/Datencenter/Location1/vm/Linux/"
+        "path": "/Datencenter/Location1/vm/Linux/"
       },
       "datastore_types": [
         {

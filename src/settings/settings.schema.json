@@ -398,11 +398,11 @@
             "type": "object",
             "title": "root.locations.items.compute_attributes",
             "additionalProperties": false,
-            "required": ["path_prefix"],
+            "required": ["path"],
             "properties": {
-              "path_prefix": {
+              "path": {
                 "type": "string",
-                "description": "A owner name will be added at the end of this value",
+                "description": "A path where the virtual machine is located",
                 "examples": ["/Datencenter/Location/vm/Linux/"]
               }
             }

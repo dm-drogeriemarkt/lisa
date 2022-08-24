@@ -58,6 +58,7 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   set(data, 'ptableId', operatingsystem.relations.ptableId)
   set(data, 'mediumId', medium.id)
 
+  set(data, 'computeAttributes.path', location.computeAttributes.path)
   set(data, 'computeAttributes.cluster', location.relations.cluster)
   set(data, 'computeAttributes.guest_id', operatingsystem.relations.guestOperatingsystemId)
 
@@ -66,10 +67,6 @@ const hostsCreateParams = (formValues, { computeResource }) => {
 
   const resource_pool = appTier.relations.locations.find(({ code }) => code === location.code).resourcePool
   set(data, 'computeAttributes.resource_pool', resource_pool)
-
-  const { computeAttributes: { pathPrefix }} = location
-  set(data, 'computeAttributes.path', `${pathPrefix}${data.ownerName}`)
-  unset(data, 'ownerName')
 
   merge(data, defaultConfigs)
 
