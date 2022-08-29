@@ -14,7 +14,6 @@ import OWNERS_MOCK from 'graphql/queries/__mocks__/owners_mock'
 import SUBNETS_BY_DOMAIN_QUERY_MOCK from 'graphql/queries/__mocks__/subnetsByDomain_mock'
 import PUPPETMASTERS_QUERY_MOCK from 'graphql/queries/__mocks__/puppetMasters_mock'
 import PUPPET_CLASSES_BY_ENVIRONMENT_QUERY_MOCK from 'graphql/queries/__mocks__/puppetClassesByEnvironment_mock'
-import HOSTNAMES_ALREADY_TAKEN_MOCK from 'graphql/queries/__mocks__/hostnamesAlreadyTaken_mock'
 import CREATE_HOST_MUTATION_MOCK from 'graphql/mutations/__mocks__/createHost_mock'
 
 test('Mounted NewHostContainer', async () => {
@@ -26,7 +25,6 @@ test('Mounted NewHostContainer', async () => {
     ...OWNERS_MOCK,
     ...SUBNETS_BY_DOMAIN_QUERY_MOCK,
     ...PUPPETMASTERS_QUERY_MOCK,
-    ...HOSTNAMES_ALREADY_TAKEN_MOCK,
     ...CREATE_HOST_MUTATION_MOCK,
     ...PUPPET_CLASSES_BY_ENVIRONMENT_QUERY_MOCK
   ]
