@@ -37,6 +37,10 @@ const mutationString = generateMutation('CreateHostMutation', applyParams(input,
     host: {
       id: types.string,
       name: types.string,
+    },
+    errors: {
+      path: [types.string],
+      message: types.string,
     }
   })
 }))

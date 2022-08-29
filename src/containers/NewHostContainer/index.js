@@ -91,8 +91,15 @@ class NewHostContainer extends Component {
             mutation: CREATE_HOST_MUTATION,
             variables: params,
             context: { token: this.props.token }
-          }).then(({ data }) => this.submitSuccess(data, hostNumber))
-            .catch(error => this.submitError(error, hostNumber))
+          }).then(({ data }) => {
+            if(data.createHost.errors.length) {
+              throw {
+                graphQLErrors: data.createHost.errors.map(({ path, message }) => ({ message: `[${path.join('.')}] ${message}`}))
+              }
+            } else {
+              this.submitSuccess(data, hostNumber)
+            }
+          }).catch(error => this.submitError(error, hostNumber))
         }
       })
     } catch (e) {

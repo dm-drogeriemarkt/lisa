@@ -1,10 +1,11 @@
+import { get } from 'lodash';
+
 export function parseErrorMessage(error) {
   if (error.networkError) {
     return `[Network error]: ${error.networkError}`;
   }
 
-  const graphQLError = error.graphQLErrors[0];
-  const { message, errors } = graphQLError;
+  const { message, errors } = get(error, 'graphQLErrors.0', {});
 
   if (errors) {
     return errors.join(', ');
@@ -18,13 +19,7 @@ export function parseErrorMessage(error) {
 }
 
 export function parseErrorCode(error) {
-  const graphQLError = error.graphQLErrors[0];
-
-  if (graphQLError === undefined) {
-    return '-';
-  }
-
-  const { requestId } = graphQLError;
+  const { requestId } = get(error, 'graphQLErrors.0', {});
 
   if (requestId) {
     return requestId.split('-')[0];

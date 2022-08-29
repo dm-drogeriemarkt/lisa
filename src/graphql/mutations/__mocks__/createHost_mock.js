@@ -58,8 +58,9 @@ export default [
           host: {
             id: 'MDE6SG9zdC0zOQ==',
             name: 'project-role-01'
-          }
-        }
+          },
+          errors: []
+        },
       }
     }
   }
