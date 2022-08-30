@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import T from 'i18n-react';
-import { Row, Col } from 'patternfly-react';
+import {
+  Grid,
+  GridItem,
+  TextContent,
+  Text,
+  TextVariants
+} from '@patternfly/react-core';
 import Descriptions from './Descriptions';
 import Selects from './Selects';
-import './index.css'
 
 const ServerConfig = () => (
-  <div>
-    <h3>{T.translate('hosts_form.server_config.header')}</h3>
-    <Row>
-      <Col xs={12} sm={6}>
+  <Fragment>
+    <TextContent className='pf-u-my-xl'>
+      <Text component={TextVariants.h3}>
+        {T.translate('hosts_form.server_config.header')}
+      </Text>
+    </TextContent>
+    <Grid hasGutter>
+      <GridItem sm={6}>
         <Selects />
-      </Col>
-      <Col xs={12} sm={6}>
+      </GridItem>
+      <GridItem sm={6}>
         <Descriptions />
-      </Col>
-    </Row>
-  </div>
+      </GridItem>
+    </Grid>
+  </Fragment>
 )
 
 export default ServerConfig;

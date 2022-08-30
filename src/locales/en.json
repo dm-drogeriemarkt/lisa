@@ -1,12 +1,16 @@
 {
   "form": {
     "validations": {
-      "required": "required"
+      "required": "is required",
+      "pattern": "must match the pattern",
+      "uniq": "has already been taken"
     },
+    "progress": "Please wait",
     "submit": "Submit"
   },
   "navigation": {
-    "dashboard": "< Dashboard"
+    "dashboard": "Dashboard",
+    "new_host": "Create new host"
   },
   "login": {
     "header": "Login to Your Account",
@@ -45,7 +49,8 @@
     "create_hosts_button": "Create Hosts!",
     "create_hosts_button_info": "Please fill in missing information",
     "create_hosts_header": "Create Hosts",
-    "created_hosts": "Created Hosts:",
+    "created_hosts_success": "Created Hosts:",
+    "created_hosts_danger": "Failed to create Hosts:",
     "datastore_type": "Datastore type",
     "disk": "disk",
     "error_code": "Error code:",
@@ -75,15 +80,14 @@
         "header": "Choose host names",
         "host_names": "Host Names",
         "explanation": "The name should match the following pattern *project-role-id* and can include only letters (a-z) and numbers (0-9).",
-        "host": "Host",
-        "name": "Name"
+        "label": "Host {number} Name"
       }
     },
     "location": {
       "default": {
         "content": "By default your host will be created in Karlsruhe, Germany (Datacenters 1 or 2).",
         "header": "Server location",
-        "link": "Pick a different server location >"
+        "link": "Pick a different server location"
       },
       "custom": {
         "header": "Pick Server Location",
@@ -112,7 +116,7 @@
       "default": {
         "content": "The servers will be configured with basic operating system settings. If you want to use custom puppet code to set up your server, use the link bellow.",
         "header": "Automated server configuration",
-        "link": "Puppet configuration >"
+        "link": "Puppet configuration"
       },
       "custom": {
         "header": "Pick Server Location"
@@ -123,7 +127,9 @@
     "ram": "RAM",
     "resources": {
       "header": "Basic Resources Configuration",
-      "description": "You can pick from available presets for basic configuration. Switch to the manual tab if you would like a fine tuned setup."
+      "description": "You can pick from available presets for basic configuration. Switch to the manual tab if you would like a fine tuned setup.",
+      "preset": "Preset",
+      "manual": "Manual"
     },
     "server_config": {
       "header": "Server Configuration"

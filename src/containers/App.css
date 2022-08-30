@@ -13,3 +13,7 @@
 a {
   cursor: pointer;
 }
+
+input:focus-visible {
+  outline: none;
+}

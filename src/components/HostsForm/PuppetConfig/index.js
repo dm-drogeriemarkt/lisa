@@ -1,35 +1,15 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Default from 'components/HostsForm/Default';
 import Custom from './Custom'
 
-import { HostsFormContext } from 'lib/Context'
+const PuppetConfig = () => {
+  const [customView, setCustomView] = useState(false);
+  const enableCustomView = () => setCustomView(true);
 
-class PuppetConfig extends Component {
-  static contextType = HostsFormContext
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      customView: false
-    };
-  }
-
-  enableCustomView = () => {
-    this.setState({ customView: true })
-  }
-
-  render() {
-    return (
-      <div>
-        { this.state.customView ? (
-          <Custom />
-        ) : (
-          <Default name='puppet_config' enableCustomView={this.enableCustomView}
-          />
-        )}
-      </div>
-    )
+  if(customView) {
+    return <Custom />
+  } else {
+    return <Default name='puppet_config' enableCustomView={enableCustomView} />
   }
 }
 

@@ -1,0 +1,18 @@
+div.pf-c-form__group {
+  .pf-c-form__group-control {
+    .pf-c-select {
+      .pf-c-select__toggle {
+        .pf-c-select__toggle-wrapper {
+          .pf-c-chip-group {
+            .pf-c-chip-group__main {
+              .pf-c-chip-group__list {
+                padding-left: 0;
+                margin-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

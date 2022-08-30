@@ -1,32 +1,45 @@
-import React, { useContext } from 'react'
+import React, { useMemo } from 'react'
+import { ValidatedOptions } from '@patternfly/react-core';
+import { useFormContext, useController } from 'react-hook-form';
 import T from 'i18n-react'
-import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import { appTiers as appTiersSettings } from 'settings'
-
-const AppTierSelectInput = ({...attrs}) => {
+const AppTierSelectInput = ({ name='appTierName', required = true, ...attrs }) => {
+  const { control, resetField } = useFormContext();
   const {
-    updateAttribute,
-    attributes: {
-      appTierName
+    field: {
+      value,
+      onChange: setAppTierName
+    },
+    fieldState: {
+      invalid
     }
-  } = useContext(HostsFormContext)
+  } = useController({
+    control,
+    name,
+    rules: {
+      required: required
+    }
+  })
 
-  const label = T.translate('hosts_form.app_tier_name')
-  const placeholder = T.translate('hosts_form.placeholders.app_tier_name')
-  const appTiers = appTiersSettings.map(({ name }) => ({ id: name, name }))
-  const handleChange = (appTierName) => {
-    updateAttribute({ appTierName, subnetId: undefined });
+  const validated = useMemo(() => invalid ? ValidatedOptions.error : ValidatedOptions.success, [invalid])
+
+  const onChange = (newValue) => {
+    setAppTierName(newValue)
+    resetField('subnetId', { keepDirty: true })
   }
+
+  const options = appTiersSettings.map(({ name }) => ({ id: name, name }))
 
   return (
     <SelectInput
-      label={label}
-      placeholder={placeholder}
-      value={appTierName}
-      options={appTiers}
-      onChange={handleChange}
-      allowEmpty={true}
+      label={T.translate('hosts_form.app_tier_name')}
+      placeholder={T.translate('hosts_form.placeholders.app_tier_name')}
+      value={value}
+      options={options}
+      onChange={onChange}
+      validated={validated}
+      isRequired={required}
       {...attrs}
     />
   )

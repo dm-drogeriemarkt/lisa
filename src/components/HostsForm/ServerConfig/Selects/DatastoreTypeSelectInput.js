@@ -1,41 +1,53 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, useEffect, useMemo } from 'react'
+import { ValidatedOptions } from '@patternfly/react-core';
+import { useFormContext, useController } from 'react-hook-form'
 import T from 'i18n-react'
-import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import useLocation from 'hooks/useLocation'
 
-const DatastoreTypeSelectInput = ({ ...attrs }) => {
-  const {
-    updateAttribute,
-    attributes: {
-      datastoreTypeId,
-      locationCode
-    }
-  } = useContext(HostsFormContext)
+const DatastoreTypeSelectInput = ({ name='datastoreTypeId', required = true, ...attrs }) => {
+  const { control, resetField, watch } = useFormContext();
 
+  const {
+    field: {
+      value: datastoreTypeId,
+      onChange: setDatastoreTypeId
+    },
+    fieldState: {
+      invalid
+    }
+  } = useController({
+    control,
+    name,
+    rules: {
+      required: required
+    }
+  })
+
+  const validated = useMemo(() => invalid ? ValidatedOptions.error : ValidatedOptions.success, [invalid])
+
+  const locationCode = watch('locationCode');
   const { datastoreTypes = [] } = useLocation(locationCode)
 
   useEffect(() => {
     if(datastoreTypes.length === 1) {
-      updateAttribute({ datastoreTypeId: datastoreTypes[0].id })
+      setDatastoreTypeId(datastoreTypes[0].id)
+    } else {
+      resetField('datastoreTypeId', { keepDirty: true })
     }
-  }, [updateAttribute, datastoreTypes])
-
-  const label = T.translate('hosts_form.datastore_type')
-  const placeholder = T.translate('hosts_form.placeholders.datastore_type')
-  const handleChange = (datastoreTypeId) => {
-    updateAttribute({ datastoreTypeId })
-  }
+  }, [datastoreTypes, setDatastoreTypeId, resetField])
 
   return (
     <Fragment>
       { datastoreTypes.length > 1 &&
         <SelectInput
-          label={label}
-          placeholder={placeholder}
+          label={T.translate('hosts_form.datastore_type') }
+          placeholder={T.translate('hosts_form.placeholders.datastore_type') }
           value={datastoreTypeId}
           options={datastoreTypes}
-          onChange={handleChange}
+          onChange={setDatastoreTypeId}
+          validated={validated}
+          isRequired={required}
           {...attrs}
         />
       }

@@ -1,0 +1,47 @@
+.pf-c-page {
+  &__header {
+    background: linear-gradient(90deg, #1d1d1d 50%, #39a5dc 50%);
+    height: 59px;
+    border: 0;
+    margin-bottom: 40px;
+    &::after {
+      background-image: url('./assets/Masthead-3-clipped.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 93px;
+      width: 250px;
+      position: absolute;
+      top: -34px;
+      left: calc(50% - 96px);
+      content: '';
+    }
+
+    .pf-c-page__header-brand-link > a {
+      background-image: url('./assets/LISA-logosign-transparent-s.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 85px;
+      width: 50px;
+      position: absolute;
+      top: 10px;
+      z-index: 999;
+      padding-left: 60px;
+      color: white;
+      font-size: 25px;
+      font-family: Montserrat-SemiBold;
+      letter-spacing: 5px;
+      text-decoration: none;
+      & > a:hover,
+      & > a:active,
+      & > a:focus {
+        color: white;
+        text-decoration: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+button.pf-c-dropdown__toggle.pf-m-plain:not(.pf-m-text) {
+  display: inline-flex;
+}

@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import '@patternfly/react-core/dist/styles/base.css';
 import './App.css';
-import Navbar from '../components/navbar';
+
+import Header from '../components/Header';
+import { Page, PageSection } from '@patternfly/react-core';
 import Router from './router';
 
-class App extends Component {
-  render() {
-    return (
-      <div className='App'>
-        <Navbar {...this.props}/>
-        <Router />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Page header={Header}>
+    <PageSection>
+      <Router />
+    </PageSection>
+  </Page>
+);
 
 export default App;

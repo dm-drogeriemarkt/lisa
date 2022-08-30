@@ -1,15 +1,54 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { useFormContext, useController } from 'react-hook-form';
 import T from 'i18n-react';
 import Preset from './Preset';
 import Manual from './Manual';
-import { Tabs, Tab } from 'patternfly-react';
-import './index.css';
+import {
+  Tabs,
+  Tab,
+  TabContent,
+  TabTitleText,
+  TextContent,
+  Text,
+  TextVariants
+} from '@patternfly/react-core';
 import { pluginsExtensions } from 'plugins'
-
-
 import { formSettings } from 'settings'
 
 const Resources = () => {
+  const { control } = useFormContext();
+
+  const cpu = useController({
+    control,
+    name: 'cpu',
+    rules: {
+      required: true
+    }
+  });
+  const memory = useController({
+    control,
+    name: 'memory',
+    rules: {
+      required: true
+    }
+  });
+  const size = useController({
+    control,
+    name: 'size',
+    rules: {
+      required: true
+    }
+  });
+  const operatingsystemId = useController({
+    control,
+    name: 'operatingsystemId',
+    rules: {
+      required: true
+    }
+  });
+
+  const fields = { cpu, memory, size, operatingsystemId }
+
   const JSXextensions = pluginsExtensions.filter(({ slot }) => {
     return slot === 'HostsForm/Resources'
   }).map(({ extension }, i) => {
@@ -17,25 +56,36 @@ const Resources = () => {
   })
 
   return (
-    <div className="resources">
+    <Fragment>
       { JSXextensions }
-      <h3>{T.translate('hosts_form.resources.header')}</h3>
+
+      <TextContent className='pf-u-my-xl'>
+        <Text component={TextVariants.h3}>
+          {T.translate('hosts_form.resources.header')}
+        </Text>
+
+        <Text component={TextVariants.p}>
+          {T.translate('hosts_form.resources.description')}
+        </Text>
+      </TextContent>
+
       { formSettings.presetResources.length ? (
-        <React.Fragment>
-          <p>{T.translate('hosts_form.resources.description')}</p>
-          <Tabs defaultActiveKey={1} id="resources-tabs">
-            <Tab eventKey={1} title="Preset">
-              <Preset />
-            </Tab>
-            <Tab eventKey={2} title="Manual">
-              <Manual />
-            </Tab>
-          </Tabs>
-        </React.Fragment>
+        <Tabs defaultActiveKey={0} mountOnEnter>
+          <Tab eventKey={0} title={<TabTitleText>{T.translate('hosts_form.resources.preset')}</TabTitleText>}>
+            <TabContent className='pf-u-my-lg'>
+              <Preset fields={fields} />
+            </TabContent>
+          </Tab>
+          <Tab eventKey={1} title={<TabTitleText>{T.translate('hosts_form.resources.manual')}</TabTitleText>}>
+            <TabContent className='pf-u-my-lg'>
+              <Manual fields={fields} />
+            </TabContent>
+          </Tab>
+        </Tabs>
       ) : (
-        <Manual />
+        <Manual fields={fields} />
       )}
-    </div>
+    </Fragment>
   )
 }
 

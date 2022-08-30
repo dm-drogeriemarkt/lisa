@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import T from 'i18n-react';
 import { useQuery } from '@apollo/client'
-import { Spinner } from 'patternfly-react';
+import { Spinner } from '@patternfly/react-core';
+import Breadcrumb from './Breadcrumb';
 import Host from 'components/Host';
 import HOST_QUERY from 'graphql/queries/host';
 import Notification from 'components/Notification';
@@ -16,13 +17,15 @@ const HostContainer = () => {
   );
 
   return (
-    <div className='text-center'>
+    <Fragment>
+      <Breadcrumb data={data} />
+
       {
-        (loading && <Notification><Spinner loading /></Notification>) ||
+        (loading && <Notification><Spinner /></Notification>) ||
         (error && <Notification><h1>{T.translate('dashboard.error')}</h1></Notification>) ||
         <Host data={data} />
       }
-    </div>
+    </Fragment>
   )
 }
 

@@ -1,32 +1,41 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Slot from 'components/Slot'
 import T from 'i18n-react';
-import { Row, Col } from 'patternfly-react'
+import {
+  Grid,
+  GridItem,
+  Text,
+  TextContent,
+  TextVariants
+} from '@patternfly/react-core'
 import PuppetMasterSelectInput from './PuppetMasterSelectInput'
 import PuppetEnvSelectInput from './PuppetEnvSelectInput'
 import PuppetclassesSelectInput from './PuppetclassesSelectInput'
 
 const Custom = () => {
   const selects = [{
-    id: 'puppetMasterId',
+    name: 'puppetMasterId',
     components: [PuppetMasterSelectInput]
   }, {
-    id: 'puppetEnvId',
+    name: 'puppetEnvId',
     components: [PuppetEnvSelectInput]
   }, {
-    id: 'puppetclassIds',
+    name: 'puppetclassIds',
     components: [PuppetclassesSelectInput]
   }]
 
   return (
-    <Fragment>
-      <h3>{T.translate('hosts_form.puppet_config.header')}</h3>
-      <Row>
-        <Col xs={12} sm={6}>
+
+    <TextContent>
+      <Text component={TextVariants.h3}>
+        {T.translate('hosts_form.puppet_config.header')}
+      </Text>
+      <Grid hasGutter>
+        <GridItem sm={6}>
           <Slot name='HostsForm/PuppetConfig/Custom' elements={selects} />
-        </Col>
-      </Row>
-    </Fragment>
+        </GridItem>
+      </Grid>
+    </TextContent>
   )
 }
 

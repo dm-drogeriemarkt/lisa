@@ -27,8 +27,6 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   const appTier = appTiers.find(({ name }) => name === data.appTierName)
   const medium = location.relations.media.find(({ operatingsystemId }) => operatingsystemId === operatingsystem.id)
 
-  const { hostCount, hostNames } = data
-
   unset(data, 'hostCount')
   unset(data, 'hostNames')
   unset(data, 'project')
@@ -81,8 +79,10 @@ const hostsCreateParams = (formValues, { computeResource }) => {
     return datastoreTemplate.replace('#DC#', datastoreDatacenterNumber)
   }
 
-  return [...Array(hostCount)].map((_, i) => merge({
-    name: hostNames[`name_${i+1}`],
+  const { hostnames, ...hostAttributes } = data;
+
+  return Object.values(hostnames).map((name, i) => merge({
+    name,
     computeAttributes: {
       volumes_attributes: [
         {
@@ -90,7 +90,7 @@ const hostsCreateParams = (formValues, { computeResource }) => {
         }
       ]
     }
-  }, data))
+  }, hostAttributes));
 }
 
 export default hostsCreateParams

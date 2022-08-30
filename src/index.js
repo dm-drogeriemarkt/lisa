@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './variables.css';
 import './index.css';
 import App from './containers/App';
 import { auth as authSettings } from './settings';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom'
 import { merge } from 'lodash'
-
-import '@patternfly/react-core/dist/styles/base.css';
-import 'patternfly/dist/css/patternfly.css';
-import 'patternfly/dist/css/patternfly-additions.css';
-import 'patternfly-react/dist/css/patternfly-react.css';
-import 'react-select/dist/react-select.css';
 
 import T from 'i18n-react';
 import { ApolloProvider } from '@apollo/client'
