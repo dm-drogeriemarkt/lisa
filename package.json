@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@apollo/client": "3.6.5",
+    "@apollo/client": "3.6.9",
     "@patternfly/react-core": "^4.231.8",
     "@patternfly/react-styles": "^4.74.1",
     "bootstrap": "^4.1.3",
