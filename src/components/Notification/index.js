@@ -1,5 +1,5 @@
 import React from 'react';
-import NotificationGfx from './lisa-notification-gfx.svg';
+import NotificationGfx from './lisa-notification-gfx.min.svg';
 import './index.scss';
 
 const Notification = ({children}) => (
