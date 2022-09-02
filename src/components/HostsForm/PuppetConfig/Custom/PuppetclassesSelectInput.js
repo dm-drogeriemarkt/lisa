@@ -1,22 +1,23 @@
-import React, { useContext, useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
+import { useFormContext, useController } from 'react-hook-form'
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
 import { get, intersection } from 'lodash'
 import useUser from 'hooks/useUser'
-import { HostsFormContext } from 'lib/Context'
 import SelectInput from 'components/HostsForm/SelectInput'
 import PUPPET_CLASSES_BY_ENVIRONMENT_QUERY from 'graphql/queries/puppetClassesByEnvironment'
 
-const PuppetclassesSelectInput = ({...attrs}) => {
+const PuppetclassesSelectInput = ({ name='puppetclassIds', ...attrs }) => {
   const { token } = useUser();
+  const { control, watch } = useFormContext();
   const {
-    updateAttribute,
-    attributes: {
-      puppetclassIds,
-      puppetEnvId
+    field: {
+      value: puppetclassIds,
+      onChange: setPuppetclassIds
     }
-  } = useContext(HostsFormContext)
+  } = useController({ control, name })
 
+  const puppetEnvId = watch('puppetEnvId');
   const { loading, data } = useQuery(PUPPET_CLASSES_BY_ENVIRONMENT_QUERY, {
     variables: {
       id: puppetEnvId
@@ -36,13 +37,9 @@ const PuppetclassesSelectInput = ({...attrs}) => {
       const newOptionsIds = options.map(({ id }) => (id));
       const newPuppetclassIds = intersection(puppetclassIds, newOptionsIds)
 
-      updateAttribute({ puppetclassIds: newPuppetclassIds })
+      setPuppetclassIds(newPuppetclassIds)
     }
   }, [options, loading])
-
-  const handleChange = (puppetclassIds) => {
-    updateAttribute({ puppetclassIds })
-  }
 
   return (
     <SelectInput
@@ -50,7 +47,7 @@ const PuppetclassesSelectInput = ({...attrs}) => {
       placeholder={T.translate('hosts_form.placeholders.puppetclass_ids')}
       value={puppetclassIds}
       loading={loading}
-      onChange={handleChange}
+      onChange={setPuppetclassIds}
       options={options}
       multi={true}
       {...attrs}

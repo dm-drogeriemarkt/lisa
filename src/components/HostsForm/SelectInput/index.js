@@ -1,55 +1,23 @@
 import React from 'react'
-import { Col, FormGroup, ControlLabel, Spinner } from 'patternfly-react'
-import Select from 'react-select'
-import './index.css'
+import { FormGroup } from '@patternfly/react-core'
+import SingleSelectInput from './SingleSelectInput';
+import MultipleSelectInput from './MultipleSelectInput';
+import './index.scss'
 
 const SelectInput = ({
+  name,
   label,
-  placeholder,
-  loading,
-  value,
-  options,
   multi,
-  onChange,
-  disabled,
-  clearable = false,
-  required = true,
-  searchable = true
-}) => {
-  const selectOptions = loading ? [{ value: undefined, label: <Spinner loading /> }]
-    : options.map(({ id: value, name: label }) => ({ value, label }))
-
-  const handleChange = (value) => {
-    const newValue = value && (multi ? value.map(({ value }) => value) : value.value)
-    onChange(newValue)
-  }
-
-  const selectValue = !disabled && value
-
-  return (
-    <FormGroup controlId='' bsSize='large' validationState='error'>
-      <Col xs={12}>
-        <ControlLabel>
-          { label }
-        </ControlLabel>
-      </Col>
-      <Col xs={12}>
-        <Select
-          placeholder={placeholder}
-          value={selectValue}
-          options={selectOptions}
-          multi={multi}
-          onChange={handleChange}
-          disabled={disabled}
-          clearable={clearable}
-          required={required}
-          searchable={searchable}
-          menuContainerStyle={{zIndex: 2}}
-        />
-        { required && <input className="hidden-input" defaultValue={value} required onChange={() => {}} /> }
-      </Col>
-    </FormGroup>
-  )
-}
+  isRequired = false,
+  ...props
+}) => (
+  <FormGroup
+    label={label}
+    isRequired={isRequired}
+    fieldId={`select-field-${name}`}
+  >
+    {multi ? <MultipleSelectInput {...props} /> : <SingleSelectInput {...props} />}
+  </FormGroup>
+)
 
 export default SelectInput

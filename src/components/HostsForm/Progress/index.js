@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ProgressBar } from 'patternfly-react';
+import { Progress as PatternflyProgress } from '@patternfly/react-core';
+
 import './index.css';
 
 class Progress extends Component {
@@ -44,8 +45,10 @@ class Progress extends Component {
   }
 
   render() {
+    const { title='' } = this.props;
+
     return (
-      <ProgressBar now={this.state.progress} />
+      <PatternflyProgress title={title} value={this.state.progress} />
     )
   }
 }

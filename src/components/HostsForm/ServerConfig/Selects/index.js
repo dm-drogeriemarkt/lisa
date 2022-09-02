@@ -7,16 +7,16 @@ import OwnerSelectInput from './OwnerSelectInput'
 
 const Selects = () => {
   const selects = [{
-    id: 'appTierName',
+    name: 'appTierName',
     components: [AppTierSelectInput]
   }, {
-    id: 'subnetId',
+    name: 'subnetId',
     components: [SubnetSelectInput]
   }, {
-    id: 'ownerId',
+    name: 'ownerId',
     components: [OwnerSelectInput]
   }, {
-    id: 'datastoreType',
+    name: 'datastoreTypeId',
     components: [DatastoreTypeSelectInput]
   }]
 

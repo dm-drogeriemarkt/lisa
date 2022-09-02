@@ -1,23 +1,31 @@
-import React, { useContext } from 'react'
+import React, { useMemo } from 'react'
+import { useFormContext, useController } from 'react-hook-form'
+import { ValidatedOptions } from '@patternfly/react-core';
 import T from 'i18n-react'
 import { useQuery } from '@apollo/client'
 import { get } from 'lodash'
 import useUser from 'hooks/useUser'
 import SelectInput from 'components/HostsForm/SelectInput'
-import { HostsFormContext } from 'lib/Context'
 import PUPPET_MASTERS_QUERY from 'graphql/queries/puppetMasters'
 import useLocation from 'hooks/useLocation'
 
-const PuppetMasterSelectInput = ({...attrs}) => {
+const PuppetMasterSelectInput = ({ name='puppetMasterId', ...attrs }) => {
   const { token } = useUser();
+  const { control, watch } = useFormContext();
   const {
-    updateAttribute,
-    attributes: {
-      locationCode,
-      puppetMasterId
+    field: { value, onChange },
+    fieldState: { invalid }
+  } = useController({
+    control,
+    name,
+    rules: {
+      required: true
     }
-  } = useContext(HostsFormContext)
+  })
 
+  const validated = useMemo(() => (invalid ? ValidatedOptions.error : ValidatedOptions.success), [invalid])
+
+  const locationCode = watch('locationCode')
   const { location } = useLocation(locationCode)
 
   const { loading, data } = useQuery(PUPPET_MASTERS_QUERY, {
@@ -30,18 +38,15 @@ const PuppetMasterSelectInput = ({...attrs}) => {
   })
   const puppetMasters = get(data, 'smartProxies.edges', []).map(({ node: { id, name }}) => ({ id, name }))
 
-  const handleChange = (puppetMasterId) => {
-    updateAttribute({ puppetMasterId })
-  }
-
   return (
     <SelectInput
       label={T.translate('hosts_form.puppet_master_id')}
       placeholder={T.translate('hosts_form.placeholders.puppet_master_id')}
-      value={puppetMasterId}
+      value={value}
       loading={loading}
-      onChange={handleChange}
+      onChange={onChange}
       options={puppetMasters}
+      validated={validated}
       {...attrs}
     />
   )

@@ -1,45 +1,53 @@
-import React, { Fragment, useContext } from 'react'
+import React from 'react'
 import T from 'i18n-react'
-import { CardGrid, Row, Col } from 'patternfly-react'
-
+import {
+  Alert,
+  Grid,
+  GridItem,
+  Text,
+  TextContent,
+  TextVariants
+} from '@patternfly/react-core';
 import Card from './Card'
-import Warning from './Warning'
 import { locations } from 'settings'
-import { HostsFormContext } from 'lib/Context'
 import useLocation from 'hooks/useLocation'
 
-const Custom = () => {
-  const {
-    attributes: {
-      locationCode
+const Custom = ({
+  locationCode: {
+    field: {
+      value: locationCode,
+      onChange: setLocationCode
     }
-  } = useContext(HostsFormContext)
-
+  }
+}) => {
   const {
-    location: currentLocation,
-    reducedPerformance,
-    explanation
+    label: {
+      location: currentLocation,
+      explanation,
+      reducedPerformance
+    }
   } = useLocation(locationCode)
 
+  const locationName = `${currentLocation} - ${explanation}`; 
 
   return (
-    <Fragment>
-      <h3>{ T.translate('hosts_form.location.custom.header') }</h3>
-      <CardGrid>
-        <Row>
-          {
-            locations.map((location, i) => (
-              <Col xs={12} sm={6} md={3} key={i}>
-                <Card location={location} />
-              </Col>
-            ))
-          }
-        </Row>
-      </CardGrid>
-      { reducedPerformance === 'true' && (
-        <Warning location={currentLocation} explanation={explanation} />
+    <TextContent>
+      <Text component={TextVariants.h3}>
+        { T.translate('hosts_form.location.custom.header') }
+      </Text>
+      <Grid hasGutter sm={12} md={6} xl={4} xl2={3}>
+        {locations.map((location, i) => (
+          <GridItem key={i}>
+            <Card location={location} setLocationCode={setLocationCode} />
+          </GridItem>
+        ))}
+      </Grid>
+      {reducedPerformance && (
+        <Alert variant="warning" title={locationName} className='pf-u-mt-lg' isInline>
+          {T.translate('hosts_form.location.custom.warning', { location: locationName })}
+        </Alert>
       )}
-    </Fragment>
+    </TextContent>
   )
 }
 

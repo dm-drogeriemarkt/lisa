@@ -1,91 +1,90 @@
-import React, { Fragment, useContext, useEffect } from 'react'
-import { useQuery } from '@apollo/client'
+import React, { useEffect, useMemo } from 'react'
+import T from 'i18n-react';
 import { get } from 'lodash'
-import { Col, FormGroup, FormControl, ControlLabel, Icon } from 'patternfly-react'
-
+import { useFormContext, useController } from 'react-hook-form'
+import { useLazyQuery } from '@apollo/client'
+import {
+  FormGroup,
+  TextInput,
+  ValidatedOptions,
+  HelperText,
+  HelperTextItem
+} from '@patternfly/react-core';
 import useUser from 'hooks/useUser'
-import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
-import { HostsFormContext } from 'lib/Context'
 import useLocation from 'hooks/useLocation'
+import HOSTNAMES_ALREADY_TAKEN_QUERY from 'graphql/queries/hostnamesAlreadyTaken'
 
-const HostNameInput = ({ number }) => {
+const HostNameInput = ({ number, project, role }) => {
+  const fieldName = `hostnames.host${number}`;
   const { token } = useUser();
-  const {
-    updateAttribute,
-    attributes: {
-      role,
-      project,
-      appTierName,
-      locationCode,
-      hostNames = {}
-    }
-  } = useContext(HostsFormContext)
-
+  const defaultValue = useMemo(() => (`${project}-${role}-${number.toString().padStart(2, '0')}`), [project, role, number]);
+  const { control, resetField, trigger, watch } = useFormContext();
+  const [locationCode, appTierName] = watch(['locationCode', 'appTierName'])
   const { domainName } = useLocation(locationCode)
-
-  const hostNumber = number.toString().padStart(2, '0')
-  const defaultValue = `${project}-${role}-${hostNumber}`
-  const value = get(hostNames, `name_${number}`, defaultValue)
-
-  const { data, loading } = useQuery(HOSTNAMES_ALREADY_TAKEN_QUERY, {
-    variables: {
-      first: 1,
-      last: 1,
-      search: `name=${value}.${appTierName}.${domainName}`
-    },
-    context: { token },
-    skip: !value,
-    fetchPolicy: 'cache-and-network'
-  })
-
-  const updateValue = (value) => {
-    hostNames[`name_${number}`] = value ? value : undefined
-    Object.keys(hostNames).forEach((key) => {
-      hostNames[key] === undefined && delete hostNames[key]
-    })
-    updateAttribute({ hostNames })
-  }
-
-  const setDefaultValueEffect = () => {
-    updateValue(defaultValue)
-
-    return () => updateValue(undefined)
-  }
-  useEffect(setDefaultValueEffect, [role, project])
-
-  const handleChange = ({ target: { value }}) => updateValue(value)
-  const ensureValueSet = ({ target: { value }}) => {
-    if(!value) {
-      updateValue(defaultValue)
+  const [queryHostnamesAlreadyTaken] = useLazyQuery(HOSTNAMES_ALREADY_TAKEN_QUERY, { context: { token }, fetchPolicy: 'cache-and-network' });
+  const {
+    field: { value, onChange },
+    fieldState: {
+      invalid,
+      error: { message: error } = {}
     }
-  }
+  } = useController({
+    control,
+    name: fieldName,
+    shouldUnregister: true,
+    defaultValue: defaultValue,
+    rules: {
+      required: T.translate('form.validations.required'),
+      pattern: {
+        value: /^[a-z0-9]+-[a-z0-9]+-[0-9]{2}$/i,
+        message: T.translate('form.validations.pattern')
+      },
+      validate: {
+        uniq: async (newValue) => {
+          const { data } = await queryHostnamesAlreadyTaken({ variables: {
+            first: 1,
+            last: 1,
+            search: `name=${newValue}.${appTierName}.${domainName}`
+          }});
 
-  const alreadyTaken = get(data, 'hosts.edges[0].node.name')
-  const alreadyTakenPattern = alreadyTaken ? `(?!${value})` : ''
-  const pattern = `^${alreadyTakenPattern}[a-z0-9]+-[a-z0-9]+-[0-9]{2}$`
+          return !get(data, 'hosts.edges', []).length || T.translate('form.validations.uniq')
+        }
+      }
+    },
+  });
+
+  useEffect(() => {
+    async function revalidate() {
+      await trigger(fieldName);
+    }
+    resetField(fieldName, { defaultValue });
+    revalidate();
+  }, [fieldName, defaultValue]);
+
+  const validated = useMemo(() => invalid ? ValidatedOptions.error : ValidatedOptions.success, [invalid])
 
   return (
-    <FormGroup controlId='name' bsSize='large'>
-      <Col xs={12}>
-        <ControlLabel>
-          { `Host ${number} Name` }
-        </ControlLabel>
-      </Col>
-      <Col xs={12}>
-        <FormControl
-          value={value}
-          onChange={handleChange}
-          onBlur={ensureValueSet}
-          bsClass='Select-control input-separator'
-          pattern={pattern}
-          maxLength='63'
-          required
-        />
-        { loading ? <Icon type='pf' name='spinner' /> : <Fragment>
-          <Icon type='pf' name='ok' />
-          <Icon type='pf' name='error-circle-o' /> 
-        </Fragment> }
-      </Col>
+    <FormGroup
+      label={T.translate('hosts_form.hosts_creation.hosts_names.label', { number })}
+      isRequired
+      fieldId={`hostname-${number}`}
+      helperTextInvalid={
+        <HelperText>
+          <HelperTextItem variant="error">
+            {error}
+          </HelperTextItem>
+        </HelperText>
+      }
+      validated={validated}
+    >
+      <TextInput
+        type="text"
+        id={`hostname-${number}`}
+        value={value}
+        onChange={onChange}
+        validated={validated}
+        isRequired
+      />
     </FormGroup>
   )
 }
