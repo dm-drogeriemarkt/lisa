@@ -32,7 +32,6 @@
     "test": "react-scripts test --env=jsdom --passWithNoTests",
     "test:debug": "echo 'Open Chrome at chrome://inspect to start debugging' && react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
-    "upload": "s3-deploy './build/**' --cwd './build/' --region eu-central-1 --bucket ${WEBBUCKET} --deleteRemoved --private --signatureVersion v4",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
     "docs": "rm -rf docs/settings && npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
     "prepare": "husky install"
@@ -46,7 +45,6 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "husky": "^8.0.1",
     "jest-enzyme": "^7.0.1",
-    "s3-deploy": "^0.10.0",
     "waait": "^1.0.2"
   },
   "browserslist": [
