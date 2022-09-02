@@ -46,7 +46,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "husky": "^8.0.1",
     "jest-enzyme": "^7.0.1",
-    "s3-deploy": "^0.10.0",
+    "s3-deploy": "^1.4.0",
     "waait": "^1.0.2"
   },
   "browserslist": [
