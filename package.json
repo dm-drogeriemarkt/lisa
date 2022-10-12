@@ -37,7 +37,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@adobe/jsonschema2md": "^7.1.1",
+    "@adobe/jsonschema2md": "^7.1.2",
     "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-react": "^7.18.6",
     "ajv-cli": "^5.0.0",
