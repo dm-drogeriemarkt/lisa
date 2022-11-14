@@ -1,4 +1,4 @@
-import { locations } from 'settings'
+import { locations } from '../settings'
 
 const useLocation = (locationCode) => locations.find(({ code }) => code === locationCode)
 

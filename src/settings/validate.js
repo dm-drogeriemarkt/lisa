@@ -8,7 +8,7 @@ class SettingsError extends Error {
   }
 }
 
-const schema = require('./settings.schema')
+import schema from './settings.schema'
 
 const validate = (data) => {
   try {

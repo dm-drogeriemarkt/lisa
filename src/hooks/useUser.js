@@ -1,7 +1,7 @@
 import { get } from 'lodash'
-import { auth as authSettings } from 'settings'
-import { isEnabled, useAuth as useOidcAuth } from 'lib/auth/oidc'
-import { useAuth as useForemanAuth } from 'lib/auth/foreman'
+import { auth as authSettings } from '../settings'
+import { isEnabled, useAuth as useOidcAuth } from '../lib/auth/oidc'
+import { useAuth as useForemanAuth } from '../lib/auth/foreman'
 
 export function useForemanUser() {
   const { userData, signOut } = useForemanAuth();
