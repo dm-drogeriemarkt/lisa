@@ -43,7 +43,7 @@
     "ajv-cli": "^5.0.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.15.7",
-    "husky": "^8.0.1",
+    "husky": "^8.0.2",
     "jest-enzyme": "^7.0.1",
     "waait": "^1.0.2"
   },
