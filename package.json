@@ -33,7 +33,7 @@
     "test:debug": "echo 'Open Chrome at chrome://inspect to start debugging' && react-scripts --inspect-brk test --runInBand --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.json src/",
-    "docs": "rm -rf docs/settings && npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
+    "docs": "git rm -r docs/settings --quiet && npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
     "prepare": "husky install"
   },
   "devDependencies": {
