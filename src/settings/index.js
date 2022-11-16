@@ -2,7 +2,8 @@ import validate from './validate'
 import humps from 'lodash-humps'
 import { get, defaultsDeep } from 'lodash'
 
-const json = require(`./${process.env.REACT_APP_SETTINGS_FILE}`)
+const jsons = import.meta.globEager('./(development|production).json')
+const { default: json } = get(jsons, `./${import.meta.env.MODE}.json`, {})
 
 validate(json)
 
