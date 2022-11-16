@@ -23,11 +23,10 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
       - run: npm run lint
-      - name: npm test
+      - name: Validate settings
         run: |
           npx ajv -d src/settings/example.json -s src/settings/settings.schema.json
           npx ajv -d src/settings/test.json -s src/settings/settings.schema.json
-          npm test
       - run: mv src/settings/test.json src/settings/production.json
       - run: npm run build
 
