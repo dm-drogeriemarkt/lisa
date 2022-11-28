@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "3.7.1",
-    "@patternfly/react-core": "^4.250.1",
+    "@patternfly/react-core": "^4.264.0",
     "bootstrap": "^5.2.2",
     "bytes": "^3.1.2",
     "classnames": "^2.3.2",
