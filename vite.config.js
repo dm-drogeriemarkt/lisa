@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite'
+import path from 'path';
+
 
 export default defineConfig({
   server: {
@@ -7,5 +9,10 @@ export default defineConfig({
   envPrefix: 'REACT_APP_',
   build: {
     outDir: 'build'
-  }
+  },
+  resolve: {
+    alias: {
+      '#' : path.resolve(__dirname, './src')
+    },
+  },
 })

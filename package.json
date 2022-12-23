@@ -45,6 +45,7 @@
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.2",
     "jest-enzyme": "^7.0.1",
+    "path": "^0.12.7",
     "tslib": "^2.4.1",
     "vite": "^3.2.3",
     "waait": "^1.0.2"
