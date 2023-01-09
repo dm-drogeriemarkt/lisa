@@ -41,7 +41,6 @@
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.2",
-    "jest-enzyme": "^7.0.1",
     "path": "^0.12.7",
     "vite": "^4.0.3"
   },
