@@ -16,7 +16,7 @@ const authMiddleware = new ApolloLink((operation, forward) => {
 })
 
 // eslint-disable-next-line no-undef
-const httpLink = new BatchHttpLink({ uri: process.env.REACT_APP_GRAPHQL_API_URL });
+const httpLink = new BatchHttpLink({ uri: import.meta.env.REACT_APP_GRAPHQL_API_URL });
 
 const errorLink = onError(({ networkError, graphQLErrors }) => {
   if (graphQLErrors) {

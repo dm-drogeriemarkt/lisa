@@ -1,4 +1,4 @@
-import { appTiers } from 'settings'
+import { appTiers } from '../settings'
 
 export function label(domain) {
   if (!domain) {

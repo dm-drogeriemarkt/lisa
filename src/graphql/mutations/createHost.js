@@ -1,7 +1,7 @@
 import { mutation as generateMutation, params as applyParams, types } from 'typed-graphqlify'
 import gql from 'graphql-tag'
 import { merge } from 'lodash'
-import { pluginsExtensions } from 'plugins'
+import { pluginsExtensions } from '../../plugins'
 
 const SLOT = 'GraphQL/Mutations/CreateHostMutation/Input'
 const CORE_INPUT = {

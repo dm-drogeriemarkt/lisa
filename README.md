@@ -72,6 +72,13 @@ $ npm test
 $ npm start
 ```
 
+## Production preview
+
+```
+$ npm run build
+$ npm run preview
+```
+
 ## Running in Docker / Production
 
 Create src/settings/production.json file. (See above)
