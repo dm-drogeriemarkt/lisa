@@ -19,6 +19,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Update npm to the latest version
         run: npm install -g npm@latest
+      - name: Install packages that are used in this pipeline
+        run: npm install --global ajv-cli wait-on
       - run: npm install
       - uses: actions/cache@v3
         with:
