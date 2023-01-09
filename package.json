@@ -42,7 +42,7 @@
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.2",
     "path": "^0.12.7",
-    "vite": "^4.0.3"
+    "vite": "^4.0.4"
   },
   "browserslist": [
     ">0.2%",
