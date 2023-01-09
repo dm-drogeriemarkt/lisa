@@ -8,17 +8,19 @@ jobs:
     timeout-minutes: 10
     strategy:
       fail-fast: true
-      max-parallel: 2
+      max-parallel: 3
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [14.x, 16.x, 18.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Update npm to the latest version
+        run: npm install -g npm@latest
       - run: npm install
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
@@ -29,12 +31,12 @@ jobs:
           npx ajv -d src/settings/test.json -s src/settings/settings.schema.json
       - run: mv src/settings/test.json src/settings/production.json
       - run: npm run build
-
+      - run: npm start & npx wait-on tcp:3001
   docker:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Docker Build
         run: |
           cp src/settings/example.json src/settings/production.json
