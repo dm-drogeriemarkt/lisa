@@ -38,18 +38,12 @@
     "@babel/eslint-parser": "^7.19.1",
     "@babel/preset-react": "^7.18.6",
     "@vitejs/plugin-react": "^3.0.0",
-    "ajv-cli": "^5.0.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.15.7",
     "eslint": "^8.27.0",
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.2",
     "jest-enzyme": "^7.0.1",
     "path": "^0.12.7",
-    "tslib": "^2.4.1",
-    "vite": "^4.0.3",
-    "waait": "^1.0.2",
-    "wait-on": "^7.0.1"
+    "vite": "^4.0.3"
   },
   "browserslist": [
     ">0.2%",
