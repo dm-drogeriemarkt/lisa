@@ -11,11 +11,19 @@ This README outlines the details of collaborating on this React.js application.
 | --------------- |
 | >= 1.24         |
 
-LISA is known to work with Node version >= 14 and <= 16.
+LISA is known to work with Node version >= 14 and <= 18.
 
 ## Installation
 
+Make sure you use the latest version of npm:
+
+```bash
+$ npm install -g npm@latest
 ```
+
+Download and install packages:
+
+```bash
 $ npm install
 ```
 
