@@ -11,6 +11,15 @@ export default defineConfig({
     outDir: 'build'
   },
   resolve: {
+    dedupe: [
+      '@apollo/client',
+      '@patternfly/react-core',
+      'graphql-tag',
+      'i18n-react',
+      'lodash',
+      'react',
+      'react-hook-form'
+    ],
     alias: {
       '#' : path.resolve(__dirname, './src')
     },
