@@ -19,7 +19,7 @@
     "react-dom": "^16.13.1",
     "react-flag-icon-css": "^1.0.24",
     "react-hook-form": "^7.43.0",
-    "react-router-dom": "^6.8.0",
+    "react-router-dom": "^6.8.2",
     "react-use": "^17.4.0",
     "sass": "^1.57.1",
     "typed-graphqlify": "^3.1.6",
