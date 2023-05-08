@@ -45,7 +45,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "path": "^0.12.7",
-    "vite": "^4.2.1"
+    "vite": "^4.3.5"
   },
   "browserslist": [
     ">0.2%",
