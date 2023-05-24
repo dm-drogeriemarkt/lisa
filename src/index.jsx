@@ -29,6 +29,8 @@ const oidcConfig = {
   scope,
   redirectUri,
   autoSignIn: false,
+  automaticSilentRenew: false,
+  loadUserInfo: false
 };
 
 ReactDOM.render((
