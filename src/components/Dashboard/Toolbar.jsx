@@ -25,7 +25,7 @@ const Toolbar = ({
 }) => {
   const isAscendingOrder = sortDirection === ASCENDING_SORT_DIRECTION
 
-  const handleChangeSearch = (newValue) => {
+  const handleChangeSearch = ({ target: { value: newValue }}) => {
     if (newValue) {
       updateParams({
         filterValue: newValue,
