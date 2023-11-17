@@ -8,7 +8,7 @@
     "bootstrap": "^5.2.3",
     "bytes": "^3.1.2",
     "classnames": "^2.3.2",
-    "graphql": "^16.6.0",
+    "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "hoek": "^6.1.3",
     "i18n-react": "^0.7.0",
