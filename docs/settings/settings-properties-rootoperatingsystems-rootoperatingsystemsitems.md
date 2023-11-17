@@ -20,6 +20,7 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 | :---------------------- | :------- | :------- | :------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [id](#id)               | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")                                        |
 | [name](#name)           | `string` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")                                    |
+| [firmware](#firmware)   | `string` | Optional | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-firmware.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/firmware")                            |
 | [relations](#relations) | `object` | Required | cannot be null | [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations") |
 
 ## id
@@ -68,6 +69,45 @@ Operating system name
 
 ```json
 "RedHat 7.6"
+```
+
+## firmware
+
+Firmware
+
+`firmware`
+
+*   is optional
+
+*   Type: `string`
+
+*   cannot be null
+
+*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-firmware.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/firmware")
+
+### firmware Type
+
+`string`
+
+### firmware Constraints
+
+**enum**: the value of this property must be equal to one of the following values:
+
+| Value         | Explanation |
+| :------------ | :---------- |
+| `"automatic"` |             |
+| `"bios"`      |             |
+| `"efi"`       |             |
+| `"uefi"`      |             |
+
+### firmware Examples
+
+```json
+"automatic"
+```
+
+```json
+"efi"
 ```
 
 ## relations
