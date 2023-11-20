@@ -509,6 +509,12 @@
             "description": "Operating system name",
             "examples": ["RedHat 7.6"]
           },
+          "firmware": {
+            "type": "string",
+            "description": "Firmware",
+            "enum": ["automatic", "bios", "efi", "uefi"],
+            "examples": ["automatic", "efi"]
+          },
           "relations": {
             "type": "object",
             "title": "root.operatingsystems.items.relations",

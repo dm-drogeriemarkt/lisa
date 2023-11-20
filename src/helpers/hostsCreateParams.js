@@ -59,6 +59,9 @@ const hostsCreateParams = (formValues, { computeResource }) => {
   set(data, 'computeAttributes.path', location.computeAttributes.path)
   set(data, 'computeAttributes.cluster', location.relations.cluster)
   set(data, 'computeAttributes.guest_id', operatingsystem.relations.guestOperatingsystemId)
+  if(operatingsystem.firmware) {
+    set(data, 'computeAttributes.firmware', operatingsystem.firmware)
+  }
 
   const networkId = get(network, 'id')
   set(data, 'interfacesAttributes.0.computeAttributes.network', networkId)
