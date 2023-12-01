@@ -1,0 +1,115 @@
+---
+name: CI
+on: [push, pull_request]
+env:
+  SEED_ADMIN_PASSWORD: password
+  SEED_LOCATION: "LAN"
+  SEED_ORGANIZATION: "Organization 1"
+  RAILS_ENV: development
+  DATABASE_URL: postgresql://postgres:@localhost/test
+  DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL: true
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:12.1
+        ports: ['5432:5432']
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        foreman-core-branch: [2.5-stable, 3.0-stable, 3.1-stable, develop]
+        foreman-puppet-version: [null, 0.1.0, 2.0, 3.0]
+        ruby-version: [2.7]
+        node-version: [12.x]
+        exclude:
+          - foreman-core-branch: 2.5-stable
+            foreman-puppet-version: 2.0
+          - foreman-core-branch: 2.5-stable
+            foreman-puppet-version: 3.0
+          - foreman-core-branch: 3.0-stable
+            foreman-puppet-version: null
+          - foreman-core-branch: 3.1-stable
+            foreman-puppet-version: null
+          - foreman-core-branch: develop
+            foreman-puppet-version: null
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: lisa
+      - uses: actions/checkout@v2
+        with:
+          repository: theforeman/foreman
+          ref: ${{ matrix.foreman-core-branch }}
+          path: foreman
+      - name: Setup foreman_puppet
+        if: ${{ matrix.foreman-puppet-version != null }}
+        run: |
+          echo "gem 'foreman_puppet', '~> ${{ matrix.foreman-puppet-version }}'" > bundler.d/foreman-puppet.local.rb
+        working-directory: foreman
+      - name: Run Mocked Smart Proxy
+        run: docker run -d --env MAIN_APP_FILE='app.rb' -p 8800:80 -v /home/runner/work/lisa/lisa/lisa/e2e/smart-proxy:/usr/src/app erikap/ruby-sinatra
+      - uses: nanasess/setup-chromedriver@master
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      - run: |
+          sudo apt-get update
+          sudo apt-get install build-essential libcurl4-openssl-dev libvirt-dev ruby-libvirt zlib1g-dev libpq-dev
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+      - name: Install bundler
+        run: gem install bundler
+      - name: Copy lisa settings (puppet plugin enabled)
+        if: ${{ matrix.foreman-puppet-version != null }}
+        run: cp e2e/production.json.with_puppet_plugin src/settings/production.json
+        working-directory: lisa
+      - name: Copy lisa settings (puppet plugin disabled)
+        if: ${{ matrix.foreman-puppet-version == null }}
+        run: cp e2e/production.json.without_puppet_plugin src/settings/production.json
+        working-directory: lisa
+      - name: Build Lisa
+        run: docker build -t lisa-image .
+        working-directory: lisa
+      - name: Run Lisa
+        run: docker run -d -p 8080:8080 lisa-image
+        working-directory: lisa
+      - name: Cache Foreman gems
+        uses: actions/cache@v2
+        with:
+          path: foreman/vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('foreman/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Copy the Lisa specific configs to Foreman
+        run: cp -r lisa/e2e/foreman ./
+      - name: Setup Foreman
+        run: |
+          bundle config path vendor/bundle
+          bundle config set without journald development console mysql2 sqlite
+          bundle install --jobs 4 --retry 3
+          bundle lock --update
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rake db:seed
+        working-directory: foreman
+      - name: Cache gems
+        uses: actions/cache@v2
+        with:
+          path: foreman/vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('foreman/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - name: Run Foreman
+        run: bundle exec rails server -d -p 5000
+        working-directory: foreman
+      - name: Run tests
+        run: |
+          bundle install
+          bundle exec rake test
+        working-directory: lisa/e2e
