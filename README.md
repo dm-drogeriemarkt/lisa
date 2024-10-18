@@ -1,6 +1,6 @@
 # LISA
 
-[<img src="https://opensourcelogos.aws.dmtech.cloud/dmTECH_opensource_logo.svg" height="21" width="130">](https://www.dmtech.de/)
+[<img src="https://raw.githubusercontent.com/dm-drogeriemarkt/.github/refs/heads/main/assets/dmtech-open-source-badge.svg">](https://www.dmtech.de/)
 
 LISA, the lovely interface for sysadmins, is an opinionated UI for [Foreman](https://theforeman.org/). While the Foreman UI was made for infrastructure teams, LISA was made for users who want to create hosts without needing to know how that is done in detail.
 This README outlines the details of collaborating on this React.js application.
