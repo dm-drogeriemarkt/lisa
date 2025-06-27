@@ -2,7 +2,7 @@ import validate from './validate'
 import humps from 'lodash-humps'
 import { get, defaultsDeep } from 'lodash'
 
-const jsons = import.meta.globEager('./(development|production).json')
+const jsons = import.meta.glob('./(development|production).json',{ eager: true })
 const { default: json } = get(jsons, `./${import.meta.env.MODE}.json`, {})
 
 validate(json)
