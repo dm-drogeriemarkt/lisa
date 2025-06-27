@@ -1,0 +1,41 @@
+diff --git a/node_modules/react-flag-icon-css/lib/styles.js.flow b/node_modules/react-flag-icon-css/lib/styles.js.flow
+index e22083e..4d6b48b 100644
+--- a/node_modules/react-flag-icon-css/lib/styles.js.flow
++++ b/node_modules/react-flag-icon-css/lib/styles.js.flow
+@@ -1,6 +1,6 @@
+ // @flow
+-import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css'
+-import stylesMain from './styles/main.css'
++import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css?inline'
++import stylesMain from './styles/main.css?inline'
+ import type { CssModuleType } from './types/flow'
+ 
+ const finalStyles: CssModuleType = {
+diff --git a/node_modules/react-flag-icon-css/module/styles.js b/node_modules/react-flag-icon-css/module/styles.js
+index 38551fc..cbd0445 100644
+--- a/node_modules/react-flag-icon-css/module/styles.js
++++ b/node_modules/react-flag-icon-css/module/styles.js
+@@ -2,8 +2,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
+ 
+ function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+ 
+-import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css';
+-import stylesMain from './styles/main.css';
++import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css?inline';
++import stylesMain from './styles/main.css?inline';
+ 
+ var finalStyles = _objectSpread({}, stylesFlagIcon, stylesMain);
+ 
+diff --git a/node_modules/react-flag-icon-css/module/styles.js.flow b/node_modules/react-flag-icon-css/module/styles.js.flow
+index e22083e..4d6b48b 100644
+--- a/node_modules/react-flag-icon-css/module/styles.js.flow
++++ b/node_modules/react-flag-icon-css/module/styles.js.flow
+@@ -1,6 +1,6 @@
+ // @flow
+-import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css'
+-import stylesMain from './styles/main.css'
++import stylesFlagIcon from 'flag-icon-css/css/flag-icon.css?inline'
++import stylesMain from './styles/main.css?inline'
+ import type { CssModuleType } from './types/flow'
+ 
+ const finalStyles: CssModuleType = {
