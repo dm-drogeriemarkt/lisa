@@ -2,7 +2,6 @@
   "name": "lisa",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "dependencies": {
     "@apollo/client": "3.13.8",
     "@hapi/hoek": "^11.0.7",
