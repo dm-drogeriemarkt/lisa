@@ -20,6 +20,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flag-icon-css": "^1.0.25",
+    "react-flagpack": "^2.0.6",
     "react-hook-form": "^7.48.2",
     "react-router-dom": "^6.30.1",
     "react-use": "^17.4.0",
@@ -34,7 +35,7 @@
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js --ext .js,.jsx src/",
     "docs": "git rm -r docs/settings --quiet && npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
     "prepare": "husky install",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package && react-flagpack"
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "^7.1.5",

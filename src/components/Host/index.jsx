@@ -24,7 +24,6 @@ import WhmcsIcon from '@patternfly/react-icons/dist/js/icons/whmcs-icon';
 import ClusterIcon from '@patternfly/react-icons/dist/js/icons/cluster-icon';
 import SitemapIcon from '@patternfly/react-icons/dist/js/icons/sitemap-icon';
 import MapMarkerAltIcon from '@patternfly/react-icons/dist/js/icons/map-marker-alt-icon';
-import FlagIcon from '../../components/FlagIcon';
 
 import { label as location_label, country as location_country } from '../../helpers/location';
 import { label as domain_label } from '../../helpers/domain';
@@ -48,7 +47,7 @@ const Host = ({
   const headerItems = [
     {
       label: location_label(location, true),
-      Icon: () => country ? <FlagIcon code={country} /> : <MapMarkerAltIcon />
+      Icon: () => country ? <Flag code={country} /> : <MapMarkerAltIcon />
     },
     {
       label: domain_label(domain),
