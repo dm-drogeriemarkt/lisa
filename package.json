@@ -9,17 +9,14 @@
     "bootstrap": "^5.3.2",
     "bytes": "^3.1.2",
     "classnames": "^2.5.1",
-    "flag-icon-css": "^4.1.7",
     "graphql": "^16.8.1",
     "graphql-tag": "^2.12.6",
     "i18n-react": "^0.7.0",
     "lodash": "^4.17.21",
     "lodash-humps": "^3.1.5",
     "oidc-react": "^3.4.1",
-    "patch-package": "^8.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-flag-icon-css": "^1.0.25",
     "react-flagpack": "^2.0.6",
     "react-hook-form": "^7.48.2",
     "react-router-dom": "^6.30.1",
@@ -34,8 +31,8 @@
     "preview": "vite preview",
     "lint": "./node_modules/.bin/eslint -c .eslintrc.js --ext .js,.jsx src/",
     "docs": "git rm -r docs/settings --quiet && npx jsonschema2md -x - -d src/settings/ -o docs/settings/",
-    "prepare": "husky install",
-    "postinstall": "patch-package && react-flagpack"
+    "prepare": "husky",
+    "postinstall": "react-flagpack"
   },
   "devDependencies": {
     "@adobe/jsonschema2md": "^7.1.5",
