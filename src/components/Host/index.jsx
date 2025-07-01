@@ -47,7 +47,7 @@ const Host = ({
   const headerItems = [
     {
       label: location_label(location, true),
-      Icon: () => country ? <Flag code={country} /> : <MapMarkerAltIcon />
+      Icon: () => country.toUpperCase() ? <Flag code={country.toUpperCase()} /> : <MapMarkerAltIcon />
     },
     {
       label: domain_label(domain),

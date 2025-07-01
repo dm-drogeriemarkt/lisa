@@ -53,7 +53,7 @@ const Card = ({
 " />}
       </CardTitle>
       <CardBody>
-        <Flag code={country} size={'m'} />
+        <Flag code={country.toUpperCase()} size={'m'} />
       </CardBody>
       <CardFooter>
         {explanation}
