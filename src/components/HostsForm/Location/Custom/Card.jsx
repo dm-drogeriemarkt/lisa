@@ -7,8 +7,7 @@ import {
   CardFooter
 } from '@patternfly/react-core';
 import ExclamationTriangleIcon from '@patternfly/react-icons/dist/esm/icons/exclamation-triangle-icon';
-import FlagIcon from '../../../FlagIcon'
-
+import Flag from '../../../FlagIcon'
 const Card = ({
   setLocationCode,
   location: {
@@ -54,7 +53,7 @@ const Card = ({
 " />}
       </CardTitle>
       <CardBody>
-        <FlagIcon code={country} size={'4x'} />
+        <Flag code={country.toUpperCase()} size={'l'} />
       </CardBody>
       <CardFooter>
         {explanation}
