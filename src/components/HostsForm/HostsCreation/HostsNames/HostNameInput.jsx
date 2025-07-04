@@ -8,7 +8,8 @@ import {
   TextInput,
   ValidatedOptions,
   HelperText,
-  HelperTextItem
+  HelperTextItem,
+  FormHelperText
 } from '@patternfly/react-core';
 import useUser from '../../../../hooks/useUser'
 import useLocation from '../../../../hooks/useLocation'
@@ -68,23 +69,23 @@ const HostNameInput = ({ number, project, role }) => {
       label={T.translate('hosts_form.hosts_creation.hosts_names.label', { number })}
       isRequired
       fieldId={`hostname-${number}`}
-      helperTextInvalid={
-        <HelperText>
-          <HelperTextItem variant="error">
-            {error}
-          </HelperTextItem>
-        </HelperText>
-      }
-      validated={validated}
     >
       <TextInput
         type="text"
         id={`hostname-${number}`}
         value={value}
         onChange={onChange}
-        validated={validated}
         isRequired
       />
+      <FormHelperText>
+        <HelperText>
+          {validated && (
+            <HelperTextItem variant="error">
+              {error}
+            </HelperTextItem>
+          )}
+        </HelperText>
+      </FormHelperText>
     </FormGroup>
   )
 }
