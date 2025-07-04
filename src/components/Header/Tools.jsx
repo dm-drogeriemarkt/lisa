@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Avatar,
+  Avatar
+} from '@patternfly/react-core';
+import {
   Dropdown,
   DropdownToggle,
   DropdownItem,
-  PageHeaderTools,
-} from '@patternfly/react-core';
+  PageHeaderTools
+} from '@patternfly/react-core/deprecated';
 import useUser from '../../hooks/useUser';
-import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import avatarImg from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 const Tools = () => {
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const Tools = () => {
         onSelect={onSelect}
         toggle={
           <DropdownToggle
-            onToggle={onToggle}
+            onToggle={(_event, isOpen) => onToggle(isOpen)}
             icon={<Avatar src={avatarImg} />}
           >
             {username}
