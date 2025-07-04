@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import {
-  Select,
-  SelectOption,
-  SelectVariant,
   ValidatedOptions
 } from '@patternfly/react-core';
+import {
+  Select,
+  SelectOption,
+  SelectVariant
+} from '@patternfly/react-core/deprecated';
 
 const SelectInput = ({
   placeholder,
@@ -37,7 +39,7 @@ const SelectInput = ({
     selections={value}
     onSelect={handleChange}
     isOpen={isOpen}
-    onToggle={setIsOpen}
+    onToggle={(_event, val) => setIsOpen(val)}
     placeholderText={placeholder}
     validated={validated}
     isDisabled={disabled}
