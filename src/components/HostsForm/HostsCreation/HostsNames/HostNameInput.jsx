@@ -79,7 +79,7 @@ const HostNameInput = ({ number, project, role }) => {
       />
       <FormHelperText>
         <HelperText>
-          {!validated && (
+          {validated && (
             <HelperTextItem variant="error">
               {error}
             </HelperTextItem>
