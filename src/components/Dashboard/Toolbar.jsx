@@ -49,7 +49,7 @@ const Toolbar = ({
   return (
     <PatternflyToolbar id="toolbar-items">
       <ToolbarContent>
-        <ToolbarItem variant="search-filter" className="pf-u-w-50">
+        <ToolbarItem variant="search-filter" className="pf-v5-u-w-50">
           <SearchInput
             onChange={handleChangeSearch}
             value={filterValue}
@@ -61,7 +61,7 @@ const Toolbar = ({
             {isAscendingOrder ? <SortAlphaUpIcon /> : <SortAlphaDownIcon /> }
           </Button>
         </ToolbarItem>
-        <ToolbarGroup variant="filter-group" alignment={{ default: 'alignRight' }}>
+        <ToolbarGroup variant="filter-group" align={{ default: 'alignRight' }}>
           <ToolbarItem>
             <Link to='/hosts-new'>
               <Button variant='primary'>

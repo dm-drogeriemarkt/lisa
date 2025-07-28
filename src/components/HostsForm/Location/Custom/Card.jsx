@@ -42,14 +42,14 @@ const Card = ({
     <PatternflyCard
       onClick={handleClick}
       isSelected={isSelected}
-      isSelectableRaised
+      isSelectable
       isCompact
       isFlat
       isFullHeight
-      className='pf-u-text-align-center'
+      className='pf-v5-u-text-align-center'
     >
       <CardTitle>
-        {location} {reducedPerformance && <ExclamationTriangleIcon color="var(--pf-global--warning-color--100)
+        {location} {reducedPerformance && <ExclamationTriangleIcon color="var(--pf-v5-global--warning-color--100)
 " />}
       </CardTitle>
       <CardBody>
