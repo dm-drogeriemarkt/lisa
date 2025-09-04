@@ -18,7 +18,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flagpack": "^2.0.6",
-    "react-hook-form": "^7.48.2",
+    "react-hook-form": "^7.62.0",
     "react-router-dom": "^6.30.1",
     "react-use": "^17.6.0",
     "sass": "^1.91.0",
