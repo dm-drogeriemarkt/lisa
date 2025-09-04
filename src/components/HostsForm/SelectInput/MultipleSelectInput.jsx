@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ValidatedOptions
-} from '@patternfly/react-core';
-import {
-  Select,
-  SelectOption,
-  SelectVariant
-} from '@patternfly/react-core/deprecated';
+import { ValidatedOptions, Select, SelectOption } from '@patternfly/react-core';
 
 const SelectInput = ({
   placeholder,
@@ -14,51 +7,38 @@ const SelectInput = ({
   value=[],
   onChange,
   disabled,
-  clearable = false,
-  required = true,
-  searchable = true,
   validated = ValidatedOptions.default
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [selectedValues, setSelectedValues] = useState(value);
 
-  const variant = searchable ? SelectVariant.typeaheadMulti : SelectVariant.checkbox
-  const selectOptions = options.map(({ id, name }, i) => (
-    <SelectOption key={i} id={id} value={id}>
-      {name}
-    </SelectOption>
-  ))
-
-  const handleSelect = (selection) => {
-    const newValue = [...value, selection]
-    onChange(newValue)
-  }
-
-  const handleDeselect = (selection) => {
-    const newValue = value.filter(item => item !== selection)
-    onChange(newValue)
-  }
-
-  const handleChange = (_event, selection) => {
-    const handler = value.includes(selection) ? handleDeselect : handleSelect
-    handler(selection)
-    setIsOpen(false)
+  const handleChange = (event, value, isPlaceholder) => {
+    if (isPlaceholder) {
+      setSelectedValues([]);
+      onChange([]);
+    } else {
+      setSelectedValues(value);
+      onChange(value);
+    }
   };
 
-  const handleClear = () => onChange([]);
+  const selectOptions = options.map(({ id, name }, i) => (
+    <SelectOption key={i} value={id} label={name} hasCheckbox/>
+  ));
 
-  return <Select
-    variant={variant}
-    selections={value}
-    onSelect={handleChange}
-    isOpen={isOpen}
-    onToggle={(_event, val) => setIsOpen(val)}
-    placeholderText={placeholder}
-    validated={validated}
-    isDisabled={disabled}
-    onClear={!required || clearable ? handleClear : undefined}
-  >
-    {selectOptions}
-  </Select>
+  return (
+    <Select
+      aria-label={placeholder}
+      onSelect={handleChange}
+      value={selectedValues}
+      isDisabled={disabled}
+      validated={validated}
+      isCheckboxSelect
+      isMultiSelect
+      role="menu"
+    >
+      {selectOptions}
+    </Select>
+  );
 }
 
 export default SelectInput

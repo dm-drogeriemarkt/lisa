@@ -5,14 +5,11 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
-  Spinner
-} from '@patternfly/react-core';
-import {
+  Spinner,
   Dropdown,
-  DropdownPosition,
-  KebabToggle,
-  DropdownItem
-} from '@patternfly/react-core/deprecated';
+  DropdownItem,
+  MenuToggle,
+} from '@patternfly/react-core';
 import T from 'i18n-react';
 import { get } from 'lodash';
 import { description } from '../../../helpers/hardware';
@@ -70,9 +67,9 @@ const HostItem = ({
       >
         <Dropdown
           dropdownItems={dropdownItems}
-          toggle={<KebabToggle onToggle={onToggle} />}
+          toggle={<MenuToggle onToggle={onToggle} />}
           isOpen={isActionDropdownOpen}
-          position={DropdownPosition.right}
+          position="right"
           isPlain
         />
       </DataListAction>

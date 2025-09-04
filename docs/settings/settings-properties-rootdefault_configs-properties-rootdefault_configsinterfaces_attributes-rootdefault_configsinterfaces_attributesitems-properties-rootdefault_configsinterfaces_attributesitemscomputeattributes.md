@@ -26,13 +26,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `type`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes-properties-type.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/computeAttributes/properties/type")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes-properties-type.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/computeAttributes/properties/type")
 
 ### type Type
 

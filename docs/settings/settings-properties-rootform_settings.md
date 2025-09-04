@@ -41,13 +41,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `max_host_count_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-max_host_count_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_host_count_value")
+* defined in: [root](settings-properties-rootform_settings-properties-max_host_count_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_host_count_value")
 
 ### max\_host\_count\_value Type
 
@@ -67,13 +67,13 @@ The default value is:
 
 `host_creation_duration`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-host_creation_duration.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/host_creation_duration")
+* defined in: [root](settings-properties-rootform_settings-properties-host_creation_duration.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/host_creation_duration")
 
 ### host\_creation\_duration Type
 
@@ -93,13 +93,13 @@ The minimum number of CPUs that can be assigned to the host
 
 `min_cpu_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-min_cpu_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_cpu_value")
+* defined in: [root](settings-properties-rootform_settings-properties-min_cpu_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_cpu_value")
 
 ### min\_cpu\_value Type
 
@@ -119,13 +119,13 @@ The maximum number of CPUs that can be assigned to the host
 
 `max_cpu_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-max_cpu_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_cpu_value")
+* defined in: [root](settings-properties-rootform_settings-properties-max_cpu_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_cpu_value")
 
 ### max\_cpu\_value Type
 
@@ -145,13 +145,13 @@ The step of the CPUs number on the form
 
 `step_cpu`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-step_cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_cpu")
+* defined in: [root](settings-properties-rootform_settings-properties-step_cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_cpu")
 
 ### step\_cpu Type
 
@@ -171,13 +171,13 @@ The step that the CPUs label should appear on the form
 
 `mark_step_cpu`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-mark_step_cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_cpu")
+* defined in: [root](settings-properties-rootform_settings-properties-mark_step_cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_cpu")
 
 ### mark\_step\_cpu Type
 
@@ -197,13 +197,13 @@ The minimum memory that can be assigned to the host
 
 `min_memory_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-min_memory_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_memory_value")
+* defined in: [root](settings-properties-rootform_settings-properties-min_memory_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_memory_value")
 
 ### min\_memory\_value Type
 
@@ -223,13 +223,13 @@ The maximum memory that can be assigned to the host
 
 `max_memory_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-max_memory_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_memory_value")
+* defined in: [root](settings-properties-rootform_settings-properties-max_memory_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_memory_value")
 
 ### max\_memory\_value Type
 
@@ -249,13 +249,13 @@ The step of the memory size on the form
 
 `step_memory`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-step_memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_memory")
+* defined in: [root](settings-properties-rootform_settings-properties-step_memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_memory")
 
 ### step\_memory Type
 
@@ -275,13 +275,13 @@ The step that the memory size label should appear on the form
 
 `mark_step_memory`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-mark_step_memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_memory")
+* defined in: [root](settings-properties-rootform_settings-properties-mark_step_memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_memory")
 
 ### mark\_step\_memory Type
 
@@ -301,13 +301,13 @@ The minimum disk size that can be assigned to the host
 
 `min_size_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-min_size_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_size_value")
+* defined in: [root](settings-properties-rootform_settings-properties-min_size_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/min_size_value")
 
 ### min\_size\_value Type
 
@@ -327,13 +327,13 @@ The maximum disk size that can be assigned to the host
 
 `max_size_value`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-max_size_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_size_value")
+* defined in: [root](settings-properties-rootform_settings-properties-max_size_value.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/max_size_value")
 
 ### max\_size\_value Type
 
@@ -353,13 +353,13 @@ The step of the disk size on the form
 
 `step_size`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-step_size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_size")
+* defined in: [root](settings-properties-rootform_settings-properties-step_size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/step_size")
 
 ### step\_size Type
 
@@ -379,13 +379,13 @@ The step that the disk size label should appear on the form
 
 `mark_step_size`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-mark_step_size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_size")
+* defined in: [root](settings-properties-rootform_settings-properties-mark_step_size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/mark_step_size")
 
 ### mark\_step\_size Type
 
@@ -405,13 +405,13 @@ A set of attributes that can be assigned to a host with one click on a form elem
 
 `preset_resources`
 
-*   is optional
+* is optional
 
-*   Type: `object[]` ([root.form\_settings.preset\_resources.items](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems.md))
+* Type: `object[]` ([root.form\_settings.preset\_resources.items](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources")
 
 ### preset\_resources Type
 
@@ -435,13 +435,13 @@ The default value is:
 
 `default_values`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.form\_settings.default\_values](settings-properties-rootform_settings-properties-rootform_settingsdefault_values.md))
+* Type: `object` ([root.form\_settings.default\_values](settings-properties-rootform_settings-properties-rootform_settingsdefault_values.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values")
 
 ### default\_values Type
 

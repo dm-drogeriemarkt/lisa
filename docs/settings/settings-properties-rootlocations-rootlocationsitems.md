@@ -35,13 +35,13 @@ Location global id from Foreman
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/id")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/id")
 
 ### id Type
 
@@ -53,13 +53,13 @@ A unique code that is used to identify the location
 
 `code`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/code")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/code")
 
 ### code Type
 
@@ -71,13 +71,13 @@ Location name
 
 `name`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/name")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/name")
 
 ### name Type
 
@@ -89,13 +89,13 @@ This value will be used in the search query to filter subnets
 
 `location`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-location.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/location")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-location.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/location")
 
 ### location Type
 
@@ -107,13 +107,13 @@ Country code
 
 `country`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-country.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/country")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-country.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/country")
 
 ### country Type
 
@@ -135,13 +135,13 @@ Domain name
 
 `domain_name`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-domain_name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/domain_name")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-domain_name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/domain_name")
 
 ### domain\_name Type
 
@@ -159,13 +159,13 @@ These values will be visible on the host creation form
 
 `label`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.locations.items.label](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel.md))
+* Type: `object` ([root.locations.items.label](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label")
 
 ### label Type
 
@@ -177,13 +177,13 @@ These values will be visible on the host creation form
 
 `compute_attributes`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.locations.items.compute\_attributes](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes.md))
+* Type: `object` ([root.locations.items.compute\_attributes](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemscompute_attributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/compute_attributes")
 
 ### compute\_attributes Type
 
@@ -195,13 +195,13 @@ These values will be visible on the host creation form
 
 `datastore_types`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([root.locations.items.datastore\_types.items](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsdatastore_types-rootlocationsitemsdatastore_typesitems.md))
+* Type: `object[]` ([root.locations.items.datastore\_types.items](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsdatastore_types-rootlocationsitemsdatastore_typesitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsdatastore_types.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/datastore_types")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsdatastore_types.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/datastore_types")
 
 ### datastore\_types Type
 
@@ -219,13 +219,13 @@ These values will be visible on the host creation form
 
 `relations`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.locations.items.relations](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations.md))
+* Type: `object` ([root.locations.items.relations](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/relations")
 
 ### relations Type
 
