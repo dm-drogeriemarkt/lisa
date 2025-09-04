@@ -21,7 +21,7 @@
     "react-hook-form": "^7.48.2",
     "react-router-dom": "^6.30.1",
     "react-use": "^17.6.0",
-    "sass": "^1.69.5",
+    "sass": "^1.91.0",
     "typed-graphqlify": "^3.1.6",
     "url-parse": "^1.5.10"
   },
