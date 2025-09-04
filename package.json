@@ -38,7 +38,7 @@
     "@adobe/jsonschema2md": "^8.0.3",
     "@babel/core": "^7.27.7",
     "@babel/eslint-parser": "^7.28.0",
-    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-env": "^7.28.3",
     "@babel/preset-react": "^7.27.1",
     "eslint": "^8.53.0",
     "eslint-plugin-react": "^7.32.2",
