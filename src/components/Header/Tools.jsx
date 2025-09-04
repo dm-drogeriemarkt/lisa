@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import {
   Avatar,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  PageHeaderTools,
+  Toolbar,
+  ToolbarContent, MenuToggle
 } from '@patternfly/react-core';
 import useUser from '../../hooks/useUser';
-import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import avatarImg from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 const Tools = () => {
   const navigate = useNavigate();
@@ -28,22 +28,23 @@ const Tools = () => {
   ];
 
   return (
-    <PageHeaderTools>
-      {token && <Dropdown
-        onSelect={onSelect}
-        toggle={
-          <DropdownToggle
-            onToggle={onToggle}
-            icon={<Avatar src={avatarImg} />}
-          >
-            {username}
-          </DropdownToggle>
-        }
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-        isPlain
-      />}
-    </PageHeaderTools>
+    <Toolbar>
+      <ToolbarContent>
+        {token && <Dropdown
+          onSelect={onSelect}
+          toggle={
+            <MenuToggle
+              onToggle={(_event, isOpen) => onToggle(isOpen)}
+              icon={<Avatar src={avatarImg} />} >
+              {username}
+            </MenuToggle>
+          }
+          isOpen={isOpen}
+          dropdownItems={dropdownItems}
+          isPlain
+        />}
+      </ToolbarContent>
+    </Toolbar>
   );
 };
 

@@ -27,7 +27,7 @@ const OidcAuth = () => {
 
   return (
     <Form>
-      {oidcError && <Alert variant="danger" title={T.translate('login.oidc_error', { name })} className="pf-u-mt-xl pf-u-p-md" />}
+      {oidcError && <Alert variant="danger" title={T.translate('login.oidc_error', { name })} className="pf-v5-u-mt-xl pf-v5-u-p-md" />}
       <Button onClick={handleClick}>{T.translate('login.oidc', { name })}</Button>
     </Form>
   )

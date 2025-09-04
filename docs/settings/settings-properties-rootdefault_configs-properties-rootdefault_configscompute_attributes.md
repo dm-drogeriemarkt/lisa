@@ -29,13 +29,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `start`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-start.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/start")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-start.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/start")
 
 ### start Type
 
@@ -47,13 +47,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `memory_hot_add_enabled`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-memory_hot_add_enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/memory_hot_add_enabled")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-memory_hot_add_enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/memory_hot_add_enabled")
 
 ### memory\_hot\_add\_enabled Type
 
@@ -65,13 +65,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `cpu_hot_add_enabled`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-cpu_hot_add_enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/cpu_hot_add_enabled")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-cpu_hot_add_enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/cpu_hot_add_enabled")
 
 ### cpu\_hot\_add\_enabled Type
 
@@ -83,13 +83,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `corespersocket`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-corespersocket.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/corespersocket")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configscompute_attributes-properties-corespersocket.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/compute_attributes/properties/corespersocket")
 
 ### corespersocket Type
 

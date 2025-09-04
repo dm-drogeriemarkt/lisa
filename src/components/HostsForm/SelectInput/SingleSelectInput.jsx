@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Select,
-  SelectOption,
-  SelectVariant,
-  ValidatedOptions
-} from '@patternfly/react-core';
+import { ValidatedOptions, FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 const SelectInput = ({
   placeholder,
@@ -12,39 +7,31 @@ const SelectInput = ({
   value,
   onChange,
   disabled,
-  clearable = false,
-  searchable = true,
   validated = ValidatedOptions.default
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [selectedValue, setSelectedValue] = useState(value);
 
-  const variant = searchable ? SelectVariant.typeahead : SelectVariant.single;
-  const selectOptions = options.map(({ id, name }, i) => (
-    <SelectOption key={i} id={id} value={id}>
-      {name}
-    </SelectOption>
-  ))
-
-  const handleChange = (_event, selection, isPlaceholder) => {
-    isPlaceholder ? onChange(null) : onChange(selection)
-    setIsOpen(false)
+  const handleChange = (event) => {
+    const newValue = event.target.value;
+    setSelectedValue(newValue);
+    onChange(newValue); // Notify the parent component of the change
   };
 
-  const handleClear = () => onChange(undefined)
+  const selectOptions = options.map(({ id, name }) => (
+    <FormSelectOption key={id} value={id} label={name} />
+  ));
 
-  return <Select
-    variant={variant}
-    selections={value}
-    onSelect={handleChange}
-    isOpen={isOpen}
-    onToggle={setIsOpen}
-    placeholderText={placeholder}
-    validated={validated}
-    isDisabled={disabled}
-    onClear={clearable ? handleClear : undefined}
-  >
-    {selectOptions}
-  </Select>
+  return (
+    <FormSelect
+      value={selectedValue}
+      onChange={handleChange}
+      aria-label={placeholder}
+      isDisabled={disabled}
+      validated={validated}
+    >
+      {selectOptions}
+    </FormSelect>
+  );
 }
 
 export default SelectInput

@@ -27,13 +27,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `type`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-type.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/type")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-type.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/type")
 
 ### type Type
 
@@ -64,13 +64,13 @@ The default value is:
 
 `computeAttributes`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([root.default\_configs.interfaces\_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
+* Type: `object` ([root.default\_configs.interfaces\_attributes.items.computeAttributes](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/computeAttributes")
+* defined in: [root](settings-properties-rootdefault_configs-properties-rootdefault_configsinterfaces_attributes-rootdefault_configsinterfaces_attributesitems-properties-rootdefault_configsinterfaces_attributesitemscomputeattributes.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs/properties/interfaces_attributes/items/properties/computeAttributes")
 
 ### computeAttributes Type
 

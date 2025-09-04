@@ -29,13 +29,13 @@ Operatingsystem global id from Foreman
 
 `id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")
+* defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/id")
 
 ### id Type
 
@@ -53,13 +53,13 @@ Operating system name
 
 `name`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")
+* defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/name")
 
 ### name Type
 
@@ -77,13 +77,13 @@ Firmware
 
 `firmware`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-firmware.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/firmware")
+* defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-firmware.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/firmware")
 
 ### firmware Type
 
@@ -116,13 +116,13 @@ Firmware
 
 `relations`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.operatingsystems.items.relations](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md))
+* Type: `object` ([root.operatingsystems.items.relations](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations")
+* defined in: [root](settings-properties-rootoperatingsystems-rootoperatingsystemsitems-properties-rootoperatingsystemsitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems/items/properties/relations")
 
 ### relations Type
 

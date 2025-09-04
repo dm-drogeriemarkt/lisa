@@ -26,13 +26,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `enabled`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthforeman-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/foreman/properties/enabled")
+* defined in: [root](settings-properties-rootauth-properties-rootauthforeman-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/foreman/properties/enabled")
 
 ### enabled Type
 

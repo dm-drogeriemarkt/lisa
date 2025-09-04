@@ -5,11 +5,10 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
+  Spinner,
   Dropdown,
-  DropdownPosition,
-  KebabToggle,
   DropdownItem,
-  Spinner
+  MenuToggle,
 } from '@patternfly/react-core';
 import T from 'i18n-react';
 import { get } from 'lodash';
@@ -31,25 +30,25 @@ const HostItem = ({
 
   const dataListCells = [
     <DataListCell key="icon" width={1}>
-      {host.build ? <Spinner isSVG size="lg" /> : <LinuxIcon size="lg" />}
+      {host.build ? <Spinner  size="lg" /> : <LinuxIcon size="lg" />}
     </DataListCell>,
     <DataListCell key="name" width={5}>
       <Link to={`/host/${host.id}`}>{host.name}</Link>
     </DataListCell>,
     <DataListCell key="location" width={4}>
-      <MapMarkerAltIcon size="md" className='pf-u-mr-sm' />
+      <MapMarkerAltIcon size="md" className='pf-v5-u-mr-sm' />
       {location_label(host.location)}
     </DataListCell>,
     <DataListCell key="os" width={4}>
-      <WhmcsIcon size="md" className='pf-u-mr-sm' />
+      <WhmcsIcon size="md" className='pf-v5-u-mr-sm' />
       {get(host, 'operatingsystem.name')}
     </DataListCell>,
     <DataListCell key="facts" width={4}>
-      <ClusterIcon size="md" className='pf-u-mr-sm' />
+      <ClusterIcon size="md" className='pf-v5-u-mr-sm' />
       {description(host.factValues.edges)}
     </DataListCell>,
-    <DataListCell key="domain" width={4} className="pf-u-display-inline">
-      <SitemapIcon size="md" className='pf-u-mr-sm' />
+    <DataListCell key="domain" width={4} className="pf-v5-u-display-inline">
+      <SitemapIcon size="md" className='pf-v5-u-mr-sm' />
       {domain_label(host.domain)}
     </DataListCell>
   ]
@@ -68,9 +67,9 @@ const HostItem = ({
       >
         <Dropdown
           dropdownItems={dropdownItems}
-          toggle={<KebabToggle onToggle={onToggle} />}
+          toggle={<MenuToggle onToggle={onToggle} />}
           isOpen={isActionDropdownOpen}
-          position={DropdownPosition.right}
+          position="right"
           isPlain
         />
       </DataListAction>
