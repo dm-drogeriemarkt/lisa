@@ -6,6 +6,7 @@ import {
 import {
   Dropdown,
   DropdownItem,
+  MenuToggle,
   Toolbar,
   ToolbarItem
 } from '@patternfly/react-core';
@@ -35,13 +36,10 @@ const Tools = () => {
         <ToolbarItem>
           <Dropdown
             onSelect={onSelect}
-            toggleText={
-              <span className="pf-v5-c-avatar pf-v5-u-mr-sm">
-                <Avatar src={avatarImg} />
-                <span className="pf-v5-u-text">{username}</span>
-              </span>
+            toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggleClick} variant="plainText" icon={<Avatar src={avatarImg} />}>
+              {username}
+            </MenuToggle>
             }
-            onToggle={(isOpen) => onToggle(isOpen)}
             isOpen={isOpen}
             dropdownItems={dropdownItems}
             isPlain
