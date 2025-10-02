@@ -73,7 +73,7 @@ const DashboardContainer = () => {
   return (
     <Fragment>
       <TextContent>
-        <Text component={TextVariants.h1} className="pf-u-text-align-center">
+        <Text component={TextVariants.h1} className="pf-v5-u-text-align-center">
           {T.translate('dashboard.dashboard')}
         </Text>
       </TextContent>

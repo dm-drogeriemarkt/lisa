@@ -43,7 +43,7 @@ const Custom = ({
         ))}
       </Grid>
       {reducedPerformance && (
-        <Alert variant="warning" title={locationName} className='pf-u-mt-lg' isInline>
+        <Alert variant="warning" title={locationName} className='pf-v5-u-mt-lg' isInline>
           {T.translate('hosts_form.location.custom.warning', { location: locationName })}
         </Alert>
       )}

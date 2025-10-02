@@ -27,13 +27,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `foreman`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([root.auth.foreman](settings-properties-rootauth-properties-rootauthforeman.md))
+* Type: `object` ([root.auth.foreman](settings-properties-rootauth-properties-rootauthforeman.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthforeman.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/foreman")
+* defined in: [root](settings-properties-rootauth-properties-rootauthforeman.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/foreman")
 
 ### foreman Type
 
@@ -45,13 +45,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `oidc`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([root.auth.oidc](settings-properties-rootauth-properties-rootauthoidc.md))
+* Type: `object` ([root.auth.oidc](settings-properties-rootauth-properties-rootauthoidc.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc")
 
 ### oidc Type
 

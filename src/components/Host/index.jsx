@@ -80,8 +80,8 @@ const Host = ({
 
   return (
     <Fragment>
-      <TextContent className='pf-u-my-xl'>
-        <Text component={TextVariants.h2} className='pf-u-text-align-center pf-u-my-xl'>
+      <TextContent className='pf-v5-u-my-xl'>
+        <Text component={TextVariants.h2} className='pf-v5-u-text-align-center pf-v5-u-my-xl'>
           <LinuxIcon size="md" /> {name}
         </Text>
 
@@ -103,7 +103,7 @@ const Host = ({
 
       <Tabs defaultActiveKey={0} id='host-detail-tabs'>
         <Tab eventKey={0} title={<TabTitleText>{T.translate('host_details.overview.card_label')}</TabTitleText>}>
-          <TabContent className='pf-u-my-lg'>
+          <TabContent className='pf-v5-u-my-lg'>
             <Card isLarge isFlat>
               <CardTitle>
                 {T.translate('host_details.overview.header')}

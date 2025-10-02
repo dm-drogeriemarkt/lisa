@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import {
+  ValidatedOptions
+} from '@patternfly/react-core';
+import {
   Select,
   SelectOption,
-  SelectVariant,
-  ValidatedOptions
 } from '@patternfly/react-core';
 
 const SelectInput = ({
@@ -19,7 +20,7 @@ const SelectInput = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const variant = searchable ? SelectVariant.typeaheadMulti : SelectVariant.checkbox
+  const variant = searchable ? "typeaheadMulti" : "checkbox";
   const selectOptions = options.map(({ id, name }, i) => (
     <SelectOption key={i} id={id} value={id}>
       {name}
@@ -49,7 +50,7 @@ const SelectInput = ({
     selections={value}
     onSelect={handleChange}
     isOpen={isOpen}
-    onToggle={setIsOpen}
+    onToggle={(_event, val) => setIsOpen(val)}
     placeholderText={placeholder}
     validated={validated}
     isDisabled={disabled}

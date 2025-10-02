@@ -31,13 +31,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `enabled`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/enabled")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-enabled.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/enabled")
 
 ### enabled Type
 
@@ -49,13 +49,13 @@ Name of OIDC/OAuth2 provider
 
 `name`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/name")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/name")
 
 ### name Type
 
@@ -73,13 +73,13 @@ Your client application's identifier as registered with the OIDC/OAuth2 provider
 
 `client_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/client_id")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-client_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/client_id")
 
 ### client\_id Type
 
@@ -97,13 +97,13 @@ The URL of the OIDC/OAuth2 provider
 
 `authority`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/authority")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-authority.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/authority")
 
 ### authority Type
 
@@ -121,13 +121,13 @@ The key to the username value
 
 `username_key`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-username_key.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/username_key")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-username_key.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/username_key")
 
 ### username\_key Type
 
@@ -147,13 +147,13 @@ List of required permissions
 
 `scope`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-scope.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/scope")
+* defined in: [root](settings-properties-rootauth-properties-rootauthoidc-properties-scope.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth/properties/oidc/properties/scope")
 
 ### scope Type
 

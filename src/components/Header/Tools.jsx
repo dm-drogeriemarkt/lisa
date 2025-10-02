@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Avatar,
+  Avatar
+} from '@patternfly/react-core';
+import {
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  PageHeaderTools,
+  MenuToggle,
+  Toolbar,
+  ToolbarItem
 } from '@patternfly/react-core';
 import useUser from '../../hooks/useUser';
-import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import avatarImg from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 const Tools = () => {
   const navigate = useNavigate();
@@ -28,22 +31,22 @@ const Tools = () => {
   ];
 
   return (
-    <PageHeaderTools>
-      {token && <Dropdown
-        onSelect={onSelect}
-        toggle={
-          <DropdownToggle
-            onToggle={onToggle}
-            icon={<Avatar src={avatarImg} />}
-          >
-            {username}
-          </DropdownToggle>
-        }
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-        isPlain
-      />}
-    </PageHeaderTools>
+    <Toolbar>
+      {token && (
+        <ToolbarItem>
+          <Dropdown
+            onSelect={onSelect}
+            toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggleClick} variant="plainText" icon={<Avatar src={avatarImg} />}>
+              {username}
+            </MenuToggle>
+            }
+            isOpen={isOpen}
+            dropdownItems={dropdownItems}
+            isPlain
+          />
+        </ToolbarItem>
+      )}
+    </Toolbar>
   );
 };
 
