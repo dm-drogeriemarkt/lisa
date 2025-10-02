@@ -36,7 +36,7 @@ const Tools = () => {
         <ToolbarItem>
           <Dropdown
             onSelect={onSelect}
-            toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={(_event, isOpen) => onToggle(!isOpen)} icon={<Avatar src={avatarImg} />}>
+            toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggleClick} variant="plainText" icon={<Avatar src={avatarImg} />}>
               {username}
             </MenuToggle>
             }
