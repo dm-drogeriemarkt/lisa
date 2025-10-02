@@ -9,10 +9,8 @@ import {
 } from '@patternfly/react-core';
 import {
   Dropdown,
-  DropdownPosition,
-  KebabToggle,
   DropdownItem
-} from '@patternfly/react-core/deprecated';
+} from '@patternfly/react-core';
 import T from 'i18n-react';
 import { get } from 'lodash';
 import { description } from '../../../helpers/hardware';
@@ -70,9 +68,8 @@ const HostItem = ({
       >
         <Dropdown
           dropdownItems={dropdownItems}
-          toggle={<KebabToggle onToggle={onToggle} />}
+          toggle={{ onToggle }}
           isOpen={isActionDropdownOpen}
-          position={DropdownPosition.right}
           isPlain
         />
       </DataListAction>

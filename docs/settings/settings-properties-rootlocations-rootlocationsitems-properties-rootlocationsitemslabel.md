@@ -28,13 +28,13 @@ These values will be visible on the host creation form
 
 `location`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-location.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/location")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-location.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/location")
 
 ### location Type
 
@@ -46,13 +46,13 @@ These values will be visible on the host creation form
 
 `explanation`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-explanation.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/explanation")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-explanation.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/explanation")
 
 ### explanation Type
 
@@ -64,13 +64,13 @@ These values will be visible on the host creation form
 
 `reduced_performance`
 
-*   is optional
+* is optional
 
-*   Type: `boolean`
+* Type: `boolean`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-reduced_performance.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/reduced_performance")
+* defined in: [root](settings-properties-rootlocations-rootlocationsitems-properties-rootlocationsitemslabel-properties-reduced_performance.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations/items/properties/label/properties/reduced_performance")
 
 ### reduced\_performance Type
 

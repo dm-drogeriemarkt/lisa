@@ -5,8 +5,7 @@ import {
 import {
   Select,
   SelectOption,
-  SelectVariant
-} from '@patternfly/react-core/deprecated';
+} from '@patternfly/react-core';
 
 const SelectInput = ({
   placeholder,
@@ -21,7 +20,7 @@ const SelectInput = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const variant = searchable ? SelectVariant.typeaheadMulti : SelectVariant.checkbox
+  const variant = searchable ? "typeaheadMulti" : "checkbox";
   const selectOptions = options.map(({ id, name }, i) => (
     <SelectOption key={i} id={id} value={id}>
       {name}

@@ -5,10 +5,10 @@ import {
 } from '@patternfly/react-core';
 import {
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  PageHeaderTools
-} from '@patternfly/react-core/deprecated';
+  Toolbar,
+  ToolbarItem
+} from '@patternfly/react-core';
 import useUser from '../../hooks/useUser';
 import avatarImg from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
@@ -30,22 +30,20 @@ const Tools = () => {
   ];
 
   return (
-    <PageHeaderTools>
-      {token && <Dropdown
-        onSelect={onSelect}
-        toggle={
-          <DropdownToggle
+    <Toolbar>
+      {token && (
+        <ToolbarItem>
+          <Dropdown
+            onSelect={onSelect}
+            toggleText={<Avatar src={avatarImg} />}
             onToggle={(_event, isOpen) => onToggle(isOpen)}
-            icon={<Avatar src={avatarImg} />}
-          >
-            {username}
-          </DropdownToggle>
-        }
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-        isPlain
-      />}
-    </PageHeaderTools>
+            isOpen={isOpen}
+            dropdownItems={dropdownItems}
+            isPlain
+          />
+        </ToolbarItem>
+      )}
+    </Toolbar>
   );
 };
 
