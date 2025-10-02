@@ -35,8 +35,13 @@ const Tools = () => {
         <ToolbarItem>
           <Dropdown
             onSelect={onSelect}
-            toggleText={<Avatar src={avatarImg} />}
-            onToggle={(_event, isOpen) => onToggle(isOpen)}
+            toggleText={
+              <span className="pf-v5-c-avatar pf-v5-u-mr-sm">
+                <Avatar src={avatarImg} />
+                <span className="pf-v5-u-text">{username}</span>
+              </span>
+            }
+            onToggle={(isOpen) => onToggle(isOpen)}
             isOpen={isOpen}
             dropdownItems={dropdownItems}
             isPlain
