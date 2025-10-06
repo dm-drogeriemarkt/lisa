@@ -1,10 +1,9 @@
 div.pf-v5-c-page {
   --pf-v5-c-page--BackgroundColor: var(--pf-v5-global--palette--white);
   --pf-v5-c-page__main-section--BackgroundColor: var(--pf-v5-global--palette--white);
-  --pf-v5-c-page__header--MinHeight: 2.75rem;
-  --pf-v5-c-page__header-brand--xl--PaddingLeft: 15rem;
+  --pf-v5-c-masthead__main--MinHeight: 2.75rem;
   /* --pf-v5-c-page__header-brand--xl--PaddingRight: 12rem; */
-  --pf-v5-c-page__header-tools--xl--MarginRight: 15rem;
+  --pf-v5-c-masthead--c-toolbar__expandable-content--PaddingRight: 15rem;
   --pf-v5-c-page__main-section--xl--PaddingRight: 15rem;
   --pf-v5-c-page__main-section--xl--PaddingLeft: 15rem;
 }

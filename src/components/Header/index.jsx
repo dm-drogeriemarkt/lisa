@@ -4,7 +4,7 @@ import {
   Masthead,
   MastheadMain,
   MastheadBrand,
-  MastheadToggle
+  MastheadContent
 } from '@patternfly/react-core';
 import Tools from './Tools';
 import './index.scss';
@@ -14,12 +14,11 @@ const Header = (
     <MastheadMain>
       <MastheadBrand>
         <Link to='/'>LISA</Link>
-      </MastheadBrand>
-      
-      <MastheadToggle>
-        <Tools />
-      </MastheadToggle>
+      </MastheadBrand> 
     </MastheadMain>
+    <MastheadContent>
+      {<Tools />}
+    </MastheadContent>
   </Masthead>
 );
 

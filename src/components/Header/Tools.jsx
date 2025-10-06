@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  Avatar
+  Avatar,
+  ToolbarContent,
+  ToolbarGroup
 } from '@patternfly/react-core';
 import {
   Dropdown,
   DropdownItem,
+  DropdownList,
   MenuToggle,
   Toolbar,
   ToolbarItem
@@ -18,7 +21,9 @@ const Tools = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { token, username, signOut } = useUser()
 
-  const onToggle = (isOpen) => setIsOpen(isOpen);
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const onSelect = () => setIsOpen(false);
 
   const logoutAndRedirect = () => {
@@ -31,21 +36,25 @@ const Tools = () => {
   ];
 
   return (
-    <Toolbar>
-      {token && (
-        <ToolbarItem align="alignRight">
-          <Dropdown
-            onSelect={onSelect}
-            toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggleClick} variant="plainText" icon={<Avatar src={avatarImg} />}>
-              {username}
-            </MenuToggle>
-            }
-            isOpen={isOpen}
-            dropdownItems={dropdownItems}
-            isPlain
-          />
-        </ToolbarItem>
-      )}
+    <Toolbar id="toolbar-items">
+      <ToolbarContent>
+        <ToolbarGroup variant="filter-group" align={{ default: 'alignRight' }}>
+          {token &&( 
+          <ToolbarItem>
+            <Dropdown
+              onSelect={onSelect}
+              toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} variant="plainText" onClick={onToggleClick} icon={<Avatar src={avatarImg} />}>
+                {username}
+              </MenuToggle>
+              }
+              isOpen={isOpen}
+            >
+              <DropdownList>{dropdownItems}</DropdownList>
+            </Dropdown>
+          </ToolbarItem>
+          )}
+        </ToolbarGroup>
+      </ToolbarContent>
     </Toolbar>
   );
 };
