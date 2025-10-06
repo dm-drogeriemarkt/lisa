@@ -33,7 +33,7 @@ const Tools = () => {
   return (
     <Toolbar>
       {token && (
-        <ToolbarItem>
+        <ToolbarItem align="alignRight">
           <Dropdown
             onSelect={onSelect}
             toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} onClick={onToggleClick} variant="plainText" icon={<Avatar src={avatarImg} />}>
