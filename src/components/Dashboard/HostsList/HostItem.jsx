@@ -6,9 +6,7 @@ import {
   DataListCell,
   DataListAction,
   Spinner,
-  DropdownList
-} from '@patternfly/react-core';
-import {
+  DropdownList,
   Dropdown,
   DropdownItem,
   MenuToggle
@@ -58,7 +56,7 @@ const HostItem = ({
   ]
 
   const dropdownItems = [
-    <DropdownItem key="foreman-link" href={`${import.meta.env.REACT_APP_FOREMAN_URL}${host.path}`} target='_blank'>{T.translate('dashboard.hosts_list.foreman_link')}</DropdownItem>,
+    <DropdownItem key="foreman-link" to={`${import.meta.env.REACT_APP_FOREMAN_URL}${host.path}`} target='_blank'>{T.translate('dashboard.hosts_list.foreman_link')}</DropdownItem>,
   ]
 
   return (
@@ -70,9 +68,8 @@ const HostItem = ({
         isPlainButtonAction
       >
         <Dropdown
-          toggle={ toggleRef =><MenuToggle ref={toggleRef} variant="plain" onClick={onToggle} icon={<EllipsisVIcon />}></MenuToggle>}
+          toggle={ toggleRef =><MenuToggle ref={toggleRef} variant="plain" onClick={onToggle}><EllipsisVIcon /></MenuToggle>}
           isOpen={isActionDropdownOpen}
-          isPlain
         >
           <DropdownList>{dropdownItems}</DropdownList>
         </Dropdown>

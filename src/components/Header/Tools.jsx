@@ -3,9 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   Avatar,
   ToolbarContent,
-  ToolbarGroup
-} from '@patternfly/react-core';
-import {
+  ToolbarGroup,
   Dropdown,
   DropdownItem,
   DropdownList,
