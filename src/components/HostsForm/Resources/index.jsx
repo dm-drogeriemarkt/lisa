@@ -59,7 +59,7 @@ const Resources = () => {
     <Fragment>
       { JSXextensions }
 
-      <TextContent className='pf-u-my-xl'>
+      <TextContent className='pf-v5-u-my-xl'>
         <Text component={TextVariants.h3}>
           {T.translate('hosts_form.resources.header')}
         </Text>
@@ -72,12 +72,12 @@ const Resources = () => {
       { formSettings.presetResources.length ? (
         <Tabs defaultActiveKey={0} mountOnEnter>
           <Tab eventKey={0} title={<TabTitleText>{T.translate('hosts_form.resources.preset')}</TabTitleText>}>
-            <TabContent className='pf-u-my-lg'>
+            <TabContent className='pf-v5-u-my-lg'>
               <Preset fields={fields} />
             </TabContent>
           </Tab>
           <Tab eventKey={1} title={<TabTitleText>{T.translate('hosts_form.resources.manual')}</TabTitleText>}>
-            <TabContent className='pf-u-my-lg'>
+            <TabContent className='pf-v5-u-my-lg'>
               <Manual fields={fields} />
             </TabContent>
           </Tab>

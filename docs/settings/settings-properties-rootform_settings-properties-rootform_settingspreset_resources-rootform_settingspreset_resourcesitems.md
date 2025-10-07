@@ -29,13 +29,13 @@ Number of CPUs
 
 `cpu`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/cpu")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/cpu")
 
 ### cpu Type
 
@@ -47,13 +47,13 @@ Memory size
 
 `memory`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/memory")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/memory")
 
 ### memory Type
 
@@ -65,13 +65,13 @@ Disk size
 
 `size`
 
-*   is required
+* is required
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/size")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/size")
 
 ### size Type
 
@@ -83,13 +83,13 @@ A reference to the [operating system](#operatingsystems)
 
 `operatingsystem_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/operatingsystem_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingspreset_resources-rootform_settingspreset_resourcesitems-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/preset_resources/items/properties/operatingsystem_id")
 
 ### operatingsystem\_id Type
 

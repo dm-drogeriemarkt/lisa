@@ -1,24 +1,35 @@
 import React, { useState } from 'react';
 import {
   Select,
+  SelectList,
   SelectOption,
-  SelectVariant,
-  ValidatedOptions
+  MenuToggle,
+  MenuToggleStatus,
+  TextInputGroup,
+  TextInputGroupMain
 } from '@patternfly/react-core';
 
 const SelectInput = ({
   placeholder,
-  options,
   value,
+  options,
   onChange,
   disabled,
   clearable = false,
   searchable = true,
-  validated = ValidatedOptions.default
+  validated = MenuToggleStatus.default
 }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const variant = searchable ? SelectVariant.typeahead : SelectVariant.single;
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  }
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  }
+
+  const variant = searchable ? "typeahead" : "default";
   const selectOptions = options.map(({ id, name }, i) => (
     <SelectOption key={i} id={id} value={id}>
       {name}
@@ -32,18 +43,41 @@ const SelectInput = ({
 
   const handleClear = () => onChange(undefined)
 
+  const toggle = toggleRef =>
+    <MenuToggle
+      ref={toggleRef}
+      isExpanded={isOpen}
+      isFullWidth
+      isFullHeight
+      status={validated}
+      variant={variant}
+      onClick={onToggleClick}
+    >
+      <TextInputGroup isPlain>
+        <TextInputGroupMain
+          value={value}
+          id="typeahead-select-input"
+          autoComplete="off"
+          placeholder={placeholder}
+          role="combobox"
+          isExpanded={isOpen}
+          aria-controls="select-typeahead-listbox"
+        />
+      </TextInputGroup>
+    </MenuToggle>
+
   return <Select
-    variant={variant}
-    selections={value}
+    toggle={toggle} 
     onSelect={handleChange}
     isOpen={isOpen}
-    onToggle={setIsOpen}
+    isOpenChange={(isOpen) => {
+      !isOpen && closeMenu();
+    }}
     placeholderText={placeholder}
-    validated={validated}
     isDisabled={disabled}
     onClear={clearable ? handleClear : undefined}
   >
-    {selectOptions}
+    <SelectList>{selectOptions}</SelectList>
   </Select>
 }
 

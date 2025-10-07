@@ -32,13 +32,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `auth`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([root.auth](settings-properties-rootauth.md))
+* Type: `object` ([root.auth](settings-properties-rootauth.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootauth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth")
+* defined in: [root](settings-properties-rootauth.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/auth")
 
 ### auth Type
 
@@ -50,13 +50,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `form_settings`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.form\_settings](settings-properties-rootform_settings.md))
+* Type: `object` ([root.form\_settings](settings-properties-rootform_settings.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings")
+* defined in: [root](settings-properties-rootform_settings.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings")
 
 ### form\_settings Type
 
@@ -68,13 +68,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `default_configs`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.default\_configs](settings-properties-rootdefault_configs.md))
+* Type: `object` ([root.default\_configs](settings-properties-rootdefault_configs.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootdefault_configs.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs")
+* defined in: [root](settings-properties-rootdefault_configs.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/default_configs")
 
 ### default\_configs Type
 
@@ -86,13 +86,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `locations`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([root.locations.items](settings-properties-rootlocations-rootlocationsitems.md))
+* Type: `object[]` ([root.locations.items](settings-properties-rootlocations-rootlocationsitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootlocations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations")
+* defined in: [root](settings-properties-rootlocations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/locations")
 
 ### locations Type
 
@@ -110,13 +110,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `operatingsystems`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([root.operatingsystems.items](settings-properties-rootoperatingsystems-rootoperatingsystemsitems.md))
+* Type: `object[]` ([root.operatingsystems.items](settings-properties-rootoperatingsystems-rootoperatingsystemsitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootoperatingsystems.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems")
+* defined in: [root](settings-properties-rootoperatingsystems.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/operatingsystems")
 
 ### operatingsystems Type
 
@@ -134,13 +134,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `app_tiers`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([root.app\_tiers.items](settings-properties-rootapp_tiers-rootapp_tiersitems.md))
+* Type: `object[]` ([root.app\_tiers.items](settings-properties-rootapp_tiers-rootapp_tiersitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers")
+* defined in: [root](settings-properties-rootapp_tiers.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers")
 
 ### app\_tiers Type
 
@@ -156,13 +156,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json
 
 `fact_names`
 
-*   is optional
+* is optional
 
-*   Type: `object` ([root.fact\_names](settings-properties-rootfact_names.md))
+* Type: `object` ([root.fact\_names](settings-properties-rootfact_names.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootfact_names.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names")
+* defined in: [root](settings-properties-rootfact_names.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names")
 
 ### fact\_names Type
 

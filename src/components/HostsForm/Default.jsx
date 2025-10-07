@@ -14,7 +14,7 @@ import InfoAltIcon from '@patternfly/react-icons/dist/esm/icons/info-alt-icon';
 import AngleRightIcon from '@patternfly/react-icons/dist/esm/icons/angle-right-icon';
 
 const Default = ({ name, enableCustomView }) => (
-  <Card isFlat className='pf-u-my-xl pf-u-p-lg'>
+  <Card isFlat className='pf-v5-u-my-xl pf-v5-u-p-lg'>
     <Split hasGutter>
       <SplitItem>
         <Bullseye>

@@ -5,6 +5,11 @@ import { useAuth } from '../../lib/auth/foreman';
 import { Alert, Form, FormGroup, TextInput, Button } from '@patternfly/react-core';
 import { get, has } from 'lodash';
 import T from 'i18n-react';
+import {
+  HelperText,
+  HelperTextItem,
+  FormHelperText
+} from '@patternfly/react-core';
 
 function ForemanAuth() {
   const [error, setError] = useState(false)
@@ -34,7 +39,7 @@ function ForemanAuth() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      {error && <Alert variant="danger" title={T.translate('login.username_or_password_incorrect')} className="pf-u-p-md" />}
+      {error && <Alert variant="danger" title={T.translate('login.username_or_password_incorrect')} className="pf-v5-u-p-md" />}
 
       <Controller
         name="username"
@@ -44,8 +49,6 @@ function ForemanAuth() {
           <FormGroup
             label={T.translate('login.username')}
             fieldId="username-id"
-            helperTextInvalid={get(errors, 'username.message', null)}
-            validated={!has(errors, 'username.message') || 'error'}
             isRequired
           >
             <TextInput
@@ -55,6 +58,13 @@ function ForemanAuth() {
               value={value}
               isRequired
             />
+            <FormHelperText>
+              <HelperText>
+                {!has(errors, 'username.message') || 'error' && (
+                  <HelperTextItem variant="error">{get(errors, 'username.message', null)}</HelperTextItem>
+                )}
+              </HelperText>
+            </FormHelperText>
           </FormGroup>
         )}
       />
@@ -66,8 +76,6 @@ function ForemanAuth() {
           <FormGroup
             label={T.translate('login.password')}
             fieldId="password-id"
-            helperTextInvalid={get(errors, 'password.message', null)}
-            validated={!has(errors, 'password.message') || 'error'}
             isRequired
           >
             <TextInput
@@ -77,6 +85,13 @@ function ForemanAuth() {
               value={value}
               isRequired
             />
+            <FormHelperText>
+              <HelperText>
+                {!has(errors, 'password.message') || 'error' && (
+                  <HelperTextItem variant="error">{get(errors, 'password.message', null)}</HelperTextItem>
+                )}
+              </HelperText>
+            </FormHelperText>
           </FormGroup>
         )}
       />

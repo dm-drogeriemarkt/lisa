@@ -1,5 +1,4 @@
-.pf-c-page {
-  &__header {
+.pf-v5-c-masthead {
     background: linear-gradient(90deg, #1d1d1d 50%, #39a5dc 50%);
     height: 59px;
     border: 0;
@@ -16,7 +15,7 @@
       content: '';
     }
 
-    .pf-c-page__header-brand-link > a {
+    .pf-v5-c-masthead__brand > a {
       background-image: url('./assets/LISA-logosign-transparent-s.png');
       background-repeat: no-repeat;
       background-size: contain;
@@ -40,8 +39,10 @@
       }
     }
   }
+.pf-v5-c-toolbar {
+  background: transparent;
 }
 
-button.pf-c-dropdown__toggle.pf-m-plain:not(.pf-m-text) {
+button.pf-v5-c-menu__toggle.pf-m-plain:not(.pf-m-text) {
   display: inline-flex;
 }

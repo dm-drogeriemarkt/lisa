@@ -34,11 +34,11 @@ const Card = ({
     <PatternflyCard
       onClick={onClick}
       isSelected={isSelected}
-      isSelectableRaised
+      isSelectable
       isCompact
       isFullHeight
       isFlat
-      className='pf-u-text-align-center'
+      className='pf-v5-u-text-align-center'
     >
       <CardTitle>{osName}</CardTitle>
       <CardBody>
@@ -46,10 +46,10 @@ const Card = ({
           <TextList component={TextListVariants.dl}>
             {items.map(({ label, value }, i) => (
               <Fragment key={i}>
-                <TextListItem component={TextListItemVariants.dt} className='pf-u-ml-auto'>
+                <TextListItem component={TextListItemVariants.dt} className='pf-v5-u-ml-auto'>
                   {value}
                 </TextListItem>
-                <TextListItem component={TextListItemVariants.dd} className='pf-u-mr-auto'>
+                <TextListItem component={TextListItemVariants.dd} className='pf-v5-u-mr-auto'>
                   {label}
                 </TextListItem>
               </Fragment>

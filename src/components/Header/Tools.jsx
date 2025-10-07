@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Avatar,
+  ToolbarContent,
+  ToolbarGroup,
   Dropdown,
-  DropdownToggle,
   DropdownItem,
-  PageHeaderTools,
+  DropdownList,
+  MenuToggle,
+  Toolbar,
+  ToolbarItem
 } from '@patternfly/react-core';
 import useUser from '../../hooks/useUser';
-import avatarImg from '@patternfly/react-core/src/components/Avatar/examples/avatarImg.svg';
+import avatarImg from '@patternfly/react-core/src/components/assets/avatarImg.svg';
 
 const Tools = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const { token, username, signOut } = useUser()
 
-  const onToggle = (isOpen) => setIsOpen(isOpen);
+  const onToggleClick = () => {
+    setIsOpen(!isOpen);
+  };
   const onSelect = () => setIsOpen(false);
 
   const logoutAndRedirect = () => {
@@ -28,22 +34,26 @@ const Tools = () => {
   ];
 
   return (
-    <PageHeaderTools>
-      {token && <Dropdown
-        onSelect={onSelect}
-        toggle={
-          <DropdownToggle
-            onToggle={onToggle}
-            icon={<Avatar src={avatarImg} />}
-          >
-            {username}
-          </DropdownToggle>
-        }
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-        isPlain
-      />}
-    </PageHeaderTools>
+    <Toolbar id="toolbar-items">
+      <ToolbarContent>
+        <ToolbarGroup variant="filter-group" align={{ default: 'alignRight' }}>
+          {token &&( 
+            <ToolbarItem>
+              <Dropdown
+                onSelect={onSelect}
+                toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} variant="plainText" onClick={onToggleClick} icon={<Avatar src={avatarImg} />}>
+                  {username}
+                </MenuToggle>
+                }
+                isOpen={isOpen}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
+          )}
+        </ToolbarGroup>
+      </ToolbarContent>
+    </Toolbar>
   );
 };
 

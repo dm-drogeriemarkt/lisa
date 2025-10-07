@@ -1,15 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '@patternfly/react-core';
+import {
+  Masthead,
+  MastheadMain,
+  MastheadBrand,
+  MastheadContent
+} from '@patternfly/react-core';
 import Tools from './Tools';
 import './index.scss';
 
 const Header = (
-  <PageHeader
-    logo={<Link to='/'>LISA</Link>}
-    logoComponent='div'
-    headerTools={<Tools />}
-  />
+  <Masthead>
+    <MastheadMain>
+      <MastheadBrand>
+        <Link to='/'>LISA</Link>
+      </MastheadBrand> 
+    </MastheadMain>
+    <MastheadContent>
+      {<Tools />}
+    </MastheadContent>
+  </Masthead>
 );
 
 export default Header;

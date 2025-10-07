@@ -5,11 +5,11 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
+  Spinner,
+  DropdownList,
   Dropdown,
-  DropdownPosition,
-  KebabToggle,
   DropdownItem,
-  Spinner
+  MenuToggle
 } from '@patternfly/react-core';
 import T from 'i18n-react';
 import { get } from 'lodash';
@@ -22,6 +22,7 @@ import MapMarkerAltIcon from '@patternfly/react-icons/dist/js/icons/map-marker-a
 import WhmcsIcon from '@patternfly/react-icons/dist/js/icons/whmcs-icon';
 import ClusterIcon from '@patternfly/react-icons/dist/js/icons/cluster-icon';
 import SitemapIcon from '@patternfly/react-icons/dist/js/icons/sitemap-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 const HostItem = ({
   host
@@ -31,31 +32,31 @@ const HostItem = ({
 
   const dataListCells = [
     <DataListCell key="icon" width={1}>
-      {host.build ? <Spinner isSVG size="lg" /> : <LinuxIcon size="lg" />}
+      {host.build ? <Spinner  size="lg" /> : <LinuxIcon size="lg" />}
     </DataListCell>,
     <DataListCell key="name" width={5}>
       <Link to={`/host/${host.id}`}>{host.name}</Link>
     </DataListCell>,
     <DataListCell key="location" width={4}>
-      <MapMarkerAltIcon size="md" className='pf-u-mr-sm' />
+      <MapMarkerAltIcon size="md" className='pf-v5-u-mr-sm' />
       {location_label(host.location)}
     </DataListCell>,
     <DataListCell key="os" width={4}>
-      <WhmcsIcon size="md" className='pf-u-mr-sm' />
+      <WhmcsIcon size="md" className='pf-v5-u-mr-sm' />
       {get(host, 'operatingsystem.name')}
     </DataListCell>,
     <DataListCell key="facts" width={4}>
-      <ClusterIcon size="md" className='pf-u-mr-sm' />
+      <ClusterIcon size="md" className='pf-v5-u-mr-sm' />
       {description(host.factValues.edges)}
     </DataListCell>,
-    <DataListCell key="domain" width={4} className="pf-u-display-inline">
-      <SitemapIcon size="md" className='pf-u-mr-sm' />
+    <DataListCell key="domain" width={4} className="pf-v5-u-display-inline">
+      <SitemapIcon size="md" className='pf-v5-u-mr-sm' />
       {domain_label(host.domain)}
     </DataListCell>
   ]
 
   const dropdownItems = [
-    <DropdownItem key="foreman-link" href={`${import.meta.env.REACT_APP_FOREMAN_URL}${host.path}`} target='_blank'>{T.translate('dashboard.hosts_list.foreman_link')}</DropdownItem>,
+    <DropdownItem key="foreman-link" to={`${import.meta.env.REACT_APP_FOREMAN_URL}${host.path}`} target='_blank'>{T.translate('dashboard.hosts_list.foreman_link')}</DropdownItem>,
   ]
 
   return (
@@ -67,12 +68,11 @@ const HostItem = ({
         isPlainButtonAction
       >
         <Dropdown
-          dropdownItems={dropdownItems}
-          toggle={<KebabToggle onToggle={onToggle} />}
+          toggle={ toggleRef =><MenuToggle ref={toggleRef} variant="plain" onClick={onToggle}><EllipsisVIcon /></MenuToggle>}
           isOpen={isActionDropdownOpen}
-          position={DropdownPosition.right}
-          isPlain
-        />
+        >
+          <DropdownList>{dropdownItems}</DropdownList>
+        </Dropdown>
       </DataListAction>
     </DataListItemRow>
   )
