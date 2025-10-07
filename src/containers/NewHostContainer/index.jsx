@@ -81,7 +81,7 @@ function NewHostContainer() {
       <Breadcrumb />
 
       <TextContent>
-        <Text component={TextVariants.h1} className='pf-u-text-align-center'>
+        <Text component={TextVariants.h1} className='pf-v5-u-text-align-center'>
           {T.translate('hosts_form.create_hosts_header')}
         </Text>
       </TextContent>
@@ -93,7 +93,7 @@ function NewHostContainer() {
         <PuppetConfig />
         <HostsCreation />
 
-        <div className='pf-u-text-align-center'>
+        <div className='pf-v5-u-text-align-center'>
           <Button
             variant='primary'
             isDisabled={!isValid}
@@ -108,7 +108,7 @@ function NewHostContainer() {
         {isSubmitting && <Progress duration={progressDuration} title={T.translate('form.progress')} />}
 
         {createdHosts.length > 0 && (
-          <Alert variant='success' title={T.translate('hosts_form.created_hosts_success')} className='pf-u-mt-lg' isInline>
+          <Alert variant='success' title={T.translate('hosts_form.created_hosts_success')} className='pf-v5-u-mt-lg' isInline>
             <TextContent>
               <TextList>
                 {createdHosts.map(({ name }, i) => <TextListItem key={i}>{name}</TextListItem>)}
@@ -118,14 +118,14 @@ function NewHostContainer() {
         )}
 
         {failedToCreateHosts.length > 0 && (
-          <Alert variant='danger' title={T.translate('hosts_form.created_hosts_danger')} className='pf-u-mt-lg' isInline>
+          <Alert variant='danger' title={T.translate('hosts_form.created_hosts_danger')} className='pf-v5-u-mt-lg' isInline>
             <TextContent>
               <TextList>
                 {failedToCreateHosts.map(({ name, errors}, i) => (
                   <TextListItem key={i}>
-                    <span className='pf-u-mr-sm'>{name}</span>
+                    <span className='pf-v5-u-mr-sm'>{name}</span>
                     <Tooltip aria="none" aria-live="polite" content={<span>{errors.map(({ message }) => message).join('. ')}</span>}>
-                      <InfoAltIcon color="var(--pf-global--danger-color--100)" />
+                      <InfoAltIcon color="var(--pf-v5-global--danger-color--100)" />
                     </Tooltip>
                   </TextListItem>
                 ))}

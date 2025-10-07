@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '@patternfly/react-core';
+import {
+  PageHeader
+} from '@patternfly/react-core/deprecated';
 import Tools from './Tools';
 import './index.scss';
 

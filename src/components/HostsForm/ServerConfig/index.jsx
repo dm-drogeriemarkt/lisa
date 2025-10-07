@@ -12,7 +12,7 @@ import Selects from './Selects';
 
 const ServerConfig = () => (
   <Fragment>
-    <TextContent className='pf-u-my-xl'>
+    <TextContent className='pf-v5-u-my-xl'>
       <Text component={TextVariants.h3}>
         {T.translate('hosts_form.server_config.header')}
       </Text>

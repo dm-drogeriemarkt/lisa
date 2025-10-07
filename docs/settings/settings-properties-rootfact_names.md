@@ -28,13 +28,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `cpu`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootfact_names-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")
+* defined in: [root](settings-properties-rootfact_names-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/cpu")
 
 ### cpu Type
 
@@ -54,13 +54,13 @@ The default value is:
 
 `memory`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootfact_names-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory")
+* defined in: [root](settings-properties-rootfact_names-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/memory")
 
 ### memory Type
 
@@ -80,13 +80,13 @@ The default value is:
 
 `disk`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootfact_names-properties-disk.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")
+* defined in: [root](settings-properties-rootfact_names-properties-disk.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/fact_names/properties/disk")
 
 ### disk Type
 

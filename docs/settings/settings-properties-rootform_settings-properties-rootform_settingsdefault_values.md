@@ -36,13 +36,13 @@ Number of CPUs
 
 `cpu`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/cpu")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-cpu.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/cpu")
 
 ### cpu Type
 
@@ -62,13 +62,13 @@ Memory size
 
 `memory`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/memory")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-memory.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/memory")
 
 ### memory Type
 
@@ -88,13 +88,13 @@ Disk size
 
 `size`
 
-*   is optional
+* is optional
 
-*   Type: `number`
+* Type: `number`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/size")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-size.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/size")
 
 ### size Type
 
@@ -114,13 +114,13 @@ A reference to the [operating system](#operatingsystems)
 
 `operatingsystem_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/operatingsystem_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-operatingsystem_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/operatingsystem_id")
 
 ### operatingsystem\_id Type
 
@@ -140,13 +140,13 @@ A reference to the [location](#locations-1)
 
 `location_code`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-location_code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/location_code")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-location_code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/location_code")
 
 ### location\_code Type
 
@@ -166,13 +166,13 @@ A reference to the [compute resource](#compute_resource_id-1)
 
 `compute_resource_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-compute_resource_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/compute_resource_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-compute_resource_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/compute_resource_id")
 
 ### compute\_resource\_id Type
 
@@ -192,13 +192,13 @@ A reference to the [puppet master](#puppet_ca_proxy_id)
 
 `puppet_master_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-puppet_master_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppet_master_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-puppet_master_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppet_master_id")
 
 ### puppet\_master\_id Type
 
@@ -218,13 +218,13 @@ A reference to the [datastore type](#datastore_types)
 
 `datastore_type_id`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-datastore_type_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/datastore_type_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-datastore_type_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/datastore_type_id")
 
 ### datastore\_type\_id Type
 
@@ -244,13 +244,13 @@ Environment global id from Foreman
 
 `puppet_env_id`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-puppet_env_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppet_env_id")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-puppet_env_id.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppet_env_id")
 
 ### puppet\_env\_id Type
 
@@ -268,13 +268,13 @@ Puppetclass global ids from Foreman
 
 `puppetclass_ids`
 
-*   is required
+* is required
 
-*   Type: `string[]`
+* Type: `string[]`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-rootform_settingsdefault_valuespuppetclass_ids.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppetclass_ids")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-rootform_settingsdefault_valuespuppetclass_ids.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/puppetclass_ids")
 
 ### puppetclass\_ids Type
 
@@ -298,13 +298,13 @@ App tier name
 
 `app_tier_name`
 
-*   is optional
+* is optional
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-app_tier_name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/app_tier_name")
+* defined in: [root](settings-properties-rootform_settings-properties-rootform_settingsdefault_values-properties-app_tier_name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/form_settings/properties/default_values/properties/app_tier_name")
 
 ### app\_tier\_name Type
 
