@@ -27,13 +27,13 @@ A reference to the [location](#locations-1)
 
 `code`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems-properties-code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items/properties/code")
+* defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems-properties-code.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items/properties/code")
 
 ### code Type
 
@@ -51,13 +51,13 @@ A reference to the [location](#locations-1)
 
 `resource_pool`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems-properties-resource_pool.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items/properties/resource_pool")
+* defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems-properties-resource_pool.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations/items/properties/resource_pool")
 
 ### resource\_pool Type
 

@@ -26,13 +26,13 @@ https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/p
 
 `locations`
 
-*   is required
+* is required
 
-*   Type: `object[]` ([root.app\_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
+* Type: `object[]` ([root.app\_tiers.items.relations.locations.items](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations-rootapp_tiersitemsrelationslocationsitems.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations")
+* defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations-properties-rootapp_tiersitemsrelationslocations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations/properties/locations")
 
 ### locations Type
 

@@ -27,13 +27,13 @@ App tier name
 
 `name`
 
-*   is required
+* is required
 
-*   Type: `string`
+* Type: `string`
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/name")
+* defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-name.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/name")
 
 ### name Type
 
@@ -51,13 +51,13 @@ App tier name
 
 `relations`
 
-*   is required
+* is required
 
-*   Type: `object` ([root.app\_tiers.items.relations](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md))
+* Type: `object` ([root.app\_tiers.items.relations](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md))
 
-*   cannot be null
+* cannot be null
 
-*   defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations")
+* defined in: [root](settings-properties-rootapp_tiers-rootapp_tiersitems-properties-rootapp_tiersitemsrelations.md "https://github.com/dm-drogeriemarkt/lisa/blob/master/src/settings/schema.json#/properties/app_tiers/items/properties/relations")
 
 ### relations Type
 
