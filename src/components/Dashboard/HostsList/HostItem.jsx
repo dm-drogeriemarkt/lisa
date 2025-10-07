@@ -23,7 +23,7 @@ import LinuxIcon from '@patternfly/react-icons/dist/js/icons/linux-icon';
 import MapMarkerAltIcon from '@patternfly/react-icons/dist/js/icons/map-marker-alt-icon';
 import WhmcsIcon from '@patternfly/react-icons/dist/js/icons/whmcs-icon';
 import ClusterIcon from '@patternfly/react-icons/dist/js/icons/cluster-icon';
-import SitemapIcon from '@poatternfly/react-icons/dist/js/icons/sitemap-icon';
+import SitemapIcon from '@patternfly/react-icons/dist/js/icons/sitemap-icon';
 import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 const HostItem = ({
