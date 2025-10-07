@@ -40,18 +40,18 @@ const Tools = () => {
       <ToolbarContent>
         <ToolbarGroup variant="filter-group" align={{ default: 'alignRight' }}>
           {token &&( 
-          <ToolbarItem>
-            <Dropdown
-              onSelect={onSelect}
-              toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} variant="plainText" onClick={onToggleClick} icon={<Avatar src={avatarImg} />}>
-                {username}
-              </MenuToggle>
-              }
-              isOpen={isOpen}
-            >
-              <DropdownList>{dropdownItems}</DropdownList>
-            </Dropdown>
-          </ToolbarItem>
+            <ToolbarItem>
+              <Dropdown
+                onSelect={onSelect}
+                toggle={ toggleRef =><MenuToggle ref={toggleRef} isExpanded={isOpen} variant="plainText" onClick={onToggleClick} icon={<Avatar src={avatarImg} />}>
+                  {username}
+                </MenuToggle>
+                }
+                isOpen={isOpen}
+              >
+                <DropdownList>{dropdownItems}</DropdownList>
+              </Dropdown>
+            </ToolbarItem>
           )}
         </ToolbarGroup>
       </ToolbarContent>

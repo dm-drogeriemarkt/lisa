@@ -5,11 +5,13 @@ import {
   DataListItemCells,
   DataListCell,
   DataListAction,
-  Spinner
+  Spinner,
+  DropdownList
 } from '@patternfly/react-core';
 import {
   Dropdown,
-  DropdownItem
+  DropdownItem,
+  MenuToggle
 } from '@patternfly/react-core';
 import T from 'i18n-react';
 import { get } from 'lodash';
@@ -21,7 +23,8 @@ import LinuxIcon from '@patternfly/react-icons/dist/js/icons/linux-icon';
 import MapMarkerAltIcon from '@patternfly/react-icons/dist/js/icons/map-marker-alt-icon';
 import WhmcsIcon from '@patternfly/react-icons/dist/js/icons/whmcs-icon';
 import ClusterIcon from '@patternfly/react-icons/dist/js/icons/cluster-icon';
-import SitemapIcon from '@patternfly/react-icons/dist/js/icons/sitemap-icon';
+import SitemapIcon from '@poatternfly/react-icons/dist/js/icons/sitemap-icon';
+import EllipsisVIcon from '@patternfly/react-icons/dist/esm/icons/ellipsis-v-icon';
 
 const HostItem = ({
   host
@@ -67,11 +70,12 @@ const HostItem = ({
         isPlainButtonAction
       >
         <Dropdown
-          dropdownItems={dropdownItems}
-          toggle={{ onToggle }}
+          toggle={ toggleRef =><MenuToggle ref={toggleRef} variant="plain" onClick={onToggle} icon={<EllipsisVIcon />}></MenuToggle>}
           isOpen={isActionDropdownOpen}
           isPlain
-        />
+        >
+          <DropdownList>{dropdownItems}</DropdownList>
+        </Dropdown>
       </DataListAction>
     </DataListItemRow>
   )
