@@ -35,7 +35,7 @@
     "postinstall": "react-flagpack"
   },
   "devDependencies": {
-    "@adobe/jsonschema2md": "^8.0.3",
+    "@adobe/jsonschema2md": "^8.0.8",
     "@babel/core": "^7.27.7",
     "@babel/eslint-parser": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
