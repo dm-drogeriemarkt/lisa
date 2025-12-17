@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This project is no longer maintained and will not receive any new features or security fixes!
+
 # LISA
 
 [<img src="https://raw.githubusercontent.com/dm-drogeriemarkt/.github/refs/heads/main/assets/dmtech-open-source-badge.svg">](https://www.dmtech.de/)
